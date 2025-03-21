@@ -10,12 +10,7 @@
     "meaning": "（人格性の低い）生物, 動物, 生き物, 動物, 獣, けもの, けだもの",
     "pronunciation": "/ask/",
     "etymology": "不明",
-    "idioms": [],
-    "variants1": [],
-    "variants2": ["ask", "アスク"],
-    "related": [],
-    "examples": [],
-    "explanation": []
+    "variants2": ["ask", "アスク"]
   },
   "boiz": {
   "word": "boiz",
@@ -26,13 +21,19 @@
     "ruletype": "no",
   "meaning": ["くじら", "クジラ", "鯨"],
   "pronunciation": "/bʷez/",
-  "etymology": "不明",
-  "idioms": [],
-  "variants1": [],
-  "variants2": ["boiz"],
-  "related": [],
-  "examples": [],
-  "explanation": []
+  "variants2": ["boiz"]
+},
+  "cyfsa": {
+  "word": "cyfsa",
+  "stem": "cyfs",
+  "tag": ["動物名"],
+  "parts": "名象",
+    "type": "a 基本型",
+    "ruletype": "na",
+  "meaning": ["リス"],
+  "pronunciation": "/bʷez/",
+  "idiom": ["cyfsaf vniut（結婚する，結ばれる）",]
+  "variants2": ["りす", "栗鼠"]
 },
 "dåpna": {
     "word": "dåpna",
@@ -46,12 +47,7 @@
     "meaning": ["シャチ", "しゃち"],
     "pronunciation": "/ask/",
     "etymology": "不明",
-    "idioms": [],
-    "variants1": [],
-    "variants2": ["doppna", "オルカ", "鯱"],
-    "related": [],
-    "examples": [],
-    "explanation": "海に生息する大型の海洋哺乳類で、サメなどを捕食することもあります。"
+    "variants2": ["doppna", "オルカ", "鯱"]
   },
 "ētiko": {
   "word": "ētiko",
@@ -90,11 +86,10 @@
       "ruletype": "nāM",
     "meaning": ["（ロップイヤーの）うさぎ, 兎"],
     "pronunciation": "/oːmə/",
-    "etymology": "不明",
-    "idioms": [],
     "vari": ["fkṓma<br>fcṓma"],
+  "variants1": ["piósta"],
     "variants2": ["fhoma", "fhōma", "たれ耳うさぎ", "垂れ耳うさぎ", "ロップイヤー", "ロップイヤーラビット"],
-    "explanation": "ウサギの中でも、耳が垂れているもの。"
+    "explanation": ["ウサギの中でも、耳が垂れているもの。"]
   },
 "fxálo": {
   "word": "fxalo",
@@ -106,12 +101,7 @@
   "meaning": ["オコジョ"],
   "pronunciation": "/fʂalo/",
   "etymology": "不明",
-  "idioms": [],
-  "variants1": [],
-  "variants2": ["fxalo", "白鼬","フシャロ"],
-  "related": [],
-  "examples": [],
-  "explanation": []
+  "variants2": ["fxalo", "白鼬","フシャロ"]
 },
 "háfa": {
   "word": "háfa",
@@ -123,9 +113,6 @@
   "ruletype": "nfha",
   "meaning": ["（昼間の）空", "青空", "天空", "天気", "空模様", "天国", "天界"],
   "pronunciation": "/xafə/",
-  "etymology": "不明",
-  "idioms": [],
-  "variants1": [],
   "variants2": ["hafa","そら", "あおぞら", "てんくう", "てんき", "そらもよう", "てんごく", "てんかい"]
 },
 "luip": {
@@ -138,13 +125,8 @@
   "ruletype": "nha",
   "meaning": ["りんご", "リンゴ"],
   "pronunciation": "/lɨp/",
-  "etymology": "不明",
-  "idioms": [],
   "variants1": ["píp"],
-  "variants2": ["luip","アップル, apple"],
-  "related": [],
-  "examples": [],
-  "explanation": []
+  "variants2": ["luip","アップル, apple"]
 },
   "lúpo": {
   "word": "lupo",
@@ -155,13 +137,7 @@
   "ruletype": "nho",
   "meaning": ["ぶどう", "ブドウ", "葡萄"],
   "pronunciation": "/lupo/",
-  "etymology": "不明",
-  "idioms": [],
-  "variants1": [],
-  "variants2": ["lupo", "grape"],
-  "related": [],
-  "examples": [],
-  "explanation": []
+  "variants2": ["lupo", "grape"]
 },
 "lukótt": {
   "word": "lukótt",
@@ -173,12 +149,7 @@
   "meaning": ["砂糖", "シュガー"],
   "pronunciation": "/lupo/",
   "etymology": ["借用語。古トシュカ語「lukotto（金平糖）」から"],
-  "idioms": [],
-  "variants1": [],
-  "variants2": ["lukott","さとう"],
-  "related": [],
-  "examples": [],
-  "explanation": []
+  "variants2": ["lukott","さとう"]
 },
 "Miuluklu": {
   "word": "Miuluklou",
@@ -202,12 +173,7 @@
       "ruletype": "nha",
       "meaning": ["りんご", "リンゴ"],
       "pronunciation": "/pip/",
-      "etymology": "不明",
-      "idioms": [],
       "variants1": ["luip"],
-      "variants2": ["pipa", "アップル", "林檎"],
-      "related": [],
-      "examples": [],
-      "explanation": []
+      "variants2": ["pipa", "アップル", "林檎"]
     }
   }
