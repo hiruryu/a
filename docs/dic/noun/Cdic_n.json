@@ -189,5 +189,274 @@
       "pronunciation": "/pip/",
       "variants1": ["luip"],
       "variants2": ["pipa", "アップル", "林檎"]
-    }
-  }
+    },
+    "mia": {
+  "word": "mia",
+  "stem": "m",
+  "tag": ["人称代象", "一人称"],
+  "parts": "名象",
+  "type": "完全不規則型",
+  "ruletype": "mia",
+  "meaning": ["（一人称男性形）","俺", "僕", "自分"],
+  "pronunciation": ["/mʲa/<br>[mʲə]"],
+  "etymology": ["古智語「 miula（竜）」から。"],
+  "variants2": ["おれ", "ぼく", "じぶん"]]
+},
+  "lia": {
+  "word": "lia",
+  "stem": "l",
+  "tag": ["人称代象", "一人称"],
+  "parts": "名象",
+  "type": "完全不規則型",
+  "ruletype": "mia",
+  "meaning": ["（一人称女性形）","わたし", "私", "自分"],
+  "pronunciation": ["/lʲa/<br>[lʲə]"],
+  "variants2": ["わたくし", "じぶん"]
+},
+  "cia": {
+  "word": "cia",
+  "stem": "c",
+  "tag": ["人称代象", "一人称"],
+  "parts": "名象",
+  "type": "完全不規則型",
+  "ruletype": "cia",
+  "meaning": ["（一人称中性形）","ぼく", "私", "自分"],
+  "pronunciation": ["/ʈ͡ʂja/<br>[ʈ͡ʂjə]"],
+  "variants2": ["僕", "わたし", "じぶん"]
+},
+  "sia": {
+  "word": "sia",
+  "stem": "s",
+  "tag": ["人称代象", "二人称"],
+  "parts": "名象",
+  "type": "完全不規則型",
+  "ruletype": "mia",
+  "meaning": ["（二人称男性形）","あなた", "君"],
+  "pronunciation": ["/sʲa/<br>[sʲə]"],
+  "variants2": ["きみ", "貴方"]
+},
+  "pia": {
+  "word": "pia",
+  "stem": "p",
+  "tag": ["人称代象", "二人称"],
+  "parts": "名象",
+  "type": "完全不規則型",
+  "ruletype": "mia",
+  "meaning": ["（二人称女性形）","あなた", "君"],
+  "pronunciation": ["/pʲa/<br>[pʲə]"],
+  "variants2": ["きみ", "貴方", "貴女"]
+},
+  "tia": {
+  "word": "tia",
+  "stem": "t",
+  "tag": ["人称代象", "二人称"],
+  "parts": "名象",
+  "type": "完全不規則型",
+  "ruletype": "mia",
+  "meaning": ["（二人称中性形）","あなた", "君"],
+  "pronunciation": ["/tʲa/<br>[tʲə]"],
+  "variants2": ["きみ", "貴方"]
+},
+
+  "kia": {
+  "word": "kia",
+  "stem": "k",
+  "tag": ["人称代象", "二人称"],
+  "parts": "名象",
+  "type": "完全不規則型",
+  "ruletype": "mia",
+  "meaning": ["（三人称男性形）", "彼"],
+  "pronunciation": ["/kʲa/<br>[kʲə]"],
+  "variants2": ["かれ"]
+},
+  "fia": {
+  "word": "fia",
+  "stem": "f",
+  "tag": ["人称代象", "三人称"],
+  "parts": "名象",
+  "type": "完全不規則型",
+  "ruletype": "mia",
+  "meaning": ["（二人称女性形）","彼女"],
+  "pronunciation": ["/fʲa/<br>[fʲə]"],
+  "variants2": ["かのじょ"]
+},
+  "xia": {
+  "word": "xia",
+  "stem": "x",
+  "tag": ["人称代象", "三人称"],
+  "parts": "名象",
+  "type": "完全不規則型",
+  "ruletype": "mia",
+  "meaning": ["（三人称中性形）", "彼", "彼女"],
+  "pronunciation": ["/ʂja/<br>[ʂjə]"],
+  "variants2": ["かれ", "かのじょ"]
+},
+
+  "zia": {
+  "word": "zia",
+  "stem": "z",
+  "tag": ["獣称代象", "二人称"],
+  "parts": "名象",
+  "type": "完全不規則型",
+  "ruletype": "mia",
+  "meaning": ["（二人称男性形）", "あなた", "君"],
+  "pronunciation": ["/zʲa/<br>[zʲə]"],
+  "variants2": ["きみ", "貴方"]
+},
+  "bia": {
+  "word": "bia",
+  "stem": "b",
+  "tag": ["獣称代象", "二人称"],
+  "parts": "名象",
+  "type": "完全不規則型",
+  "ruletype": "mia",
+  "meaning": ["（二人称女性形）","あなた", "君"],
+  "pronunciation": ["/bʲa/<br>[bʲə]"],
+  "variants2": ["きみ", "貴方", "貴女"]
+},
+  "dia": {
+  "word": "dia",
+  "stem": "d",
+  "tag": ["獣称代象", "二人称"],
+  "parts": "名象",
+  "type": "完全不規則型",
+  "ruletype": "mia",
+  "meaning": ["（二人称中性形）","あなた", "君"],
+  "pronunciation": ["/dʲa/<br>[dʲə]"],
+  "variants2": ["きみ", "貴方"]
+},
+
+  "gia": {
+  "word": "gia",
+  "stem": "g",
+  "tag": ["獣称代象", "二人称"],
+  "parts": "名象",
+  "type": "完全不規則型",
+  "ruletype": "mia",
+  "meaning": ["（三人称男性形）", "彼"],
+  "pronunciation": ["/gʲa/<br>[gʲə]"],
+  "variants2": ["かれ"]
+},
+  "via": {
+  "word": "via",
+  "stem": "v",
+  "tag": ["獣称代象", "三人称"],
+  "parts": "名象",
+  "type": "完全不規則型",
+  "ruletype": "mia",
+  "meaning": ["（二人称女性形）","彼女"],
+  "pronunciation": ["/vʲa/<br>[vʲə]"],
+  "variants2": ["かのじょ"]
+},
+  "jia": {
+  "word": "jia",
+  "stem": "j",
+  "tag": ["獣称代象", "三人称"],
+  "parts": "名象",
+  "type": "完全不規則型",
+  "ruletype": "mia",
+  "meaning": ["（三人称中性形）", "彼", "彼女"],
+  "pronunciation": ["/ʐja/<br>[ʐjə]"],
+  "variants2": ["かれ", "かのじょ"]
+},
+  "kóta": {
+  "word": "kóta",
+  "stem": "kót",
+  "stem2": "kot",
+  "tag": ["指示代象", "可算代象", "近称"],
+  "parts": "名象",
+  "type": "完全不規則型",
+  "ruletype": "kota",
+  "meaning": ["（可算代象-近称）", "これ"],
+  "pronunciation": ["/kota/<br>[kotə]"]
+},
+  "lóta": {
+  "word": "lóta",
+  "stem": "lót",
+  "stem2": "lot",
+  "tag": ["指示代象", "不可算代象", "近称"],
+  "parts": "名象",
+  "type": "完全不規則型",
+  "ruletype": "kota",
+  "meaning": ["（可算代象-近称）", "これ"],
+  "pronunciation": ["/lota/<br>[lotə]"]
+},
+  "fóta": {
+  "word": "fóta",
+  "stem": "fót",
+  "stem2": "fot",
+  "tag": ["指示代象", "不可視代象", "近称"],
+  "parts": "名象",
+  "type": "完全不規則型",
+  "ruletype": "kota",
+  "meaning": ["（可算代象-近称）", "これ"],
+  "pronunciation": ["/fota/<br>[fotə]"]
+},
+  "káta": {
+  "word": "káta",
+  "stem": "kát",
+  "stem2": "kat",
+  "tag": ["指示代象", "可算代象", "中称"],
+  "parts": "名象",
+  "type": "完全不規則型",
+  "ruletype": "kota",
+  "meaning": ["（可算代象-中称）", "しれ"],
+  "pronunciation": ["/kata/<br>[katə]"]
+},
+  "láta": {
+  "word": "láta",
+  "stem": "lát",
+  "stem2": "lat",
+  "tag": ["指示代象", "不可算代象", "中称"],
+  "parts": "名象",
+  "type": "完全不規則型",
+  "ruletype": "kota",
+  "meaning": ["（可算代象-中称）", "それ"],
+  "pronunciation": ["/lata/<br>[latə]"]
+},
+  "fáta": {
+  "word": "fáta",
+  "stem": "fát",
+  "stem2": "fat",
+  "tag": ["指示代象", "不可視代象", "中称"],
+  "parts": "名象",
+  "type": "完全不規則型",
+  "ruletype": "kota",
+  "meaning": ["（可算代象-中称）", "それ"],
+  "pronunciation": ["/fata/<br>[fatə]"]
+},
+
+  "kýta": {
+  "word": "kýta",
+  "stem": "kýt",
+  "stem2": "kyt",
+  "tag": ["指示代象", "可算代象", "遠称"],
+  "parts": "名象",
+  "type": "完全不規則型",
+  "ruletype": "kota",
+  "meaning": ["（可算代象-遠称）", "あれ"],
+  "pronunciation": ["/kita/<br>[kʲitə]"]
+},
+  "lýta": {
+  "word": "lýta",
+  "stem": "lýt",
+  "stem2": "lyt",
+  "tag": ["指示代象", "不可算代象", "遠称"],
+  "parts": "名象",
+  "type": "完全不規則型",
+  "ruletype": "kota",
+  "meaning": ["（可算代象-遠称）", "あれ"],
+  "pronunciation": ["/lita/<br>[lʲitə]"]
+},
+  "fýta": {
+  "word": "fýta",
+  "stem": "fýt",
+  "stem2": "fyt",
+  "tag": ["指示代象", "不可視代象", "遠称"],
+  "parts": "名象",
+  "type": "完全不規則型",
+  "ruletype": "kota",
+  "meaning": ["（可算代象-遠称）", "あれ"],
+  "pronunciation": ["/fita/<br>[fʲitə]"]
+}
+}
