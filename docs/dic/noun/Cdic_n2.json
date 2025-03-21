@@ -12,7 +12,7 @@
     "meaning": ["猫", "ネコ"],
     "pronunciation": "/ask/",
     "etymology": ["「猫の鳴き声」から"],
-    "vari": ["náfa"],
+    "vari": ["náfa"]
   },
   "nṓx": {
     "word": "nōx",
@@ -25,7 +25,7 @@
       "type": "長母音双数型（部分不規則）",
       "ruletype": "nā",
     "meaning": ["耳"],
-    "pronunciation": "/noːʂ/",
+    "pronunciation": ["/noːʂ/"]
   },
   "lúpha": {
   "word": "lupha",
@@ -39,8 +39,7 @@
   "meaning": ["言語", "言葉"],
   "pronunciation": "/lufə/",
   "etymology": ["音象徴「喋る」から？"],
-  "variants2": ["lupha", "language"],
-  "explanation": ["会話や文章で用いられるコミュニケーション手段を広く指す。"]
+  "variants2": ["lupha", "language"]
 },
 "petnosciuk": {
 "word": "petnosciuk",
@@ -80,6 +79,6 @@
 "meaning": ["うさぎ", "兎", "（干支の）卯"],
 "pronunciation": "/pʲostə/",
 "variants1": ["fhṓma"],
-"variants2": ["piosta", "ウサギ"],
+"variants2": ["piosta", "ウサギ"]
 }
 }
