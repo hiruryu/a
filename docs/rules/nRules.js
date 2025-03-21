@@ -2042,6 +2042,70 @@ function getConjN(word, stem, stem2, type, ruletype) {
           v_adpI: adpI.slice(0, -1) + "agh",
           in_adpI: adpI.slice(0, -1) + "iax",
         };
+    
+    } else if (ruletype === "mia") {
+    // 人称名象 (mia)
+    let andC = stem + "yt";         
+    let anpC = stem + "ȳ́v";    
+    let ansI = stem + "iūl";
+    let andI = stem + "iūz";
+    let anpI = stem + "iūtas";
+
+    return {
+      ansC: stem + "ia",
+      f_ansC: stem + "al",
+      e_ansC: stem + "ol",
+      d_ansC: stem + "el",
+      ad_ansC: stem + "iū",
+      g_ansC: stem + "hō",
+      v_ansC: stem + "iagh",
+      in_ansC: stem + "iax",
+      // 非限定形可視双数形
+      andC: andC,
+      f_andC: andC + "al",
+      e_andC: andC + "ol",
+      d_andC: andC + "el",
+      ad_andC: andC + "iú",
+      g_andC: andC + "oy",
+      v_andC: andC + "ygh",
+      in_andC: andC + "iax",
+      
+      anpC: anpC + "a",
+      f_anpC: anpC + "al",
+      e_anpC: anpC + "on",
+      d_anpC: anpC + "e",
+      ad_anpC: anpC + "ūt",
+      g_anpC: anpC + "oy",
+      v_anpC: anpC + "agh",
+      in_anpC: anpC + "iax",
+      // 非限定形不可視単数形
+      ansI: ansI + "a",
+      f_ansI: ansI + "al",
+      e_ansI: ansI + "ol",
+      d_ansI: ansI + "el",
+      ad_ansI: ansI + "iū",
+      g_ansI: ansI + "oy",
+      v_ansI: ansI + "agh",
+      in_ansI: ansI + "iax", 
+      // 非限定形不可視双数形
+      andI: andI + "a",
+      f_andI: andI + "al",
+      e_andI: andI + "ol",
+      d_andI: andI + "el",
+      ad_andI: andI + "iū",
+      g_andI: andI + "oy",
+      v_andI: andI + "agh",
+      in_andI: andI + "iax",
+      // 非限定形不可視複数形
+      anpI: anpI + "a",
+      f_anpI: anpI + "al",
+      e_anpI: anpI + "ol",
+      d_anpI: anpI + "el",
+      ad_anpI: anpI + "iū",
+      g_anpI: anpI + "oy",
+      v_anpI: anpI + "agh",
+      in_anpI: anpI + "iax",
+    };
   } 
   {
     // □ naI, nhaI, nfhaI, nsta, nstā, nsto, nstho, (nad, nhad, nstad, nsthad), naL, naI, 
