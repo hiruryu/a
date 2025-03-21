@@ -366,7 +366,7 @@
   "tag": ["指示代象", "可算代象", "近称"],
   "parts": "名象",
   "type": "完全不規則型",
-  "ruletype": "kota",
+  "ruletype": "nha",
   "meaning": ["（可算代象-近称）", "これ"],
   "pronunciation": ["/kota/<br>[kotə]"]
 },
@@ -377,7 +377,7 @@
   "tag": ["指示代象", "不可算代象", "近称"],
   "parts": "名象",
   "type": "完全不規則型",
-  "ruletype": "kota",
+  "ruletype": "nha",
   "meaning": ["（可算代象-近称）", "これ"],
   "pronunciation": ["/lota/<br>[lotə]"]
 },
@@ -388,7 +388,7 @@
   "tag": ["指示代象", "不可視代象", "近称"],
   "parts": "名象",
   "type": "完全不規則型",
-  "ruletype": "kota",
+  "ruletype": "nha",
   "meaning": ["（可算代象-近称）", "これ"],
   "pronunciation": ["/fota/<br>[fotə]"]
 },
@@ -399,7 +399,7 @@
   "tag": ["指示代象", "可算代象", "中称"],
   "parts": "名象",
   "type": "完全不規則型",
-  "ruletype": "kota",
+  "ruletype": "nha",
   "meaning": ["（可算代象-中称）", "しれ"],
   "pronunciation": ["/kata/<br>[katə]"]
 },
@@ -410,7 +410,7 @@
   "tag": ["指示代象", "不可算代象", "中称"],
   "parts": "名象",
   "type": "完全不規則型",
-  "ruletype": "kota",
+  "ruletype": "nha",
   "meaning": ["（可算代象-中称）", "それ"],
   "pronunciation": ["/lata/<br>[latə]"]
 },
@@ -421,7 +421,7 @@
   "tag": ["指示代象", "不可視代象", "中称"],
   "parts": "名象",
   "type": "完全不規則型",
-  "ruletype": "kota",
+  "ruletype": "nha",
   "meaning": ["（可算代象-中称）", "それ"],
   "pronunciation": ["/fata/<br>[fatə]"]
 },
@@ -433,7 +433,7 @@
   "tag": ["指示代象", "可算代象", "遠称"],
   "parts": "名象",
   "type": "完全不規則型",
-  "ruletype": "kota",
+  "ruletype": "nha",
   "meaning": ["（可算代象-遠称）", "あれ"],
   "pronunciation": ["/kita/<br>[kʲitə]"]
 },
@@ -444,7 +444,7 @@
   "tag": ["指示代象", "不可算代象", "遠称"],
   "parts": "名象",
   "type": "完全不規則型",
-  "ruletype": "kota",
+  "ruletype": "nha",
   "meaning": ["（可算代象-遠称）", "あれ"],
   "pronunciation": ["/lita/<br>[lʲitə]"]
 },
@@ -455,7 +455,7 @@
   "tag": ["指示代象", "不可視代象", "遠称"],
   "parts": "名象",
   "type": "完全不規則型",
-  "ruletype": "kota",
+  "ruletype": "nha",
   "meaning": ["（可算代象-遠称）", "あれ"],
   "pronunciation": ["/fita/<br>[fʲitə]"]
 }
