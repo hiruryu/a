@@ -1,0 +1,65 @@
+{
+"hádui": {
+      "word": "hadui",
+      "stem": "had",
+      "tag": ["性格", "容姿"],
+      "parts": "名飾",
+        "type": "子音型",
+        "ruletype": "c0",
+      "meaning": ["かわいい", "かわいらしい", "キュートな"],
+      "pronunciation": "/hadɨ/",
+      "etymology": "不明",
+      "variants1": ["pdáskui", "lútui"],
+      "variants2": ["hadui"]
+  },
+"lútui": {
+      "word": "lutui",
+      "stem": "lut",
+      "tag": ["性格", "容姿", "食レポ"],
+      "parts": "名飾",
+        "type": "子音型",
+        "ruletype": "c0",
+      "meaning": ["かわいい", "かわいらしい", "キュートな"],
+      "pronunciation": "/lutɨ/",
+      "etymology": "不明",
+      "variants1": ["hádui", "pdáskui"],
+      "variants2": ["lutui"]
+  },
+"pdáskui": {
+      "word": "pdaska",
+      "stem": "pdask",
+      "tag": ["性格", "容姿"],
+      "parts": "名飾",
+        "type": "a 基本型",
+        "ruletype": "c0",
+      "meaning": ["かわいい", "かわいらしい", "キュートな"],
+      "pronunciation": "/pɾaskɨ/",
+      "etymology": "不明",
+      "variants1": ["hádui", "lútui"],
+      "variants2": ["praska"]
+  },
+"snṓlui": {
+      "word": "snōlui",
+      "stem": "snōl",
+      "tag": ["性格", "容姿", "食レポ"],
+      "parts": "名飾",
+        "type": "l 変則型",
+        "ruletype": "c0",
+      "meaning": ["美しい", "綺麗な", "素晴らしい","端正な", "素敵な","上手い", "よろしい", "良い", "順調な", "上出来な", "完璧な"],
+      "pronunciation": "/pɾaskɨ/",
+      "etymology": "不明",    
+      "variants2": ["snolui","snōlui"]
+  },
+  "kátui": {
+      "word": "kátui",
+      "stem": "kátui",
+      "tag": ["形", "感触", "食レポ"],
+      "parts": "名飾",
+        "type": "l 変則型",
+        "ruletype": "c0",
+      "meaning": ["固い", "硬い", "堅い", "きつい", "凝った", "強い", "こわい", "カチコチな", "カチンコチンな", "コテコテの"],
+      "pronunciation": "/pɾaskɨ/",
+      "etymology": "不明",    
+      "variants2": ["katui","snōlui"]
+  }
+}

@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>📕 智語辞書</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="stylesheet.css">
+</head>
+<body>
+  <div class="sidebar">
+    <label for="searchMode">検索モード:</label>
+    <select id="searchMode" title="検索モード">
+      <option value="prefix">前方一致</option>
+      <option value="partial">部分一致</option>
+      <option value="exact">完全一致</option>
+    </select>
+
+    <input type="text" id="searchBox" placeholder="検索...">
+    <ul id="wordList" class="searchResults"></ul>
+
+    <p id="placeholder" class="placeholder">
+      入力欄に単語を入力して<br>
+      Enter/Return キーを押してください｡<br><br>
+      （ 現在の収録語数：34 語 ）<br><br>
+      ⚠️ 本辞書内蔵の用語辞典は<br>
+      智式言語学・智式音楽理論に基づくため，<br>
+      一般的な定義とは異なる可能性があります。     
+    </p>
+    
+        <!-- ページング用ボタンとページ情報 -->
+        <div id="pagination" class="pagination">
+          <button id="prevPage">＜ 前のページ</button>
+          <span class="bottonspan" id="pageInfo">1 / 1</span>
+          <button id="nextPage">次のページ ＞</button>
+        </div>
+  </div>
+  <div class="content">
+    <div id="details">
+      <p class="placeholder">左側のリストから単語をクリックしてください｡</p>
+    </div>
+  </div>
+
+  <script src="rules/nRules.js"></script>
+  <script src="rules/vRules.js"></script>
+  <script src="rules/aRules.js"></script>
+  <script src="rules/oRules.js"></script>
+  <script src="mapping.js"></script>
+  <script>
+    let dictionary = {};
+    let searchResults = [];
+    let currentPage = 1;
+    const itemsPerPage = 20;
+    const partsStyles = {
+  "名象": "meishou",
+  "動詞": "doushi",
+  "名飾": "meishoku",
+  "副飾": "fukushoku",
+  "接辞": "fukuji",
+  "離辞": "fukuji",
+  "付称辞": "fukuji",
+  "間投詞": "kanto",
+};
+
+window.toggleVulgarMeaning = function(linkElem) {
+      const ul = linkElem.nextElementSibling;
+      if (ul.style.display === "none") {
+        ul.style.display = "block";
+        linkElem.textContent = "俗的な意味を非表示";
+      } else {
+        ul.style.display = "none";
+        linkElem.textContent = "俗的な意味を表示";
+      }
+    };
+
+    Promise.all([
+      fetch('dic/Cdic_a.json').then(response => response.json()),
+      fetch('dic/noun/Cdic_n.json').then(response => response.json()),
+      fetch('dic/noun/Cdic_n2.json').then(response => response.json()),
+      fetch('dic/Cdic_o.json').then(response => response.json()),
+      fetch('dic/Cdic_v.json').then(response => response.json())
+    ]).then(([nounData, noun2Data, verbData, adjectiveData, othersData]) => {
+      dictionary = { ...nounData, ...noun2Data, ...verbData, ...adjectiveData, ...othersData };
+    }).catch(error => console.error("JSON読み込みエラー:", error));
+
+    function extractTranslations(text) {
+      const cleaned = text.replace(/［[^］]*］/g, "").replace(/（[^）]*）/g, "").trim();
+      return cleaned.split(/\s*,\s*/).filter(item => item !== "");
+    }
+    function removeAnnotations(text) {
+      return text.replace(/［[^］]*］/g, "").replace(/（[^）]*）/g, "").trim();
+    }
+
+    const searchBox = document.getElementById("searchBox");
+    const searchModeSelect = document.getElementById("searchMode");
+    const wordList = document.getElementById("wordList");
+    const details = document.getElementById("details");
+    const placeholder = document.getElementById("placeholder");
+
+    const prevPageBtn = document.getElementById("prevPage");
+    const nextPageBtn = document.getElementById("nextPage");
+    const pageInfoSpan = document.getElementById("pageInfo");
+
+    function showDetails(word) {
+      const data = dictionary[word];
+      if (!data) {
+        alert("単語「" + word + "」の詳細が見つかりません。");
+        return;
+      }
+
+      let tableHTML = "";
+      let conjugations = {};
+
+      if (data.parts === "名象") {
+        conjugations = getConjN(data.word, data.stem, data.stem2, data.type, data.ruletype);
+        if (Object.keys(conjugations).length === 0) {
+          tableHTML = `<tr><td colspan="13">この名詞は活用型がありません。</td></tr>`;
+        } else {
+          tableHTML = `
+            <tr class="con1">
+              <td class="conname">素格</td>
+              <td id="ans">${conjugations.ansC || ""}</td>
+              <td id="ans">${conjugations.andC || ""}</td>
+              <td id="ans">${conjugations.anpC || ""}</td>
+              <td id="ans">${conjugations.adsC || ""}</td>
+              <td id="ans">${conjugations.addC || ""}</td>
+              <td id="ans">${conjugations.adpC || ""}</td>
+              <td id="ans">${conjugations.ansI || ""}</td>
+              <td id="ans">${conjugations.andI || ""}</td>
+              <td id="ans">${conjugations.anpI || ""}</td>
+              <td id="ans">${conjugations.adsI || ""}</td>
+              <td id="ans">${conjugations.addI || ""}</td>
+              <td id="ans">${conjugations.adpI || ""}</td>
+            </tr>
+            <tr class="con2">
+              <td class="conname">獣形</td>
+              <td id="fns">${conjugations.f_ansC || ""}</td>
+              <td id="fns">${conjugations.f_andC || ""}</td>
+              <td id="fns">${conjugations.f_anpC || ""}</td>
+              <td id="fns">${conjugations.f_adsC || ""}</td>
+              <td id="fns">${conjugations.f_addC || ""}</td>
+              <td id="fns">${conjugations.f_adpC || ""}</td>
+              <td id="fns">${conjugations.f_ansI || ""}</td>
+              <td id="fns">${conjugations.f_andI || ""}</td>
+              <td id="fns">${conjugations.f_anpI || ""}</td>
+              <td id="fns">${conjugations.f_adsI || ""}</td>
+              <td id="fns">${conjugations.f_addI || ""}</td>
+              <td id="fns">${conjugations.f_adpI || ""}</td>
+            </tr>
+            <tr class="con3">
+              <td class="conname">能格/生格</td>
+              <td id="ens">${conjugations.e_ansC || ""}</td>
+              <td id="ens">${conjugations.e_andC || ""}</td>
+              <td id="ens">${conjugations.e_anpC || ""}</td>
+              <td id="ens">${conjugations.e_adsC || ""}</td>
+              <td id="ens">${conjugations.e_addC || ""}</td>
+              <td id="ens">${conjugations.e_adpC || ""}</td>
+              <td id="ens">${conjugations.e_ansI || ""}</td>
+              <td id="ens">${conjugations.e_andI || ""}</td>
+              <td id="ens">${conjugations.e_anpI || ""}</td>
+              <td id="ens">${conjugations.e_adsI || ""}</td>
+              <td id="ens">${conjugations.e_addI || ""}</td>
+              <td id="ens">${conjugations.e_adpI || ""}</td>
+            </tr>
+            <tr class="con4">
+              <td class="conname">与格</td>
+              <td id="dns">${conjugations.d_ansC || ""}</td>
+              <td id="dns">${conjugations.d_andC || ""}</td>
+              <td id="dns">${conjugations.d_anpC || ""}</td>
+              <td id="dns">${conjugations.d_adsC || ""}</td>
+              <td id="dns">${conjugations.d_addC || ""}</td>
+              <td id="dns">${conjugations.d_adpC || ""}</td>
+              <td id="dns">${conjugations.d_ansI || ""}</td>
+              <td id="dns">${conjugations.d_andI || ""}</td>
+              <td id="dns">${conjugations.d_anpI || ""}</td>
+              <td id="dns">${conjugations.d_adsI || ""}</td>
+              <td id="dns">${conjugations.d_addI || ""}</td>
+              <td id="dns">${conjugations.d_adpI || ""}</td>
+            </tr>
+            <tr class="con5">
+              <td class="conname">副飾格</td>
+              <td id="adns">${conjugations.ad_ansC || ""}</td>
+              <td id="adns">${conjugations.ad_andC || ""}</td>
+              <td id="adns">${conjugations.ad_anpC || ""}</td>
+              <td id="adns">${conjugations.ad_adsC || ""}</td>
+              <td id="adns">${conjugations.ad_addC || ""}</td>
+              <td id="adns">${conjugations.ad_adpC || ""}</td>
+              <td id="adns">${conjugations.ad_ansI || ""}</td>
+              <td id="adns">${conjugations.ad_andI || ""}</td>
+              <td id="adns">${conjugations.ad_anpI || ""}</td>
+              <td id="adns">${conjugations.ad_adsI || ""}</td>
+              <td id="adns">${conjugations.ad_addI || ""}</td>
+              <td id="adns">${conjugations.ad_adpI || ""}</td>
+            </tr>
+            <tr class="con6">
+              <td class="conname">属形</td>
+              <td id="gns">${conjugations.g_ansC || ""}</td>
+              <td id="gns">${conjugations.g_andC || ""}</td>
+              <td id="gns">${conjugations.g_anpC || ""}</td>
+              <td id="gns">${conjugations.g_adsC || ""}</td>
+              <td id="gns">${conjugations.g_addC || ""}</td>
+              <td id="gns">${conjugations.g_adpC || ""}</td>
+              <td id="gns">${conjugations.g_ansI || ""}</td>
+              <td id="gns">${conjugations.g_andI || ""}</td>
+              <td id="gns">${conjugations.g_anpI || ""}</td>
+              <td id="gns">${conjugations.g_adsI || ""}</td>
+              <td id="gns">${conjugations.g_addI || ""}</td>
+              <td id="gns">${conjugations.g_adpI || ""}</td>
+            </tr>
+            <tr class="con7">
+              <td class="conname">呼称形</td>
+              <td id="vns">${conjugations.v_ansC || ""}</td>
+              <td id="vns">${conjugations.v_andC || ""}</td>
+              <td id="vns">${conjugations.v_anpC || ""}</td>
+              <td id="vns">${conjugations.v_adsC || ""}</td>
+              <td id="vns">${conjugations.v_addC || ""}</td>
+              <td id="vns">${conjugations.v_adpC || ""}</td>
+              <td id="vns">${conjugations.v_ansI || ""}</td>
+              <td id="vns">${conjugations.v_andI || ""}</td>
+              <td id="vns">${conjugations.v_anpI || ""}</td>
+              <td id="vns">${conjugations.v_adsI || ""}</td>
+              <td id="vns">${conjugations.v_addI || ""}</td>
+              <td id="vns">${conjugations.v_adpI || ""}</td>
+            </tr>
+            <tr class="con8">
+              <td class="conname">包括形</td>
+              <td id="ins">${conjugations.in_ansC || ""}</td>
+              <td id="ins">${conjugations.in_andC || ""}</td>
+              <td id="ins">${conjugations.in_anpC || ""}</td>
+              <td id="ins">${conjugations.in_adsC || ""}</td>
+              <td id="ins">${conjugations.in_addC || ""}</td>
+              <td id="ins">${conjugations.in_adpC || ""}</td>
+              <td id="ins">${conjugations.in_ansI || ""}</td>
+              <td id="ins">${conjugations.in_andI || ""}</td>
+              <td id="ins">${conjugations.in_anpC || ""}</td>
+              <td id="ins">${conjugations.in_adsC || ""}</td>
+              <td id="ins">${conjugations.in_addC || ""}</td>
+              <td id="ins">${conjugations.in_adpC || ""}</td>
+            </tr>
+          `;
+        }
+      } else if (data.parts === "付称辞") {
+        conjugations = getConjot(data.word, data.stem, data.type, data.ruletype);
+        if (Object.keys(conjugations).length === 0) {
+          tableHTML = `<tr><td colspan="13">活用型がありません。</td></tr>`;
+        } else {
+          tableHTML = `
+            <tr class="con1">
+              <td class="conname">素格</td>
+              <td>${conjugations.ansC || ""}</td>
+              <td>${conjugations.andC || ""}</td>
+              <td>${conjugations.anpC || ""}</td>
+              <td>${conjugations.adsC || ""}</td>
+              <td>${conjugations.addC || ""}</td>
+              <td>${conjugations.adpC || ""}</td>
+              <td>${conjugations.ansI || ""}</td>
+              <td>${conjugations.andI || ""}</td>
+              <td>${conjugations.anpI || ""}</td>
+              <td>${conjugations.adsI || ""}</td>
+              <td>${conjugations.addI || ""}</td>
+              <td>${conjugations.adpI || ""}</td>
+            </tr>
+            <tr class="con2">
+              <td class="conname">獣形</td>
+              <td>${conjugations.f_ansC || ""}</td>
+              <td>${conjugations.f_andC || ""}</td>
+              <td>${conjugations.f_anpC || ""}</td>
+              <td>${conjugations.f_adsC || ""}</td>
+              <td>${conjugations.f_addC || ""}</td>
+              <td>${conjugations.f_adpC || ""}</td>
+              <td>${conjugations.f_ansI || ""}</td>
+              <td>${conjugations.f_andI || ""}</td>
+              <td>${conjugations.f_anpI || ""}</td>
+              <td>${conjugations.f_adsI || ""}</td>
+              <td>${conjugations.f_addI || ""}</td>
+              <td>${conjugations.f_adpI || ""}</td>
+            </tr>
+            <tr class="con3">
+              <td class="conname">能格/生格</td>
+              <td>${conjugations.e_ansC || ""}</td>
+              <td>${conjugations.e_andC || ""}</td>
+              <td>${conjugations.e_anpC || ""}</td>
+              <td>${conjugations.e_adsC || ""}</td>
+              <td>${conjugations.e_addC || ""}</td>
+              <td>${conjugations.e_adpC || ""}</td>
+              <td>${conjugations.e_ansI || ""}</td>
+              <td>${conjugations.e_andI || ""}</td>
+              <td>${conjugations.e_anpI || ""}</td>
+              <td>${conjugations.e_adsI || ""}</td>
+              <td>${conjugations.e_addI || ""}</td>
+              <td>${conjugations.e_adpI || ""}</td>
+            </tr>
+            <tr class="con4">
+              <td class="conname">与格</td>
+              <td>${conjugations.d_ansC || ""}</td>
+              <td>${conjugations.d_andC || ""}</td>
+              <td>${conjugations.d_anpC || ""}</td>
+              <td>${conjugations.d_adsC || ""}</td>
+              <td>${conjugations.d_addC || ""}</td>
+              <td>${conjugations.d_adpC || ""}</td>
+              <td>${conjugations.d_ansI || ""}</td>
+              <td>${conjugations.d_andI || ""}</td>
+              <td>${conjugations.d_anpI || ""}</td>
+              <td>${conjugations.d_adsI || ""}</td>
+              <td>${conjugations.d_addI || ""}</td>
+              <td>${conjugations.d_adpI || ""}</td>
+            </tr>
+            <tr class="con5">
+              <td class="conname">副飾格</td>
+              <td>${conjugations.ad_ansC || ""}</td>
+              <td>${conjugations.ad_andC || ""}</td>
+              <td>${conjugations.ad_anpC || ""}</td>
+              <td>${conjugations.ad_adsC || ""}</td>
+              <td>${conjugations.ad_addC || ""}</td>
+              <td>${conjugations.ad_adpC || ""}</td>
+              <td>${conjugations.ad_ansI || ""}</td>
+              <td>${conjugations.ad_andI || ""}</td>
+              <td>${conjugations.ad_anpI || ""}</td>
+              <td>${conjugations.ad_adsI || ""}</td>
+              <td>${conjugations.ad_addI || ""}</td>
+              <td>${conjugations.ad_adpI || ""}</td>
+            </tr>
+            <tr class="con6">
+              <td class="conname">属形</td>
+              <td>${conjugations.g_ansC || ""}</td>
+              <td>${conjugations.g_andC || ""}</td>
+              <td>${conjugations.g_anpC || ""}</td>
+              <td>${conjugations.g_adsC || ""}</td>
+              <td>${conjugations.g_addC || ""}</td>
+              <td>${conjugations.g_adpC || ""}</td>
+              <td>${conjugations.g_ansI || ""}</td>
+              <td>${conjugations.g_andI || ""}</td>
+              <td>${conjugations.g_anpI || ""}</td>
+              <td>${conjugations.g_adsI || ""}</td>
+              <td>${conjugations.g_addI || ""}</td>
+              <td>${conjugations.g_adpI || ""}</td>
+            </tr>
+            <tr class="con7">
+              <td class="conname">呼称形</td>
+              <td>${conjugations.v_ansC || ""}</td>
+              <td>${conjugations.v_andC || ""}</td>
+              <td>${conjugations.v_anpC || ""}</td>
+              <td>${conjugations.v_adsC || ""}</td>
+              <td>${conjugations.v_addC || ""}</td>
+              <td>${conjugations.v_adpC || ""}</td>
+              <td>${conjugations.v_ansI || ""}</td>
+              <td>${conjugations.v_andI || ""}</td>
+              <td>${conjugations.v_anpI || ""}</td>
+              <td>${conjugations.v_adsI || ""}</td>
+              <td>${conjugations.v_addI || ""}</td>
+              <td>${conjugations.v_adpI || ""}</td>
+            </tr>
+            <tr class="con8">
+              <td class="conname">包括形</td>
+              <td>${conjugations.in_ansC || ""}</td>
+              <td>${conjugations.in_andC || ""}</td>
+              <td>${conjugations.in_anpC || ""}</td>
+              <td>${conjugations.in_adsC || ""}</td>
+              <td>${conjugations.in_addC || ""}</td>
+              <td>${conjugations.in_adpC || ""}</td>
+              <td>${conjugations.in_ansI || ""}</td>
+              <td>${conjugations.in_andI || ""}</td>
+              <td>${conjugations.in_anpC || ""}</td>
+              <td>${conjugations.in_adsC || ""}</td>
+              <td>${conjugations.in_addC || ""}</td>
+              <td>${conjugations.in_adpC || ""}</td>
+            </tr>
+          `;
+          tableHTML2 = `
+            <tr class="con1">
+              <td class="conname">単純相</td>
+              <td>${conjugations.vpa0 || ""}</td>
+              <td>${conjugations.vpr0 || ""}</td>
+              <td>${conjugations.vf0 || ""}</td>
+            </tr>
+            <tr class="con4">
+              <td class="conname">進行相</td>
+              <td>${conjugations.vpa1 || ""}</td>
+              <td>${conjugations.vpr1 || ""}</td>
+              <td>${conjugations.vf1 || ""}</td>
+            </tr>
+            <tr class="con2">
+              <td class="conname">完了相</td>
+              <td>${conjugations.vpa2 || ""}</td>
+              <td>${conjugations.vpr2 || ""}</td>
+              <td>${conjugations.vf2 || ""}</td>
+            </tr>
+          `;
+        }
+      } else if (data.parts === "動詞") {
+        conjugations = getConjV(data.word, data.stem, data.type, data.ruletype);
+        if (Object.keys(conjugations).length === 0) {
+          tableHTML = `<tr><td colspan="4">この動詞は活用型がありません。</td></tr>`;
+        } else {
+          tableHTML = `
+            <tr class="con1">
+              <td class="conname">単純相</td>
+              <td>${conjugations.vpa0 || ""}</td>
+              <td>${conjugations.vpr0 || ""}</td>
+              <td>${conjugations.vf0 || ""}</td>
+            </tr>
+            <tr class="con4">
+              <td class="conname">進行相</td>
+              <td>${conjugations.vpa1 || ""}</td>
+              <td>${conjugations.vpr1 || ""}</td>
+              <td>${conjugations.vf1 || ""}</td>
+            </tr>
+            <tr class="con2">
+              <td class="conname">完了相</td>
+              <td>${conjugations.vpa2 || ""}</td>
+              <td>${conjugations.vpr2 || ""}</td>
+              <td>${conjugations.vf2 || ""}</td>
+            </tr>
+          `;
+        }
+        
+      } else if (data.parts === "名飾" || data.parts === "副飾") {
+        conjugations = getConjA(data.word, data.stem, data.type, data.ruletype);
+        if (Object.keys(conjugations).length === 0) {
+          tableHTML = `<tr><td colspan="6">この動詞は活用型がありません。</td></tr>`;
+        } else {
+        tableHTML = `
+            <tr class="con1">
+              <td class="conname">素格一致</td>
+              <td>${conjugations.s || ""}</td>
+              <td>${conjugations.p || ""}</td>
+              <td>${conjugations.s2 || ""}</td>
+              <td>${conjugations.p2 || ""}</td>
+              <td>${conjugations.s3 || ""}</td>
+              <td>${conjugations.p3 || ""}</td>
+            </tr>
+            <tr class="con2">
+              <td class="conname">獣格一致</td>
+              <td>${conjugations.fs || ""}</td>
+              <td>${conjugations.fp || ""}</td>
+              <td>${conjugations.fs2 || ""}</td>
+              <td>${conjugations.fp2 || ""}</td>
+              <td>${conjugations.fs3 || ""}</td>
+              <td>${conjugations.fp3 || ""}</td>
+            </tr>
+            <tr class="con3">
+              <td class="conname">生/方格一致</td>
+              <td>${conjugations.es || ""}</td>
+              <td>${conjugations.ep || ""}</td>
+              <td>${conjugations.es2 || ""}</td>
+              <td>${conjugations.ep2 || ""}</td>
+              <td>${conjugations.es3 || ""}</td>
+              <td>${conjugations.ep3 || ""}</td>
+            </tr>
+            <tr class="con4">
+              <td class="conname">与/呼格一致</td>
+              <td>${conjugations.ds || ""}</td>
+              <td>${conjugations.dp || ""}</td>
+              <td>${conjugations.ds2 || ""}</td>
+              <td>${conjugations.dp2 || ""}</td>
+              <td>${conjugations.ds3 || ""}</td>
+              <td>${conjugations.dp3 || ""}</td>
+            </tr>
+            <tr class="con5">
+              <td class="conname">副飾格一致</td>
+              <td>${conjugations.ads || ""}</td>
+              <td>${conjugations.adp || ""}</td>
+              <td>${conjugations.ads2 || ""}</td>
+              <td>${conjugations.adp2 || ""}</td>
+              <td>${conjugations.ads3 || ""}</td>
+              <td>${conjugations.adp3 || ""}</td>
+            </tr>
+            <tr class="con6">
+              <td class="conname">叙述</td>
+              <td colspan="6">${conjugations.nar || ""}</td>
+            </tr>
+          `;
+        } 
+      }
+      
+
+      let meaningsHTML = "";
+if (data.meaning) {
+  const meanings = Array.isArray(data.meaning)
+    ? data.meaning
+    : data.meaning.split(",").map(s => s.trim());
+  meaningsHTML = meanings.map(m => `<li class="detailList">${m}</li>`).join("");
+}
+
+if (data.vulgarMeaning) {
+  let vulgarListHTML = "";
+  if (Array.isArray(data.vulgarMeaning)) {
+    vulgarListHTML = data.vulgarMeaning.map(item => `<li class="detailList">${item}</li>`).join("");
+  } else {
+    vulgarListHTML = `<li class="detailList">${data.vulgarMeaning}</li>`;
+  }
+
+  meaningsHTML += `
+    <li class="detailList">
+      <a href="#" class="toggleVulgar" onclick="toggleVulgarMeaning(this); return false;">俗的な意味を表示</a>
+      <ul class="vulgarList" style="display: none;">
+        ${vulgarListHTML}
+      </ul>
+    </li>
+  `;
+}
+
+function toggleVulgarMeaning(linkElem) {
+  const span = linkElem.nextElementSibling;
+  if (span.style.display === "none") {
+    span.style.display = "inline";
+    linkElem.textContent = "俗的な意味を非表示";
+  } else {
+    span.style.display = "none";
+    linkElem.textContent = "俗的な意味を表示";
+  }
+}   
+      let leftRows = [];
+      leftRows.push(`<tr><th>属性</th><td>${data.parts || ""}</td></tr>`);
+      leftRows.push(`<tr><th>タグ</th><td>${data.tag ? (Array.isArray(data.tag) ? data.tag.join(", ") : data.tag) : ""}</td></tr>`);
+      leftRows.push(`<tr><th>発音</th><td>${data.pronunciation || ""}</td></tr>`);
+      if (data.lexemic) {
+        leftRows.push(`<tr><th>語彙素形</th><td class="maincolor">${data.lexemic}</td></tr>`);
+      }
+
+      let fixHTML = "";
+      if (data.fix) {
+        const fix = Array.isArray(data.fix)
+        ? data.fix
+        : data.fix.split(",").map(s => s.trim());
+        fixHTML = fix.map(f => `<li class="fixList">${f}</li>`).join("");
+      }
+      if (fixHTML) {
+        leftRows.push(`
+        <tr>
+        <th>接辞形</th>
+        <td class="maincolor">
+        <ul>${fixHTML}</ul>
+      </td>
+    </tr>
+  `);
+}
+if (data.lexemic) {
+        leftRows.push(`<tr><th>異形</th><td class="variList">${data.vari}</td></tr>`);
+      }
+
+      if (data.type) {
+        leftRows.push(`<tr><th>屈折型</th><td>${data.type || ""}</td></tr>`);;
+      }
+      const rowspanCount = leftRows.length;
+      leftRows[0] = leftRows[0].replace(
+        `<tr><th>属性</th><td>${data.parts || ""}</td>`,
+        `<tr><th>属性</th><td>${data.parts || ""}</td><th rowspan="${rowspanCount}">意味</th><td rowspan="${rowspanCount}"><ul>${meaningsHTML}</ul></td>`
+      );
+      
+      let bottomRows = [];
+      bottomRows.push(`<tr><th>語源</th><td colspan="3">${data.etymology || ""}</td></tr>`);
+      bottomRows.push(`<tr><th>語義</th><td colspan="3">${data.explanation || ""}</td></tr>`);
+      
+      let headerClass = partsStyles[data.parts] || "default";
+
+let detailsHTML = `
+  <table>
+    <thead>
+      <tr>
+        <th class="heading-cell ${headerClass}" colspan="4">${word}</th>
+      </tr>
+    </thead>
+    <tbody class="detailTable">
+      ${leftRows.join("\n")}
+      ${bottomRows.join("\n")}
+    </tbody>
+  </table>
+`;
+
+      let note1HTML = "";
+      if (data.note1) {
+  const notes = Array.isArray(data.note1)
+    ? data.note1
+    : data.note1.split(",").map(s => s.trim());
+  note1HTML = notes.map(note =>
+    `<li class="noteList">${
+      note.replace(/⇒([^、。]+)/g, (match, term) => {
+        const trimmedTerm = term.trim();
+        let linkWord = linkMapping[trimmedTerm] || trimmedTerm;  
+        return `→<a href="#" onclick="loadWord('${linkWord}'); return false;">${trimmedTerm}</a>`;
+      })
+    }</li>`
+  ).join("");
+}
+
+    if (note1HTML) {
+      detailsHTML += `<table class="detailTable">
+          <tbody>
+          <tr>
+            <th id="stripeth">一般言語学</th>
+            <td colspan="3">
+          <ul>
+            ${note1HTML}
+          </ul> 
+          </td>
+          </tr>
+          </tbody>
+          </table>`;
+        }
+
+      let note2HTML = "";
+      if (data.note2) {
+  const notes = Array.isArray(data.note2)
+    ? data.note2
+    : data.note2.split(",").map(s => s.trim());
+  note2HTML = notes.map(note => {
+    const processedNote = note.replace(/<h5>(.*?)<\/h5>/g, (match, innerText) => {
+      const key = innerText.replace(/^⇒\s*/, '').trim();
+      const linkWord = linkMapping[key] || key;
+      return `<h5><a href="#" onclick="loadWord('${linkWord}'); return false;">${innerText.trim()}</a></h5>`;
+    });
+    return `<li class="noteList">${processedNote}</li>`;
+  }).join("");
+}
+
+    if (note2HTML) {
+      detailsHTML += `<table class="detailTable">
+        <tbody>
+          <tr>
+            <th id="stripeth">智語解説</th>
+            <td colspan="3">
+          <ul>
+            ${note2HTML}
+          </ul> 
+          </td>
+          </tr>
+          </tbody>
+          </table>`;
+        }
+
+        let jpnoteHTML = "";
+        if (data.jpnote) {
+  const notes = Array.isArray(data.jpnote)
+    ? data.jpnote
+    : data.jpnote.split(",").map(s => s.trim());
+  jpnoteHTML = notes.map(note => {
+    const processedNote = note.replace(/<h5>(.*?)<\/h5>/g, (match, innerText) => {
+      const key = innerText.replace(/^⇒\s*/, '').trim();
+      const linkWord = linkMapping[key] || key;
+      return `<h5><a href="#" onclick="loadWord('${linkWord}'); return false;">${innerText.trim()}</a></h5>`;
+    });
+    return `<li class="noteList">${processedNote}</li>`;
+  }).join("");
+}
+
+    if (jpnoteHTML) {
+      detailsHTML += `<table class="detailTable">
+        <tbody>
+          <tr>
+            <th id="stripeth">日本語解説</th>
+            <td colspan="3">
+          <ul>
+            ${jpnoteHTML}
+          </ul> 
+          </td>
+          </tr>
+          </tbody>
+          </table>`;
+        }
+
+        let ennoteHTML = "";
+      if (data.ennote) {
+        const notes = Array.isArray(data.ennote)
+        ? data.ennote
+        : data.ennote.split(",").map(s => s.trim());
+        ennoteHTML = notes.map(note =>
+        `<li class="noteList">${note.replace(/⇒([^、。]+)/g, (match, term) => {
+          let linkWord = linkMapping[term] || term;  
+          return `→<a href="#" onclick="loadWord('${linkWord}'); return false;">${term}</a>`;
+        })}</li>`
+      ).join("");
+    }
+
+    if (ennoteHTML) {
+      detailsHTML += `<table class="detailTable">
+        <tbody>
+          <tr>
+            <th id="stripeth">英語解説</th>
+            <td colspan="3">
+          <ul>
+            ${ennoteHTML}
+          </ul> 
+          </td>
+          </tr>
+          </tbody>
+          </table>`;
+        }
+
+      
+      if (data.variants1 && data.variants1.length) {
+        const links = data.variants1.map(v => `<a href="#" onclick="loadWord('${v}'); return false;">${v}</a>`).join(", ");
+        detailsHTML += `<table class="detailTable">
+          <tbody>
+            <tr>
+              <th>類語</th>
+              <td class="linktext" colspan="3">${links}</td>
+            </tr>
+          </tbody>
+        </table>`;
+      }
+      if (data.examples && data.examples.length) {
+        detailsHTML += `<table class="detailTable">
+          <tbody>
+            <tr>
+              <th>例文</th>
+              <td colspan="3">${data.examples.join("<br>")}</td>
+            </tr>
+          </tbody>
+        </table>`;
+      }
+
+      if (tableHTML !== "") {
+        if (data.parts === "名象") {
+          detailsHTML += `<table>
+            <thead>
+              <tr class="conH1" id="conH1">
+                <th colspan="13">屈折型</th>
+              </tr>
+              <tr class="conH2">
+                <th rowspan="3"></th>
+                <th colspan="6">可視名詞</th>
+                <th colspan="6">不可視名詞</th>
+              </tr>
+              <tr class="conH2">
+                <th colspan="3">非限定形</th>
+                <th colspan="3">限定形</th>
+                <th colspan="3">非限定形</th>
+                <th colspan="3">限定形</th>
+              </tr>
+              <tr class="conH2">
+                <th>単数</th>
+                <th>双数</th>
+                <th>複数</th>
+                <th>単数</th>
+                <th>双数</th>
+                <th>複数</th>
+                <th>単数</th>
+                <th>双数</th>
+                <th>複数</th>
+                <th>単数</th>
+                <th>双数</th>
+                <th>複数</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${tableHTML}
+            </tbody>
+          </table>`;
+
+        } else if (data.parts === "付称辞") {
+          detailsHTML += `<table>
+            <thead>
+              <tr class="conH1" id="conH1">
+                <th colspan="13">屈折型（名詞用法）</th>
+              </tr>
+              <tr class="conH2">
+                <th rowspan="3"></th>
+                <th colspan="6">可視名詞</th>
+                <th colspan="6">不可視名詞</th>
+              </tr>
+              <tr class="conH2">
+                <th colspan="3">非限定形</th>
+                <th colspan="3">限定形</th>
+                <th colspan="3">非限定形</th>
+                <th colspan="3">限定形</th>
+              </tr>
+              <tr class="conH2">
+                <th>単数</th>
+                <th>双数</th>
+                <th>複数</th>
+                <th>単数</th>
+                <th>双数</th>
+                <th>複数</th>
+                <th>単数</th>
+                <th>双数</th>
+                <th>複数</th>
+                <th>単数</th>
+                <th>双数</th>
+                <th>複数</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${tableHTML}
+            </tbody>
+          </table>`;
+          detailsHTML += `<table>
+            <thead>
+              <tr class="conH1" id="conH1">
+                <th colspan="4">屈折型（動詞用法）</th>
+              </tr>
+              <tr class="conH2">
+                <th></th>
+                <th>過去</th>
+                <th>現在</th>
+                <th>未来</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${tableHTML2}
+            </tbody>
+          </table>`;
+        } else if (data.parts === "動詞") {
+          detailsHTML += `<table>
+            <thead>
+              <tr class="conH1" id="conH1">
+                <th colspan="4">屈折型</th>
+              </tr>
+              <tr class="conH2">
+                <th></th>
+                <th>過去</th>
+                <th>現在</th>
+                <th>未来</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${tableHTML}
+            </tbody>
+          </table>`;
+
+        } else if (data.parts === "名飾") {
+          detailsHTML += `<table>
+             <thead>
+              <tr class="conH1" id="conH1">
+                <th colspan="7">屈折表</th>
+              </tr>
+              <tr class="conH2">
+                <th rowspan="2"></th>
+                <th colspan="2">原級</th>
+                <th colspan="2">比較級</th>
+                <th colspan="2">最上級</th>
+              </tr>
+              <tr class="conH2">
+                <th>単数</th>
+                <th>複数</th>
+                <th>単数</th>
+                <th>複数</th>
+                <th>単数</th>
+                <th>複数</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${tableHTML}
+            </tbody>
+          </table>`;
+        } else if (data.parts === "副飾") {
+          detailsHTML += `<table>
+            <thead class="conH">
+              <tr>
+                <th>形態</th>
+                <th>基本形</th>
+                <th>比較級</th>
+                <th>最上級</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${tableHTML}
+            </tbody>
+          </table>`;
+        } else {
+          detailsHTML += `<table>
+            <tbody>
+              ${tableHTML}
+            </tbody>
+          </table>`;
+        }
+      }
+      
+      details.innerHTML = detailsHTML;
+    }
+    
+    window.loadWord = function(word) {
+      showDetails(word);
+    };
+    
+    function createWordListItem(word) {
+  const data = dictionary[word];
+  const li = document.createElement("li");
+  let meaningText = data.meaning
+    ? (Array.isArray(data.meaning) ? data.meaning.join(', ') : data.meaning)
+    : "";
+  const translations = extractTranslations(meaningText);
+  let displayText = translations.join(', ');
+  
+  const maxLength = 20;
+  if (displayText.length > maxLength) {
+    displayText = displayText.substring(0, maxLength) + "……";
+  }
+  
+  let headerClass = partsStyles[data.parts] || "default";
+  li.innerHTML = `<strong class="${headerClass}">${word}</strong><br><span class="pagespan">${displayText}</span>`;
+  li.addEventListener("click", () => {
+    showDetails(word);
+  });
+  return li;
+}
+
+      function renderPage() {
+      wordList.innerHTML = "";
+
+      const totalPages = Math.ceil(searchResults.length / itemsPerPage);
+      if (totalPages === 0) {
+        const li = document.createElement("li");
+        li.textContent = "該当する単語はありません｡";
+        li.style.color = "gray";
+        wordList.appendChild(li);
+        pageInfoSpan.textContent = "0 / 0";
+        prevPageBtn.disabled = true;
+        nextPageBtn.disabled = true;
+        return;
+      }
+
+      if (currentPage < 1) currentPage = 1;
+      if (currentPage > totalPages) currentPage = totalPages;
+
+      const startIndex = (currentPage - 1) * itemsPerPage;
+      const endIndex = startIndex + itemsPerPage;
+      const pageItems = searchResults.slice(startIndex, endIndex);
+
+      pageItems.forEach(item => {
+        if (item.type === "heading") {
+          const li = document.createElement("li");
+          li.textContent = item.text;
+          li.style.fontWeight = "bold";
+          li.style.color = "#6d6d6d";
+          li.style.backgroundColor = "#ece9e5";
+          wordList.appendChild(li);
+        } else if (item.type === "word") {
+          wordList.appendChild(createWordListItem(item.value));
+        }
+      });
+
+      pageInfoSpan.textContent = `${currentPage} / ${totalPages}`;
+      prevPageBtn.disabled = (currentPage === 1);
+      nextPageBtn.disabled = (currentPage === totalPages);
+    }
+
+    function performSearch() {
+  const searchTerm = searchBox.value.toLowerCase();
+
+  wordList.innerHTML = "";
+  details.innerHTML = `<p class="placeholder">左側のリストから単語をクリックしてください｡</p>`;
+  
+  if (searchTerm === "") {
+    placeholder.style.display = "block";
+ 
+    searchResults = [];
+    pageInfoSpan.textContent = "0 / 0";
+    prevPageBtn.disabled = true;
+    nextPageBtn.disabled = true;
+    return;
+  } else {
+    placeholder.style.display = "none";
+  }
+
+  if (Object.keys(dictionary).length === 0) {
+    wordList.innerHTML = "<li>データ読み込み中...</li>";
+    return;
+  }
+
+  const searchMode = searchModeSelect.value;
+      
+      const primaryResults = Object.keys(dictionary).filter(word => {
+        const data = dictionary[word];
+        const cleanedWord = removeAnnotations(word).toLowerCase();
+        let matchKey = false;
+        if (searchMode === "exact") {
+          matchKey = (cleanedWord === searchTerm);
+        } else if (searchMode === "prefix") {
+          matchKey = cleanedWord.startsWith(searchTerm);
+        } else {
+          matchKey = cleanedWord.includes(searchTerm);
+        }
+        let matchMeaning = false;
+        if (data.meaning) {
+          if (Array.isArray(data.meaning)) {
+            matchMeaning = data.meaning.some(m => {
+              const cleaned = removeAnnotations(m).toLowerCase();
+              if (searchMode === "exact") return cleaned === searchTerm;
+              else if (searchMode === "prefix") return cleaned.startsWith(searchTerm);
+              else return cleaned.includes(searchTerm);
+            });
+          } else {
+            const meaningLower = removeAnnotations(data.meaning).toLowerCase();
+            if (searchMode === "exact") {
+              matchMeaning = (meaningLower === searchTerm);
+            } else if (searchMode === "prefix") {
+              matchMeaning = meaningLower.startsWith(searchTerm);
+            } else {
+              matchMeaning = meaningLower.includes(searchTerm);
+            }
+          }
+        }
+        let matchVulgar = false;
+if (data.vulgarMeaning) {
+  if (Array.isArray(data.vulgarMeaning)) {
+    matchVulgar = data.vulgarMeaning.some(v => {
+      const cleaned = removeAnnotations(v).toLowerCase();
+      if (searchMode === "exact") return cleaned === searchTerm;
+      else if (searchMode === "prefix") return cleaned.startsWith(searchTerm);
+      else return cleaned.includes(searchTerm);
+    });
+  } else {
+    const cleaned = removeAnnotations(data.vulgarMeaning).toLowerCase();
+    if (searchMode === "exact") {
+      matchVulgar = (cleaned === searchTerm);
+    } else if (searchMode === "prefix") {
+      matchVulgar = cleaned.startsWith(searchTerm);
+    } else {
+      matchVulgar = cleaned.includes(searchTerm);
+    }
+  }
+}
+        let matchVariants2 = false;
+        if (data.variants2) {
+          matchVariants2 = data.variants2.some(v => {
+            const cleaned = removeAnnotations(v).toLowerCase();
+            if (searchMode === "exact") return cleaned === searchTerm;
+            else if (searchMode === "prefix") return cleaned.startsWith(searchTerm);
+            else return cleaned.includes(searchTerm);
+          });
+        }
+        return matchKey || matchMeaning || matchVariants2 || matchVulgar;;
+      });
+      
+      const variantResults = Object.keys(dictionary).filter(word => {
+        const data = dictionary[word];
+        let matchVariants1 = false;
+        if (data.variants1) {
+          matchVariants1 = data.variants1.some(v => {
+            const cleaned = removeAnnotations(v).toLowerCase();
+            if (searchMode === "exact") return cleaned === searchTerm;
+            else if (searchMode === "prefix") return cleaned.startsWith(searchTerm);
+            else return cleaned.includes(searchTerm);
+          });
+        }
+        return matchVariants1;
+      });
+      
+      const tagResults = Object.keys(dictionary).filter(word => {
+        const data = dictionary[word];
+        let matchTag = false;
+        if (data.tag) {
+          if (Array.isArray(data.tag)) {
+            matchTag = data.tag.some(t => removeAnnotations(t).toLowerCase() === searchTerm);
+          } else {
+            matchTag = removeAnnotations(data.tag).toLowerCase() === searchTerm;
+          }
+        }
+        return matchTag;
+      });
+      
+      const primarySet = new Set(primaryResults);
+      const variantOnlyResults = variantResults.filter(word => !primarySet.has(word));
+      const variantSet = new Set(variantOnlyResults);
+      const tagOnlyResults = tagResults.filter(word => !primarySet.has(word) && !variantSet.has(word));
+      
+      primaryResults.sort((a, b) => a.localeCompare(b));
+      variantOnlyResults.sort((a, b) => a.localeCompare(b));
+      tagOnlyResults.sort((a, b) => a.localeCompare(b));
+      
+      searchResults = [];
+if (primaryResults.length > 0) {
+  searchResults.push({ type: "heading", text: "【綴り・意味での検索結果】" });
+  primaryResults.forEach(word => {
+    searchResults.push({ type: "word", value: word });
+  });
+}
+if (variantOnlyResults.length > 0) {
+  searchResults.push({ type: "heading", text: "【関連語での検索結果】" });
+  variantOnlyResults.forEach(word => {
+    searchResults.push({ type: "word", value: word });
+  });
+}
+if (tagOnlyResults.length > 0) {
+  searchResults.push({ type: "heading", text: "【タグでの検索結果】" });
+  tagOnlyResults.forEach(word => {
+    searchResults.push({ type: "word", value: word });
+  });
+}
+
+if (searchResults.length === 0) {
+  const li = document.createElement("li");
+  li.textContent = "該当する単語はありません｡";
+  li.style.color = "gray";
+  wordList.appendChild(li);
+  pageInfoSpan.textContent = "0 / 0";
+  prevPageBtn.disabled = true;
+  nextPageBtn.disabled = true;
+  return;
+}
+
+currentPage = 1;
+renderPage();
+}
+    
+    searchBox.addEventListener("input", performSearch);
+    searchModeSelect.addEventListener("change", performSearch);
+
+    prevPageBtn.addEventListener("click", () => {
+      if (currentPage > 1) {
+        currentPage--;
+        renderPage();
+      }
+    });
+    nextPageBtn.addEventListener("click", () => {
+      currentPage++;
+      renderPage();
+    });
+
+  </script>
+</body>
+</html>
