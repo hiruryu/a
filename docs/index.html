@@ -237,10 +237,10 @@ window.toggleVulgarMeaning = function(linkElem) {
               <td id="ins">${conjugations.in_adpC || ""}</td>
               <td id="ins">${conjugations.in_ansI || ""}</td>
               <td id="ins">${conjugations.in_andI || ""}</td>
-              <td id="ins">${conjugations.in_anpC || ""}</td>
-              <td id="ins">${conjugations.in_adsC || ""}</td>
-              <td id="ins">${conjugations.in_addC || ""}</td>
-              <td id="ins">${conjugations.in_adpC || ""}</td>
+              <td id="ins">${conjugations.in_anpI || ""}</td>
+              <td id="ins">${conjugations.in_adsI || ""}</td>
+              <td id="ins">${conjugations.in_addI || ""}</td>
+              <td id="ins">${conjugations.in_adpI || ""}</td>
             </tr>
           `;
         }
@@ -365,10 +365,10 @@ window.toggleVulgarMeaning = function(linkElem) {
               <td>${conjugations.in_adpC || ""}</td>
               <td>${conjugations.in_ansI || ""}</td>
               <td>${conjugations.in_andI || ""}</td>
-              <td>${conjugations.in_anpC || ""}</td>
-              <td>${conjugations.in_adsC || ""}</td>
-              <td>${conjugations.in_addC || ""}</td>
-              <td>${conjugations.in_adpC || ""}</td>
+              <td>${conjugations.in_anpI || ""}</td>
+              <td>${conjugations.in_adsI || ""}</td>
+              <td>${conjugations.in_addI || ""}</td>
+              <td>${conjugations.in_adpI || ""}</td>
             </tr>
           `;
           tableHTML2 = `
@@ -540,7 +540,7 @@ function toggleVulgarMeaning(linkElem) {
     </tr>
   `);
 }
-if (data.lexemic) {
+if (data.vari) {
         leftRows.push(`<tr><th>異形</th><td class="variList">${data.vari}</td></tr>`);
       }
 
