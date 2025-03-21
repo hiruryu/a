@@ -1,5 +1,5 @@
 {
-  "náfa": {
+  "niáfa": {
     "word": "nafa",
     "stem": "náf",
     "stem2": "naf",
@@ -11,8 +11,8 @@
       "ruletype": "na",
     "meaning": ["猫", "ネコ"],
     "pronunciation": "/ask/",
-    "etymology": "不明",
-    "idioms": []
+    "etymology": ["「猫の鳴き声」から"],
+    "vari": ["náfa"],
   },
   "nṓx": {
     "word": "nōx",
@@ -26,12 +26,6 @@
       "ruletype": "nā",
     "meaning": ["耳"],
     "pronunciation": "/noːʂ/",
-    "etymology": "不明",
-    "idioms": [],
-    "variants1": [],
-    "variants2": [],
-    "related": [],
-    "examples": []
   },
   "lúpha": {
   "word": "lupha",
@@ -44,12 +38,8 @@
   "ruletype": "nā",
   "meaning": ["言語", "言葉"],
   "pronunciation": "/lufə/",
-  "etymology": "不明",
-  "idioms": [],
-  "variants1": [],
+  "etymology": ["音象徴「喋る」から？"],
   "variants2": ["lupha", "language"],
-  "related": [],
-  "examples": [],
   "explanation": ["会話や文章で用いられるコミュニケーション手段を広く指す。"]
 },
 "petnosciuk": {
@@ -62,12 +52,7 @@
 "meaning": ["付称辞"],
 "pronunciation": "/penos/",
 "etymology": "pet+nos+ciuk",
-"idioms": [],
 "vari": ["petnosciuk"],
-"variants1": [],
-"variants2": [],
-"related": [],
-"examples": [],
 "note2": ["<span>接辞の一つで、象について関係性や丁寧さを変化させるもの。</span>","素体となっている象に合わせた活用を行う。<br><table border='1'><th><h3>使い方</h3></th><th><h3>例（ 日本語訳 ）</h3></th><tr><td><h4>名象-付称辞</h4></td><td>prāxa + nos<small><sup>（ 敬称を作る ）</sup></small> = <span>prāxnos</span><br><small>（ プラーシャさん ）</small></td></tr><tr><td><h4>動象-付称辞</h4></td><td>dof + nos = <span>dofnos</span><br><small>（ 走ります ）<small></td></tr><tr><td><h4>飾象-付称辞</h4></td><td>snolui + nos = <span>snonnosui</span><br><small>（ お美しい ）<small></td></tr></table>"],
 "jpnote": ["日本語では，名詞には「 御～ 」，動詞には「 ～します 」，形容詞・副詞には「 お～ 」などを使って敬語を作る。", "「 お / ご ～ なる 」などは ⇒ <h5>付称包辞</h5> を参照。"]
 },
@@ -81,13 +66,8 @@
 "meaning": ["付称包辞"],
 "pronunciation": "/penos/",
 "etymology": "pet+nos+xek",
-"idioms": [],
-"variants1": [],
-"variants2": [],
-"related": [],
-"examples": [],
 "note2": ["⇒ <h5>付称辞</h5> の中でも，包辞的性質を持つもの。"],
-"jpnote": ["日本語では，「 お / ご ～ なる 」などが該当する。", "「 待つ 」 → 「 お待ちなさる 」など。"]
+"jpnote": ["日本語では，「 お / ご ～ なる 」などが該当する。", "「 待つ 」 → 「 お待ちになる 」など。"]
 },
 "piósta": {
 "word": "piost",
@@ -99,10 +79,7 @@
 "ruletype": "nstha",
 "meaning": ["うさぎ", "兎", "（干支の）卯"],
 "pronunciation": "/pʲostə/",
-"idioms": [],
-"variants1": [],
+"variants1": ["fhṓma"],
 "variants2": ["piosta", "ウサギ"],
-"related": [],
-"examples": []
 }
 }
