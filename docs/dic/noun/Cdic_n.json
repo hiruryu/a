@@ -23,15 +23,16 @@
   "pronunciation": "/bʷez/",
   "variants2": ["boiz"]
 },
-  "cyfsa": {
-  "word": "cyfsa",
-  "stem": "cyfs",
+  "cýfsa": {
+  "word": "cýfsa",
+  "stem": "cýfs",
+  "stem2": "cyfs",
   "tag": ["動物名"],
   "parts": "名象",
     "type": "a 基本型",
     "ruletype": "na",
   "meaning": ["リス"],
-  "pronunciation": "/bʷez/",
+  "pronunciation": "/ʈ͡ʂɨfsə/",
   "idiom": ["cyfsaf vniut（結婚する，結ばれる）"],
   "variants2": ["りす", "栗鼠"]
 },
@@ -72,7 +73,7 @@
   "meaning": ["鳥", "トリ"],
   "pronunciation": "/faskə/",
   "etymology": "音象徴「鳥がはばたく音」から",
-  "variants2": ["faska", "ファスカ"]
+  "variants2": ["faska", "ファスカ", "とり"]
 },
 "fhṓma": {
     "word": "fhōma",
@@ -101,7 +102,20 @@
   "meaning": ["オコジョ"],
   "pronunciation": "/fʂalo/",
   "etymology": "不明",
-  "variants2": ["fxalo", "白鼬","フシャロ"]
+  "variants2": ["fxalo", "白鼬","おこじょ","フシャロ"]
+},
+  "gýxka": {
+  "word": "gýxka",
+  "stem": "gýxk",
+  "stem2": "gyxk",
+  "tag": ["虫名"],
+  "parts": "名象",
+  "type": "a 基本型",
+  "ruletype": "na",
+  "meaning": ["ムシ", "虫"],
+  "pronunciation": "/giʂka/",
+  "etymology": "不明",
+  "variants2": ["むし", "蟲"]
 },
 "háfa": {
   "word": "háfa",
