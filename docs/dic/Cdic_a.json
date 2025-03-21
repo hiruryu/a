@@ -7,10 +7,10 @@
         "type": "子音型",
         "ruletype": "c0",
       "meaning": ["かわいい", "かわいらしい", "キュートな"],
-      "pronunciation": "/hadɨ/",
+      "pronunciation": "/xadɨ/",
       "etymology": "不明",
       "variants1": ["pdáskui", "lútui"],
-      "variants2": ["hadui"]
+      "variants2": ["hadui", "可愛い", "可愛らしい"]
   },
 "lútui": {
       "word": "lutui",
@@ -19,11 +19,11 @@
       "parts": "名飾",
         "type": "子音型",
         "ruletype": "c0",
-      "meaning": ["かわいい", "かわいらしい", "キュートな"],
+      "meaning": ["甘い", "スイートな", "かわいい", "かわいらしい", "キュートな"],
       "pronunciation": "/lutɨ/",
-      "etymology": "不明",
+      "etymology": ["音象徴「甘い」から"],
       "variants1": ["hádui", "pdáskui"],
-      "variants2": ["lutui"]
+      "variants2": ["lutui", "可愛い", "可愛らしい", "あまい"]
   },
 "pdáskui": {
       "word": "pdaska",
@@ -46,9 +46,8 @@
         "type": "l 変則型",
         "ruletype": "c0",
       "meaning": ["美しい", "綺麗な", "素晴らしい","端正な", "素敵な","上手い", "よろしい", "良い", "順調な", "上出来な", "完璧な"],
-      "pronunciation": "/pɾaskɨ/",
-      "etymology": "不明",    
-      "variants2": ["snolui","snōlui"]
+      "pronunciation": ["/snoːlɨ/"],
+      "variants2": ["snolui","snōlui", "うつくしい", "きれいな", "すばらしい", "たんせいな", "すてきな", "うまい", "いい", "よい", "じゅんちょうな", "じょうできな", "かんぺきな"]
   },
   "kátui": {
       "word": "kátui",
@@ -58,7 +57,7 @@
         "type": "l 変則型",
         "ruletype": "c0",
       "meaning": ["固い", "硬い", "堅い", "きつい", "凝った", "強い", "こわい", "カチコチな", "カチンコチンな", "コテコテの"],
-      "pronunciation": "/pɾaskɨ/",
+      "pronunciation": ["/katɨ/"],
       "etymology": "不明",    
       "variants2": ["katui","snōlui"]
   }
