@@ -2046,7 +2046,7 @@ function getConjN(word, stem, stem2, type, ruletype) {
     } else if (ruletype === "mia") {
     // 人称名象 (mia)
     let andC = stem + "yt";         
-    let anpC = stem + "ȳ́v";    
+    let anpC = stem + "íyv";    
     let ansI = stem + "iūl";
     let andI = stem + "iūz";
     let anpI = stem + "iūtas";
@@ -2109,7 +2109,7 @@ function getConjN(word, stem, stem2, type, ruletype) {
       } else if (ruletype === "sia") {
     // 人称名象 (sa)
     let andC = stem + "yt";         
-    let anpC = stem + "ȳ́v";    
+    let anpC = stem + "íyv";    
     let ansI = stem + "iūl";
     let andI = stem + "iūz";
     let anpI = stem + "iūtas";
