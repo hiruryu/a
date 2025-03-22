@@ -1281,8 +1281,7 @@ function getConjN(word, stem, stem2, type, ruletype) {
       v_adpI: adpI.slice(0, -1) + "agh",
       in_adpI: adpI.slice(0, -1) + "iax",
     };
-
-      // o 基本形
+    
   } else if (ruletype === "no") {
     // 弱 o 基本形
     let andC = stem + "zo";         
@@ -1541,7 +1540,7 @@ function getConjN(word, stem, stem2, type, ruletype) {
 
   } else if (ruletype === "noL") {
      // 弱 o 基本形（L 変則）
-    let andC = stem.slice(0, -1) + "zzo";         
+    let andC = stem.slice(0, -1) + "nzo";         
     let anpC = stem.slice(0, -1) + "ddol";         
     let adsC = stem + "lom";      // adsCを定義 
     let addC = stem + "lonzo";      
@@ -1564,12 +1563,12 @@ function getConjN(word, stem, stem2, type, ruletype) {
       in_ansC: stem + "ox",
       // 非限定形可視双数形
       andC: andC,
-      f_andC: andC.slice(0, -1) + "ffå",
+      f_andC: andC.slice(0, -2) + "få",
       e_andC: andC.slice(0, -1) + "on",
-      d_andC: andC.slice(0, -1) + "nnos",
+      d_andC: andC.slice(0, -2) + "os",
       ad_andC: andC.slice(0, -1) + "oit",
       g_andC: andC.slice(0, -1) + "ūy",
-      v_andC: andC.slice(0, -1) + "nnos",
+      v_andC: andC.slice(0, -2) + "nos",
       in_andC: andC.slice(0, -1) + "ox",
       // 非限定形可視複数形
       anpC: anpC,
@@ -1579,17 +1578,17 @@ function getConjN(word, stem, stem2, type, ruletype) {
       ad_anpC: anpC.slice(0, -2) + "oit",
       g_anpC: anpC.slice(0, -2) + "oy",
       v_anpC: anpC.slice(0, -2) + "ogh",
-      in_anpC: anpC.slice(0, -1) + "ox",
+      in_anpC: anpC.slice(0, -1) + "x",
 
       // 限定形可視単数形
       adsC: adsC,
-      f_adsC: adsC.slice(0, -1) + "åf",
-      e_adsC: adsC.slice(0, -1) + "on",
-      d_adsC: adsC.slice(0, -1) + "ā",
-      ad_adsC: adsC.slice(0, -1) + "oit",
-      g_adsC: adsC.slice(0, -1) + "oy",
-      v_adsC: adsC.slice(0, -1) + "ogh",
-      in_adsC: adsC.slice(0, -1) + "ox",
+      f_adsC: adsC.slice(0, -1) + "f",
+      e_adsC: adsC.slice(0, -1) + "n",
+      d_adsC: adsC.slice(0, -2) + "å",
+      ad_adsC: adsC.slice(0, -1) + "it",
+      g_adsC: adsC.slice(0, -1) + "y",
+      v_adsC: adsC.slice(0, -1) + "gh",
+      in_adsC: adsC.slice(0, -1) + "x",
       // 限定形可視双数形
       addC: addC,
       f_addC: addC.slice(0, -1) + "åf",
@@ -1611,13 +1610,13 @@ function getConjN(word, stem, stem2, type, ruletype) {
 
       // 非限定形不可視単数形
       ansI: ansI,  
-      f_ansI: ansI.slice(0, -1) + "åf",
-      e_ansI: ansI.slice(0, -1) + "on",
-      d_ansI: ansI.slice(0, -1) + "ā",
-      ad_ansI: ansI.slice(0, -1) + "oit",
-      g_ansI: ansI.slice(0, -1) + "oy",
-      v_ansI: ansI.slice(0, -1) + "ogh",
-      in_ansI: ansI.slice(0, -1) + "ox", 
+      f_ansI: ansI.slice(0, -1) + "f",
+      e_ansI: ansI.slice(0, -1) + "n",
+      d_ansI: ansI.slice(0, -2) + "ā",
+      ad_ansI: ansI.slice(0, -1) + "it",
+      g_ansI: ansI.slice(0, -1) + "y",
+      v_ansI: ansI.slice(0, -1) + "gh",
+      in_ansI: ansI.slice(0, -1) + "x", 
       // 非限定形不可視双数形
       andI: andI,
       f_andI: andI.slice(0, -1) + "åf",
