@@ -2045,11 +2045,11 @@ function getConjN(word, stem, stem2, type, ruletype) {
     
     } else if (ruletype === "mia") {
     // 人称名象 (mia)
-    let andC = stem + "yt";         
+    let andC = stem + "ýt";         
     let anpC = stem + "íyv";    
-    let ansI = stem + "iūl";
-    let andI = stem + "iūz";
-    let anpI = stem + "iūtas";
+    let ansI = stem + "iū́l";
+    let andI = stem + "iū́z";
+    let anpI = stem + "iū́tas";
 
     return {
       ansC: stem + "ia",
@@ -2065,7 +2065,7 @@ function getConjN(word, stem, stem2, type, ruletype) {
       f_andC: andC + "al",
       e_andC: andC + "ol",
       d_andC: andC + "el",
-      ad_andC: andC + "iú",
+      ad_andC: andC + "iū",
       g_andC: andC + "oy",
       v_andC: andC + "ygh",
       in_andC: andC + "iax",
@@ -2107,12 +2107,12 @@ function getConjN(word, stem, stem2, type, ruletype) {
       in_anpI: anpI + "iax",
     };
       } else if (ruletype === "sia") {
-    // 人称名象 (sa)
-    let andC = stem + "yt";         
+    // 人称名象 (sia)
+    let andC = stem + "ýt";         
     let anpC = stem + "íyv";    
-    let ansI = stem + "iūl";
-    let andI = stem + "iūz";
-    let anpI = stem + "iūtas";
+    let ansI = stem + "iū́l";
+    let andI = stem + "iū́z";
+    let anpI = stem + "iū́tas";
 
     return {
       ansC: stem + "ia",
@@ -2128,7 +2128,7 @@ function getConjN(word, stem, stem2, type, ruletype) {
       f_andC: andC + "al",
       e_andC: andC + "ol",
       d_andC: andC + "el",
-      ad_andC: andC + "iú",
+      ad_andC: andC + "iū",
       g_andC: andC + "oy",
       v_andC: andC + "ygh",
       in_andC: andC + "iax",
