@@ -53,7 +53,8 @@
           "etymology": {
               "intro": ["単純語。", "形成の根拠は不明。", "形成から以下のように変化。"],
               "changes": []
-        },
+        }
+      },
         "nos": {
         "word": "nos",
           "stem": "nos",
@@ -109,16 +110,6 @@
           "variants2": ["yep", "さよなら", "じゃあね", "また明日", "またあした"]
         },
         "Xéska": {
-        "word": "Xeska",
-          "stem": "Xeska",
-          "tag": "挨拶",
-          "parts": "間投詞",
-            "ruletype": "x",
-          "meaning": ["さようなら", "またね", "バイバイ"],
-          "pronunciation": ["/ʂɨska/<br>[ʂɨskə]<br>‖šeska‖"],
-          "variants2": ["Xeska", "さよなら", "じゃあね", "また明日", "またあした"]
-        },
-    "Xéska": {
         "word": "Xeska",
           "stem": "Xeska",
           "tag": "挨拶",
