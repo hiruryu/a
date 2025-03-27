@@ -22,9 +22,6 @@
               "intro": ["単純語。", "形成の根拠は不明。", "形成から以下のように変化。"],
               "changes": []
         },
-          "variants2": ["Cianos"],
-        "variants3": ["Xéska"]
-        },
         "nos": {
         "word": "nos",
           "stem": "nos",
@@ -50,7 +47,46 @@
           "note2": ["詳細は ⇒ <h5>付称辞</h5> を参照。"],
         "variants3": ["nos"]
         },
+        "si": {
+        "word": "si",
+          "stem": "si",
+          "tag": "包飾",
+            "ruletype": "x",
+          "meaning": ["もし", "もしも"],
+          "pronunciation": ["/sʲ/<br>[sʲ]<br>‖si‖"],
+        "variants2": ["したら", "だったら", "なら", "ならば", "if"]
+        },
+        "sýsko": {
+        "word": "sýsko",
+          "stem": "sysko",
+          "tag": "副飾",
+            "type": "基本型",
+            "ruletype": "x",
+          "meaning": ["やっぱり", "予想通り", "思った通り", "案の定", "例によって"],
+          "pronunciation": ["/sʲ/<br>[sʲ]<br>‖si‖"],
+        "variants2": ["やはり", "道理で", "どうりで", "どおりで", "よそうどおり", "おもったとおり", "あんのじょう"]
+        },
+        "fciát": {
+        "word": "fciát",
+          "stem": "fciát",
+          "tag": "挨拶",
+          "parts": "包飾",
+            "ruletype": "x",
+          "meaning": ["しかし", "だけど", "だが"],
+          "pronunciation": ["/fʈ͡ʂat/<br>[fʈ͡ʂət]<br>‖fčət‖"],
+          "variants2": ["Xeska", "さよなら", "じゃあね", "また明日", "またあした"]
+        },
         "Xéska": {
+        "word": "Xeska",
+          "stem": "Xeska",
+          "tag": "挨拶",
+          "parts": "間投詞",
+            "ruletype": "x",
+          "meaning": ["さようなら", "またね", "バイバイ"],
+          "pronunciation": ["/ʂɨska/<br>[ʂɨskə]<br>‖šeska‖"],
+          "variants2": ["Xeska", "さよなら", "じゃあね", "また明日", "またあした"]
+        },
+    "Xéska": {
         "word": "Xeska",
           "stem": "Xeska",
           "tag": "挨拶",
