@@ -155,5 +155,21 @@
   "intro": ["借用語。", "トキポナの「 Toki Pona 」が訛ったもの。"],
   "changes": []
 }
+},
+"áskesta⚠️": {
+"word": "áskesta",
+"stem": "áskesta",
+"stem2": "askesta",
+"tag": ["智語用語"],
+"parts": "名象",
+"type": "a 基本型",
+"ruletype": "na",
+"meaning": ["人格性"],
+"variants2": ["askesta","じんかくせい"],
+  "alert": {
+      "a1": "※ この単語は仮置きです。正式なものではありません。",
+      "a2": []
+    },
+"note2": ["<span>文法カテゴリーの一種で、名詞・代名詞などの指示対象のもつ生物としての性質をいう。（書きかけの項目）</span>"]
 }
 }
