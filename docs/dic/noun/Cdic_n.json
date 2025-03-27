@@ -181,16 +181,16 @@
   "etymology": ["借用語。古トシュカ語「lukotto（金平糖）」から"],
   "variants2": ["lukott","さとう"]
 },
-"Miuluklu": {
-  "word": "Miuluklou",
-  "stem": "Miuluklou",
+"Miulukluv": {
+  "word": "Miulukluv",
+  "stem": "Miulukluv",
   "tag": ["人名"],
   "parts": "名象",
-  "type": "u 変則",
+  "type": "a 基本形",
   "ruletype": "no",
   "meaning": ["みゅるくるー", "ひるりゅー", "智語の制作者"],
-  "pronunciation": "/mʲulukluː/",
-  "etymology": "「 Miul（竜）+ klout（昼）」の合成語。",
+  "pronunciation": "/mʲulukluf/",
+  "etymology": ["合成語。","古智語「 Miul（竜）+ klout（昼）」"],
   "variants2": ["ひるりゅう", "みゅるくるう"]
 },
    "píp": {
