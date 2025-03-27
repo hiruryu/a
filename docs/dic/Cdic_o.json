@@ -40,13 +40,7 @@
             "ruletype": "na",
           "meaning": ["（敬称）さん", "～さん"],
           "pronunciation": "/nos/",
-          "etymology": [],
-          "idioms": [],
-          "variants1": [],
-          "variants2": [],
-          "related": [],
-          "examples": [],
-          "explanation": []
+          "note2": ["詳細は ⇒ <h5>付称辞</h5> を参照。"]
         },
         "pa": {
         "word": "pa",
@@ -58,24 +52,7 @@
           "meaning": ["（親称）くん", "ちゃん"],
           "pronunciation": "/pə/",
           "etymology": [],
-          "note2": ["詳細は ⇒ <h5>付称辞<h5> を参照。"]
-        },
-      "ra": {
-        "word": "ra",
-          "stem": "r",
-          "tag": "付称辞",
-          "parts": "離辞",
-            "type": "a 基本型",
-            "ruletype": "an0",
-          "meaning": ["（蔑称）野郎"],
-          "pronunciation": "/ʀə/",
-          "etymology": [],
-          "idioms": [],
-          "variants1": [],
-          "variants2": [],
-          "related": [],
-          "examples": [],
-          "explanation": []
+          "note2": ["詳細は ⇒ <h5>付称辞</h5> を参照。"]
         },
       "ya": {
         "word": "ya",
