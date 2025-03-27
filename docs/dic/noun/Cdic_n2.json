@@ -10,8 +10,11 @@
       "type": "a 基本型（部分不規則）",
       "ruletype": "na",
     "meaning": ["猫", "ネコ"],
-    "pronunciation": "/ask/",
-    "etymology": ["「猫の鳴き声」から"],
+    "pronunciation": ["/nʲafa/<br>[nʲafə]<br>‖niafa‖"],
+    "etymology": {
+  "intro": ["合成語。", "擬音語「 猫の鳴き声 」から。"],
+  "changes": []
+},
     "vari": ["náfa"]
   },
   "nṓx": {
