@@ -528,7 +528,7 @@ function toggleVulgarMeaning(linkElem) {
       let leftRows = [];
       let bottomRows = [];
       leftRows.push(`<tr><th>属性</th><td>${data.parts || ""}</td></tr>`);
-      leftRows.push(`<tr><th>タグ</th><td>${data.tag ? (Array.isArray(data.tag) ? data.tag.join(", ") : data.tag) : ""}</td></tr>`);
+      leftRows.push(`<tr><th>タグ</th><td class="t-td">${data.tag ? (Array.isArray(data.tag) ? data.tag.join(", ") : data.tag) : ""}</td></tr>`);
       leftRows.push(`<tr><th>発音</th><td class="p-td">${data.pronunciation || ""}</td></tr>`);
       if (data.lexemic) {
         leftRows.push(`<tr><th>語彙素形</th><td class="maincolor">${data.lexemic}</td></tr>`);
