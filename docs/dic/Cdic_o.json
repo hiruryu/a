@@ -6,14 +6,9 @@
       "parts": "離辞",
         "ruletype": "x",
       "meaning": "［a + 動詞の呼称型 で］呼称型を作る",
-      "pronunciation": "/ə/",
-      "etymology": "不明",
-      "idioms": [],
-      "variants1": [],
-      "variants2": ["ag"],
-      "related": [],
-      "examples": [],
-      "explanation": []
+      "pronunciation": ["/a/<br>[ə]<br>‖a‖"],
+      "variants2": ["ar"],
+      "note3": ["母音で始まる場合は「 ar 」という形になる。"]
     },
       "Cianós": {
         "word": "Cianos",
@@ -22,14 +17,13 @@
           "parts": "間投詞",
             "ruletype": "x",
           "meaning": ["こんにちは"],
-          "pronunciation": "/ʈ͡ʂanos/",
-          "etymology": [],
-          "idioms": [],
-          "variants1": [],
+          "pronunciation": ["/ʈ͡ʂanos/<br>[ʈ͡ʂanos]<br>‖čanos‖"],
+          "etymology": {
+              "intro": ["単純語。", "形成の根拠は不明。", "形成から以下のように変化。"],
+              "changes": []
+        },
           "variants2": ["Cianos"],
-          "related": [],
-          "examples": [],
-          "explanation": []
+        "variants3": ["Xéska"],
         },
         "nos": {
         "word": "nos",
@@ -39,8 +33,9 @@
             "type": "a 基本型",
             "ruletype": "na",
           "meaning": ["（敬称）さん", "～さん"],
-          "pronunciation": "/nos/",
-          "note2": ["詳細は ⇒ <h5>付称辞</h5> を参照。"]
+          "pronunciation": ["/nos/<br>[nəs]<br>‖nos‖"],
+          "note2": ["詳細は ⇒ <h5>付称辞</h5> を参照。"],
+            "variants3": ["pa"]
         },
         "pa": {
         "word": "pa",
@@ -50,26 +45,10 @@
             "type": "完全不規則型",
             "ruletype": "pa",
           "meaning": ["（親称）くん", "ちゃん"],
-          "pronunciation": "/pə/",
+          "pronunciation": ["/pa/<br>[pə]<br>‖pa‖"],
           "etymology": [],
-          "note2": ["詳細は ⇒ <h5>付称辞</h5> を参照。"]
-        },
-      "ya": {
-        "word": "ya",
-          "stem": "y",
-          "tag": "付称辞",
-          "parts": "離辞",
-            "type": "a 基本型",
-            "ruletype": "an0",
-          "meaning": ["（通称）くん", "ちゃん", "さん"],
-          "pronunciation": "/jə/",
-          "etymology": [],
-          "idioms": [],
-          "variants1": [],
-          "variants2": [],
-          "related": [],
-          "examples": [],
-          "explanation": []
+          "note2": ["詳細は ⇒ <h5>付称辞</h5> を参照。"],
+        "variants3": ["nos"]
         },
         "Xéska": {
         "word": "Xeska",
@@ -78,14 +57,8 @@
           "parts": "間投詞",
             "ruletype": "x",
           "meaning": ["さようなら", "またね", "バイバイ"],
-          "pronunciation": "/ʂɨskə/",
-          "etymology": [],
-          "idioms": [],
-          "variants1": [],
-          "variants2": ["Xeska"],
-          "related": [],
-          "examples": [],
-          "explanation": []
+          "pronunciation": ["/ʂɨska/<br>[ʂɨskə]<br>‖šeska‖"],
+          "variants2": ["Xeska", "さよなら", "じゃあね", "また明日", "またあした"],
         },
        "Nei": {
         "word": "nei",
@@ -94,13 +67,6 @@
           "parts": "間投詞",
             "ruletype": "x",
           "meaning": ["ええ", "えっ", "待って", "うそ"],
-          "pronunciation": "/nei/",
-          "etymology": [],
-          "idioms": [],
-          "variants1": [],
-          "variants2": ["Xeska"],
-          "related": [],
-          "examples": [],
-          "explanation": []
+          "pronunciation": ["/nej/<br>[nej]<br>‖nei‖"]
         }
  }
