@@ -16,6 +16,7 @@
       <option value="prefix">前方一致</option>
       <option value="partial">部分一致</option>
       <option value="exact">完全一致</option>
+      <option value="tag">タグ検索</option>
     </select>
 
     <input type="text" id="searchBox" placeholder="検索...">
@@ -974,32 +975,33 @@ if (data.ennote) {
     window.loadWord = function(word) {
       showDetails(word);
     };
-    
+
+    // 単語リストのリストアイテムを生成する関数
     function createWordListItem(word) {
-  const data = dictionary[word];
-  const li = document.createElement("li");
-  let meaningText = data.meaning
-    ? (Array.isArray(data.meaning) ? data.meaning.join(', ') : data.meaning)
-    : "";
-  const translations = extractTranslations(meaningText);
-  let displayText = translations.join(', ');
-  
-  const maxLength = 20;
-  if (displayText.length > maxLength) {
-    displayText = displayText.substring(0, maxLength) + "……";
-  }
-  
-  let headerClass = partsStyles[data.parts] || "default";
-  li.innerHTML = `<strong class="${headerClass}">${word}</strong><br><span class="pagespan">${displayText}</span>`;
-  li.addEventListener("click", () => {
-    showDetails(word);
-  });
-  return li;
-}
+      const data = dictionary[word];
+      const li = document.createElement("li");
+      let meaningText = data.meaning
+        ? (Array.isArray(data.meaning) ? data.meaning.join(', ') : data.meaning)
+        : "";
+      const translations = extractTranslations(meaningText);
+      let displayText = translations.join(', ');
 
-      function renderPage() {
+      const maxLength = 20;
+      if (displayText.length > maxLength) {
+        displayText = displayText.substring(0, maxLength) + "……";
+      }
+
+      let headerClass = partsStyles[data.parts] || "default";
+      li.innerHTML = `<strong class="${headerClass}">${word}</strong><br><span class="pagespan">${displayText}</span>`;
+      li.addEventListener("click", () => {
+        showDetails(word);
+      });
+      return li;
+    }
+
+    // ページ表示用のレンダリング関数
+    function renderPage() {
       wordList.innerHTML = "";
-
       const totalPages = Math.ceil(searchResults.length / itemsPerPage);
       if (totalPages === 0) {
         const li = document.createElement("li");
@@ -1011,14 +1013,11 @@ if (data.ennote) {
         nextPageBtn.disabled = true;
         return;
       }
-
       if (currentPage < 1) currentPage = 1;
       if (currentPage > totalPages) currentPage = totalPages;
-
       const startIndex = (currentPage - 1) * itemsPerPage;
       const endIndex = startIndex + itemsPerPage;
       const pageItems = searchResults.slice(startIndex, endIndex);
-
       pageItems.forEach(item => {
         if (item.type === "heading") {
           const li = document.createElement("li");
@@ -1031,170 +1030,193 @@ if (data.ennote) {
           wordList.appendChild(createWordListItem(item.value));
         }
       });
-
       pageInfoSpan.textContent = `${currentPage} / ${totalPages}`;
       prevPageBtn.disabled = (currentPage === 1);
       nextPageBtn.disabled = (currentPage === totalPages);
     }
 
+    // 検索処理の関数
     function performSearch() {
-  const searchTerm = searchBox.value.toLowerCase();
+      const searchTerm = searchBox.value.toLowerCase();
+      wordList.innerHTML = "";
+      details.innerHTML = `<p class="placeholder">左側のリストから単語をクリックしてください｡</p>`;
 
-  wordList.innerHTML = "";
-  details.innerHTML = `<p class="placeholder">左側のリストから単語をクリックしてください｡</p>`;
-  
-  if (searchTerm === "") {
-    placeholder.style.display = "block";
- 
-    searchResults = [];
-    pageInfoSpan.textContent = "0 / 0";
-    prevPageBtn.disabled = true;
-    nextPageBtn.disabled = true;
-    return;
-  } else {
-    placeholder.style.display = "none";
-  }
+      if (searchTerm === "") {
+        placeholder.style.display = "block";
+        searchResults = [];
+        pageInfoSpan.textContent = "0 / 0";
+        prevPageBtn.disabled = true;
+        nextPageBtn.disabled = true;
+        return;
+      } else {
+        placeholder.style.display = "none";
+      }
 
-  if (Object.keys(dictionary).length === 0) {
-    wordList.innerHTML = "<li>データ読み込み中...</li>";
-    return;
-  }
+      if (Object.keys(dictionary).length === 0) {
+        wordList.innerHTML = "<li>データ読み込み中...</li>";
+        return;
+      }
 
-  const searchMode = searchModeSelect.value;
-      
-      const primaryResults = Object.keys(dictionary).filter(word => {
-        const data = dictionary[word];
-        const cleanedWord = removeAnnotations(word).toLowerCase();
-        let matchKey = false;
-        if (searchMode === "exact") {
-          matchKey = (cleanedWord === searchTerm);
-        } else if (searchMode === "prefix") {
-          matchKey = cleanedWord.startsWith(searchTerm);
-        } else {
-          matchKey = cleanedWord.includes(searchTerm);
+      const searchMode = searchModeSelect.value;
+
+      // タグ検索モードの場合は、タグのみで検索する
+      if (searchMode === "tag") {
+        const tagResults = Object.keys(dictionary).filter(word => {
+          const data = dictionary[word];
+          let matchTag = false;
+          if (data.tag) {
+            if (Array.isArray(data.tag)) {
+              matchTag = data.tag.some(t => removeAnnotations(t).toLowerCase() === searchTerm);
+            } else {
+              matchTag = removeAnnotations(data.tag).toLowerCase() === searchTerm;
+            }
+          }
+          return matchTag;
+        });
+        tagResults.sort((a, b) => a.localeCompare(b));
+        searchResults = [];
+        if (tagResults.length > 0) {
+          searchResults.push({ type: "heading", text: "【タグでの検索結果】" });
+          tagResults.forEach(word => {
+            searchResults.push({ type: "word", value: word });
+          });
         }
-        let matchMeaning = false;
-        if (data.meaning) {
-          if (Array.isArray(data.meaning)) {
-            matchMeaning = data.meaning.some(m => {
-              const cleaned = removeAnnotations(m).toLowerCase();
+      } else {
+        // 綴り・意味・関連語・タグを総合的に検索する処理
+        const primaryResults = Object.keys(dictionary).filter(word => {
+          const data = dictionary[word];
+          const cleanedWord = removeAnnotations(word).toLowerCase();
+          let matchKey = false;
+          if (searchMode === "exact") {
+            matchKey = (cleanedWord === searchTerm);
+          } else if (searchMode === "prefix") {
+            matchKey = cleanedWord.startsWith(searchTerm);
+          } else {
+            matchKey = cleanedWord.includes(searchTerm);
+          }
+          let matchMeaning = false;
+          if (data.meaning) {
+            if (Array.isArray(data.meaning)) {
+              matchMeaning = data.meaning.some(m => {
+                const cleaned = removeAnnotations(m).toLowerCase();
+                if (searchMode === "exact") return cleaned === searchTerm;
+                else if (searchMode === "prefix") return cleaned.startsWith(searchTerm);
+                else return cleaned.includes(searchTerm);
+              });
+            } else {
+              const meaningLower = removeAnnotations(data.meaning).toLowerCase();
+              if (searchMode === "exact") {
+                matchMeaning = (meaningLower === searchTerm);
+              } else if (searchMode === "prefix") {
+                matchMeaning = meaningLower.startsWith(searchTerm);
+              } else {
+                matchMeaning = meaningLower.includes(searchTerm);
+              }
+            }
+          }
+          let matchVulgar = false;
+          if (data.vulgarMeaning) {
+            if (Array.isArray(data.vulgarMeaning)) {
+              matchVulgar = data.vulgarMeaning.some(v => {
+                const cleaned = removeAnnotations(v).toLowerCase();
+                if (searchMode === "exact") return cleaned === searchTerm;
+                else if (searchMode === "prefix") return cleaned.startsWith(searchTerm);
+                else return cleaned.includes(searchTerm);
+              });
+            } else {
+              const cleaned = removeAnnotations(data.vulgarMeaning).toLowerCase();
+              if (searchMode === "exact") {
+                matchVulgar = (cleaned === searchTerm);
+              } else if (searchMode === "prefix") {
+                matchVulgar = cleaned.startsWith(searchTerm);
+              } else {
+                matchVulgar = cleaned.includes(searchTerm);
+              }
+            }
+          }
+          let matchVariants2 = false;
+          if (data.variants2) {
+            matchVariants2 = data.variants2.some(v => {
+              const cleaned = removeAnnotations(v).toLowerCase();
               if (searchMode === "exact") return cleaned === searchTerm;
               else if (searchMode === "prefix") return cleaned.startsWith(searchTerm);
               else return cleaned.includes(searchTerm);
             });
-          } else {
-            const meaningLower = removeAnnotations(data.meaning).toLowerCase();
-            if (searchMode === "exact") {
-              matchMeaning = (meaningLower === searchTerm);
-            } else if (searchMode === "prefix") {
-              matchMeaning = meaningLower.startsWith(searchTerm);
+          }
+          return matchKey || matchMeaning || matchVariants2 || matchVulgar;
+        });
+
+        const variantResults = Object.keys(dictionary).filter(word => {
+          const data = dictionary[word];
+          let matchVariants1 = false;
+          if (data.variants1) {
+            matchVariants1 = data.variants1.some(v => {
+              const cleaned = removeAnnotations(v).toLowerCase();
+              if (searchMode === "exact") return cleaned === searchTerm;
+              else if (searchMode === "prefix") return cleaned.startsWith(searchTerm);
+              else return cleaned.includes(searchTerm);
+            });
+          }
+          return matchVariants1;
+        });
+
+        const tagResults = Object.keys(dictionary).filter(word => {
+          const data = dictionary[word];
+          let matchTag = false;
+          if (data.tag) {
+            if (Array.isArray(data.tag)) {
+              matchTag = data.tag.some(t => removeAnnotations(t).toLowerCase() === searchTerm);
             } else {
-              matchMeaning = meaningLower.includes(searchTerm);
+              matchTag = removeAnnotations(data.tag).toLowerCase() === searchTerm;
             }
           }
+          return matchTag;
+        });
+
+        const primarySet = new Set(primaryResults);
+        const variantOnlyResults = variantResults.filter(word => !primarySet.has(word));
+        const variantSet = new Set(variantOnlyResults);
+        const tagOnlyResults = tagResults.filter(word => !primarySet.has(word) && !variantSet.has(word));
+
+        primaryResults.sort((a, b) => a.localeCompare(b));
+        variantOnlyResults.sort((a, b) => a.localeCompare(b));
+        tagOnlyResults.sort((a, b) => a.localeCompare(b));
+
+        searchResults = [];
+        if (primaryResults.length > 0) {
+          searchResults.push({ type: "heading", text: "【綴り・意味での検索結果】" });
+          primaryResults.forEach(word => {
+            searchResults.push({ type: "word", value: word });
+          });
         }
-        let matchVulgar = false;
-if (data.vulgarMeaning) {
-  if (Array.isArray(data.vulgarMeaning)) {
-    matchVulgar = data.vulgarMeaning.some(v => {
-      const cleaned = removeAnnotations(v).toLowerCase();
-      if (searchMode === "exact") return cleaned === searchTerm;
-      else if (searchMode === "prefix") return cleaned.startsWith(searchTerm);
-      else return cleaned.includes(searchTerm);
-    });
-  } else {
-    const cleaned = removeAnnotations(data.vulgarMeaning).toLowerCase();
-    if (searchMode === "exact") {
-      matchVulgar = (cleaned === searchTerm);
-    } else if (searchMode === "prefix") {
-      matchVulgar = cleaned.startsWith(searchTerm);
-    } else {
-      matchVulgar = cleaned.includes(searchTerm);
+        if (variantOnlyResults.length > 0) {
+          searchResults.push({ type: "heading", text: "【関連語での検索結果】" });
+          variantOnlyResults.forEach(word => {
+            searchResults.push({ type: "word", value: word });
+          });
+        }
+        if (tagOnlyResults.length > 0) {
+          searchResults.push({ type: "heading", text: "【タグでの検索結果】" });
+          tagOnlyResults.forEach(word => {
+            searchResults.push({ type: "word", value: word });
+          });
+        }
+      }
+
+      if (searchResults.length === 0) {
+        const li = document.createElement("li");
+        li.textContent = "該当する単語はありません｡";
+        li.style.color = "gray";
+        wordList.appendChild(li);
+        pageInfoSpan.textContent = "0 / 0";
+        prevPageBtn.disabled = true;
+        nextPageBtn.disabled = true;
+        return;
+      }
+
+      currentPage = 1;
+      renderPage();
     }
-  }
-}
-        let matchVariants2 = false;
-        if (data.variants2) {
-          matchVariants2 = data.variants2.some(v => {
-            const cleaned = removeAnnotations(v).toLowerCase();
-            if (searchMode === "exact") return cleaned === searchTerm;
-            else if (searchMode === "prefix") return cleaned.startsWith(searchTerm);
-            else return cleaned.includes(searchTerm);
-          });
-        }
-        return matchKey || matchMeaning || matchVariants2 || matchVulgar;;
-      });
-      
-      const variantResults = Object.keys(dictionary).filter(word => {
-        const data = dictionary[word];
-        let matchVariants1 = false;
-        if (data.variants1) {
-          matchVariants1 = data.variants1.some(v => {
-            const cleaned = removeAnnotations(v).toLowerCase();
-            if (searchMode === "exact") return cleaned === searchTerm;
-            else if (searchMode === "prefix") return cleaned.startsWith(searchTerm);
-            else return cleaned.includes(searchTerm);
-          });
-        }
-        return matchVariants1;
-      });
-      
-      const tagResults = Object.keys(dictionary).filter(word => {
-        const data = dictionary[word];
-        let matchTag = false;
-        if (data.tag) {
-          if (Array.isArray(data.tag)) {
-            matchTag = data.tag.some(t => removeAnnotations(t).toLowerCase() === searchTerm);
-          } else {
-            matchTag = removeAnnotations(data.tag).toLowerCase() === searchTerm;
-          }
-        }
-        return matchTag;
-      });
-      
-      const primarySet = new Set(primaryResults);
-      const variantOnlyResults = variantResults.filter(word => !primarySet.has(word));
-      const variantSet = new Set(variantOnlyResults);
-      const tagOnlyResults = tagResults.filter(word => !primarySet.has(word) && !variantSet.has(word));
-      
-      primaryResults.sort((a, b) => a.localeCompare(b));
-      variantOnlyResults.sort((a, b) => a.localeCompare(b));
-      tagOnlyResults.sort((a, b) => a.localeCompare(b));
-      
-      searchResults = [];
-if (primaryResults.length > 0) {
-  searchResults.push({ type: "heading", text: "【綴り・意味での検索結果】" });
-  primaryResults.forEach(word => {
-    searchResults.push({ type: "word", value: word });
-  });
-}
-if (variantOnlyResults.length > 0) {
-  searchResults.push({ type: "heading", text: "【関連語での検索結果】" });
-  variantOnlyResults.forEach(word => {
-    searchResults.push({ type: "word", value: word });
-  });
-}
-if (tagOnlyResults.length > 0) {
-  searchResults.push({ type: "heading", text: "【タグでの検索結果】" });
-  tagOnlyResults.forEach(word => {
-    searchResults.push({ type: "word", value: word });
-  });
-}
-
-if (searchResults.length === 0) {
-  const li = document.createElement("li");
-  li.textContent = "該当する単語はありません｡";
-  li.style.color = "gray";
-  wordList.appendChild(li);
-  pageInfoSpan.textContent = "0 / 0";
-  prevPageBtn.disabled = true;
-  nextPageBtn.disabled = true;
-  return;
-}
-
-currentPage = 1;
-renderPage();
-}
     
     searchBox.addEventListener("input", performSearch);
     searchModeSelect.addEventListener("change", performSearch);
