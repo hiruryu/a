@@ -61,6 +61,60 @@
         },
         "variants2": ["doi","doy", "おおきい", "おおきな", "きょだいな", "でかい"]
     },
+  
+   "pávui": {
+        "word": "pávui",
+        "stem": "páv",
+        "tag": ["恋愛", "感情", "性格"],
+        "parts": "名飾",
+          "type": "子音型",
+          "ruletype": "c0",
+        "meaning": ["恥ずかしい［与が］", "照れくさい［与が］", "照れた"],
+        "pronunciation": ["/pavɨ/<br>[pavɨ]<br>‖pavÏ‖"],
+        "etymology": {
+              "intro": ["単純語。", "音象徴「 紅潮する 」から。", "形成から以下のように変化。"],
+              "changes": [
+                { "form": "/paw-/", "note": "古形"},    
+                { "form": "/pav-/", "note": "唇音化解除" }
+              ]
+        },
+        "variants2": ["pavui", "はずかしい", "てれた", "てれくさい", "(*ﾉωﾉ)"]
+    },
+  "tvépui": {
+        "word": "tvépui",
+        "stem": "tvép",
+        "tag": ["学校"],
+        "parts": "名飾",
+          "type": "子音型",
+          "ruletype": "c0",
+        "meaning": ["正しい", "その通りである", "合っている", "きちんとした", "正常な", "直った", "まともな", "真っ当な", "順当な"],
+        "pronunciation": ["/tvepɨ/<br>[tvepɨ]<br>‖tuepÏ‖"],
+        "etymology": {
+              "intro": ["単純語。", "形成の根拠は不明。", "形成から以下のように変化。"],
+              "changes": [
+                { "form": "/toip-/", "note": "古形"},    
+                { "form": "/tʷep-/", "note": "唇音化" },
+                { "form": "/tvep-/", "note": "唇音化解除" }
+              ]
+        },
+        "variants2": ["toipui", "ただしい", "そのとおり", "あっている", "せいじょうである", "なおった", "まっとうな", "じゅんとうな", "正解である", "正解の"]
+    },
+   "lútui": {
+        "word": "lutui",
+        "stem": "lut",
+        "tag": ["性格", "容姿", "食レポ"],
+        "parts": "名飾",
+          "type": "子音型",
+          "ruletype": "c0",
+        "meaning": ["甘い", "スイートな", "かわいい", "かわいらしい", "キュートな"],
+        "pronunciation": ["/lutɨ/<br>[lutɨ]<br>‖lutÏ‖"],
+        "etymology": {
+              "intro": ["単純語。", "音象徴「 甘い 」から。"],
+              "changes": []
+        },
+        "variants1": ["hádui"],
+        "variants2": ["lutui", "可愛い", "可愛らしい", "あまい"]
+    },
     "kátui": {
         "word": "kátui",
         "stem": "kátui",
