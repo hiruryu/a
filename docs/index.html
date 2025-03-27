@@ -593,10 +593,35 @@ if (data.vari) {
     changesTable += `</tbody></table>`;
   }
   
+    if (data.etymology && (data.etymology.intro || (data.etymology.changes && data.etymology.changes.length > 0))) {
+  let introHTML = "";
+  if (data.etymology.intro) {
+    if (Array.isArray(data.etymology.intro)) {
+      introHTML = `<ul class="e-list">` +
+        data.etymology.intro.map(item => `<li>${processH5Links(item)}</li>`).join('') +
+        `</ul>`;
+    } else {
+      introHTML = `<p class="etymology-intro">${processH5Links(data.etymology.intro)}</p>`;
+    }
+  }
+  
+  let changesTable = "";
+  if (data.etymology.changes && data.etymology.changes.length > 0) {
+    changesTable = `<table class="inner-table"><tbody>`;
+    changesTable += data.etymology.changes.map(change => {
+      const note = change.note ? " " + processH5Links(change.note) : "";
+      return `<tr><td>${processH5Links(change.form)}<span>${note}</span></td></tr>`;
+    }).join("");
+    changesTable += `</tbody></table>`;
+  }
+  
   bottomRows.push(`<tr><th>語源</th><td colspan="3">${introHTML}${changesTable}</td></tr>`);
 }
 
-      bottomRows.push(`<tr><th>語義</th><td colspan="3">${data.explanation || ""}</td></tr>`);
+if (data.explanation) {
+  bottomRows.push(`<tr><th>語義</th><td colspan="3">${data.explanation}</td></tr>`);
+}
+}
       
       let headerClass = partsStyles[data.parts] || "default";
 
