@@ -24,7 +24,7 @@
     "etymology": {
       "intro": ["単純語", "音象徴「 クジラ 」から", "形成から以下のように変化"],
       "changes": [
-        { "form": "/boiz-/" "note": "古形"},
+        { "form": "/boiz-/", "note": "古形"},
         { "form": "/baiz-/", "note": "o の広化" }
       ]
     },
@@ -43,7 +43,7 @@
   "etymology": {
       "intro": ["単純語", "「 リスの鳴き声 」から", "形成から以下のように変化"],
       "changes": [
-        { "form": "/cyfs-/" "note": "古形"},
+        { "form": "/cyfs-/", "note": "古形"},
         { "form": "/cyf-/", "note": "子音の簡略化" },
         { "form": "/cyfi-/", "note": "末母音の斜音化" }
       ]
@@ -65,9 +65,9 @@
     "etymology": {
   "intro": ["単純語。", "音象徴「 シャチ 」から"],
   "changes": [
-    　　{ "form": "/dɒpn-/" "note": "古形"},
-    　　{ "form": "/dopn-/", "note": "ô の狭化"},
-        { "form": "/dapn-/　", "note": "o の広化" }
+    { "form": "/dɒpn-/", "note": "古形"},
+    { "form": "/dopn-/", "note": "ô の狭化"},
+    { "form": "/dapn-/　", "note": "o の広化" }
   ]
 },
     "variants2": ["doppna", "オルカ", "鯱"]
@@ -85,7 +85,7 @@
   "etymology": {
   "intro": ["単純語。", "夢の中で見た単語「 étiko（テーブル）」から"],
   "changes": [
-    　　{ "form": "/eːtʲko/" },
+    { "form": "/eːtʲko/" },
         { "form": "/eːtʲko/　"},
         { "form": "/eːtʲka/　", "note": "o の広化" }
   ]
@@ -193,7 +193,7 @@
   "type": "o 軟音化型",
   "ruletype": "nho",
   "meaning": ["ぶどう", "ブドウ", "葡萄"],
-  "pronunciation": ["/lupo/<br>[lupo]<br>‖lupo‖"],,
+  "pronunciation": ["/lupo/<br>[lupo]<br>‖lupo‖"],
   "etymology": {
   "intro": ["単純語。", "音象徴「紫の甘い丸いもの」から"],
   "changes": []
@@ -213,11 +213,10 @@
   "intro": ["借用語。", "古トシュカ語「lukotto（金平糖）」から", "形成から以下のように変化。"],
   "changes": [
         { "form": "/lukotːo/　"},
-        { "form": "/lukotː/　" "note": "末母音の消滅"},
+        { "form": "/lukotː/　", "note": "末母音の消滅"},
         { "form": "/lukatː/　", "note": "o の広化" }
       ]
     },
-}, 
   "variants2": ["lukatt","さとう"]
 },
 "Miúlukluv": {
