@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>📕 智語辞書</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Gentium+Plus:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="stylesheet.css">
 </head>
 <body>
@@ -24,10 +24,10 @@
     <p id="placeholder" class="placeholder">
       入力欄に単語を入力して<br>
       Enter/Return キーを押してください｡<br><br>
-      （ 現在の収録語数：60 語 ）<br><br>
+      （ 現在の収録語数：34 語 ）<br><br>
       ⚠️ 本辞書内蔵の用語辞典は<br>
       智式言語学・智式音楽理論に基づくため，<br>
-      一般的な定義とは異なる可能性があります。<br><br> 
+      一般的な定義とは異なる可能性があります。<br><br>
       ⚠️この辞書は未完成です。<br>
       単語・活用形・語義などは，<br>
       変更される可能性があります。<br>
@@ -36,7 +36,7 @@
     
         <div id="pagination" class="pagination">
           <button id="prevPage">＜ 前のページ</button>
-          <span class="bottonspan" id="pageInfo">0 / 0</span>
+          <span class="bottonspan" id="pageInfo">1 / 1</span>
           <button id="nextPage">次のページ ＞</button>
         </div>
   </div>
@@ -66,6 +66,17 @@
   "付称辞": "fukuji",
   "間投詞": "kanto",
 };
+
+function processH5Links(text) {
+  return text.replace(/<h5>(.*?)<\/h5>/g, (match, innerText) => {
+    const trimmedText = innerText.trim();
+    const mappedLink = linkMapping[trimmedText] || trimmedText;
+    if (/^https?:\/\//.test(mappedLink)) {
+      return `<h5><a href="${mappedLink}" target="_blank" rel="noopener noreferrer">${trimmedText}</a></h5>`;
+    }
+    return `<h5><a href="#" onclick="loadWord('${mappedLink}'); return false;">${trimmedText}</a></h5>`;
+  });
+}
 
 window.toggleVulgarMeaning = function(linkElem) {
       const ul = linkElem.nextElementSibling;
@@ -478,7 +489,6 @@ window.toggleVulgarMeaning = function(linkElem) {
         } 
       }
       
-
       let meaningsHTML = "";
 if (data.meaning) {
   const meanings = Array.isArray(data.meaning)
@@ -516,9 +526,10 @@ function toggleVulgarMeaning(linkElem) {
   }
 }   
       let leftRows = [];
+      let bottomRows = [];
       leftRows.push(`<tr><th>属性</th><td>${data.parts || ""}</td></tr>`);
       leftRows.push(`<tr><th>タグ</th><td>${data.tag ? (Array.isArray(data.tag) ? data.tag.join(", ") : data.tag) : ""}</td></tr>`);
-      leftRows.push(`<tr><th>発音</th><td>${data.pronunciation || ""}</td></tr>`);
+      leftRows.push(`<tr><th>発音</th><td class="p-td">${data.pronunciation || ""}</td></tr>`);
       if (data.lexemic) {
         leftRows.push(`<tr><th>語彙素形</th><td class="maincolor">${data.lexemic}</td></tr>`);
       }
@@ -553,8 +564,37 @@ if (data.vari) {
         `<tr><th>属性</th><td>${data.parts || ""}</td><th rowspan="${rowspanCount}">意味</th><td rowspan="${rowspanCount}"><ul>${meaningsHTML}</ul></td>`
       );
       
-      let bottomRows = [];
-      bottomRows.push(`<tr><th>語源</th><td colspan="3">${data.etymology || ""}</td></tr>`);
+      function processH5Links(text) {
+        if (Array.isArray(text)) {
+          text = text.join(' ');
+        }
+        return text.replace(/(https?:\/\/[^\s]+)/g, '<a href="$1">$1</a>');
+      }
+      if (data.etymology) {
+        let introHTML = "";
+        if (data.etymology.intro) {
+          if (Array.isArray(data.etymology.intro)) {
+            introHTML = `<ul class="e-list">` +
+        data.etymology.intro.map(item => `<li>${processH5Links(item)}</li>`).join('') +
+        `</ul>`;
+      } else {
+      introHTML = `<p class="etymology-intro">${processH5Links(data.etymology.intro)}</p>`;
+    }
+  }
+  
+      let changesTable = "";
+      if (data.etymology.changes && data.etymology.changes.length > 0) {
+    changesTable = `<table class="inner-table"><tbody>`;
+    changesTable += data.etymology.changes.map(change => {
+      const note = change.note ? " " + processH5Links(change.note) : "";
+      return `<tr><td>${processH5Links(change.form)}<span>${note}</span></td></tr>`;
+    }).join("");
+    changesTable += `</tbody></table>`;
+  }
+  
+  bottomRows.push(`<tr><th>語源</th><td colspan="3">${introHTML}${changesTable}</td></tr>`);
+}
+
       bottomRows.push(`<tr><th>語義</th><td colspan="3">${data.explanation || ""}</td></tr>`);
       
       let headerClass = partsStyles[data.parts] || "default";
@@ -573,19 +613,13 @@ let detailsHTML = `
   </table>
 `;
 
-      let note1HTML = "";
-      if (data.note1) {
+let note1HTML = "";
+if (data.note1) {
   const notes = Array.isArray(data.note1)
     ? data.note1
     : data.note1.split(",").map(s => s.trim());
   note1HTML = notes.map(note =>
-    `<li class="noteList">${
-      note.replace(/⇒([^、。]+)/g, (match, term) => {
-        const trimmedTerm = term.trim();
-        let linkWord = linkMapping[trimmedTerm] || trimmedTerm;  
-        return `→<a href="#" onclick="loadWord('${linkWord}'); return false;">${trimmedTerm}</a>`;
-      })
-    }</li>`
+    `<li class="noteList">${processH5Links(note)}</li>`
   ).join("");
 }
 
@@ -604,7 +638,7 @@ let detailsHTML = `
           </table>`;
         }
 
-      let note2HTML = "";
+        let note2HTML = "";
       if (data.note2) {
   const notes = Array.isArray(data.note2)
     ? data.note2
@@ -639,14 +673,16 @@ let detailsHTML = `
   const notes = Array.isArray(data.jpnote)
     ? data.jpnote
     : data.jpnote.split(",").map(s => s.trim());
-  jpnoteHTML = notes.map(note => {
-    const processedNote = note.replace(/<h5>(.*?)<\/h5>/g, (match, innerText) => {
-      const key = innerText.replace(/^⇒\s*/, '').trim();
-      const linkWord = linkMapping[key] || key;
-      return `<h5><a href="#" onclick="loadWord('${linkWord}'); return false;">${innerText.trim()}</a></h5>`;
-    });
-    return `<li class="noteList">${processedNote}</li>`;
-  }).join("");
+    
+    let jpnoteHTML = "";
+if (data.jpnote) {
+  const notes = Array.isArray(data.jpnote)
+    ? data.jpnote
+    : data.jpnote.split(",").map(s => s.trim());
+  jpnoteHTML = notes.map(note =>
+    `<li class="noteList">${processH5Links(note)}</li>`
+  ).join("");
+}
 }
 
     if (jpnoteHTML) {
@@ -665,17 +701,14 @@ let detailsHTML = `
         }
 
         let ennoteHTML = "";
-      if (data.ennote) {
-        const notes = Array.isArray(data.ennote)
-        ? data.ennote
-        : data.ennote.split(",").map(s => s.trim());
-        ennoteHTML = notes.map(note =>
-        `<li class="noteList">${note.replace(/⇒([^、。]+)/g, (match, term) => {
-          let linkWord = linkMapping[term] || term;  
-          return `→<a href="#" onclick="loadWord('${linkWord}'); return false;">${term}</a>`;
-        })}</li>`
-      ).join("");
-    }
+if (data.ennote) {
+  const notes = Array.isArray(data.ennote)
+    ? data.ennote
+    : data.ennote.split(",").map(s => s.trim());
+  ennoteHTML = notes.map(note =>
+    `<li class="noteList">${processH5Links(note)}</li>`
+  ).join("");
+}
 
     if (ennoteHTML) {
       detailsHTML += `<table class="detailTable">
@@ -692,7 +725,40 @@ let detailsHTML = `
           </table>`;
         }
 
-      
+        if (data.alert) {
+    const alertData = data.alert;
+    const hasA1 = !!alertData.a1;
+    const hasA2 = Array.isArray(alertData.a2) && alertData.a2.length > 0;
+
+    if (hasA1 || hasA2) {
+      const a1Text = hasA1
+        ? `<span style="color: red;">${alertData.a1}</span>`
+        : "";
+
+      let a2Links = "";
+      if (hasA2) {
+        a2Links = alertData.a2.map(obj => {
+          const w = obj.word || "";
+          return `<a href="#" onclick="loadWord('${w}'); return false;">${w}</a>`;
+        }).join(" ");
+      }
+
+      detailsHTML += `
+        <table class="detailTable">
+          <tbody>
+            <tr>
+              <th id="stripeth">注意</th>
+              <td colspan="3">
+                ${a1Text} <br><br>
+                ${a2Links ? " " + a2Links : ""}
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      `;
+    }
+  }
+
       if (data.variants1 && data.variants1.length) {
         const links = data.variants1.map(v => `<a href="#" onclick="loadWord('${v}'); return false;">${v}</a>`).join(", ");
         detailsHTML += `<table class="detailTable">
@@ -714,6 +780,37 @@ let detailsHTML = `
           </tbody>
         </table>`;
       }
+
+      let note3HTML = "";
+      if (data.note3) {
+  const notes = Array.isArray(data.note3)
+    ? data.note3
+    : data.note3.split(",").map(s => s.trim());
+  note3HTML = notes.map(note => {
+    const processedNote = note.replace(/<h5>(.*?)<\/h5>/g, (match, innerText) => {
+      const key = innerText.replace(/^⇒\s*/, '').trim();
+      const linkWord = linkMapping[key] || key;
+      return `<h5><a href="#" onclick="loadWord('${linkWord}'); return false;">${innerText.trim()}</a></h5>`;
+    });
+    return `<li class="noteList">${processedNote}</li>`;
+  }).join("");
+}
+
+    if (note3HTML) {
+      detailsHTML += `<table class="detailTable">
+        <tbody>
+          <tr>
+            <th id="stripeth">備考</th>
+            <td colspan="3">
+          <ul>
+            ${note3HTML}
+          </ul> 
+          </td>
+          </tr>
+          </tbody>
+          </table>`;
+        }
+
 
       if (tableHTML !== "") {
         if (data.parts === "名象") {
