@@ -68,7 +68,7 @@
     },
 "vari": ["petnosciuk"],
 "note2": ["<span>接辞の一つで、象について関係性や丁寧さを変化させるもの。</span>","素体となっている象に合わせた活用を行う。<br><table border='1'><th><h3>使い方</h3></th><th><h3>例（ 日本語訳 ）</h3></th><tr><td><h4>名象-付称辞</h4></td><td>prāxa + nos<small><sup>（ 敬称を作る ）</sup></small> = <span>prāxnos</span><br><small>（ プラーシャさん ）</small></td></tr><tr><td><h4>動象-付称辞</h4></td><td>dof + nos = <span>dofnos</span><br><small>（ 走ります ）<small></td></tr><tr><td><h4>飾象-付称辞</h4></td><td>snolui + nos = <span>snonnosui</span><br><small>（ お美しい ）<small></td></tr></table>"],
-"jpnote": ["日本語では，名詞には「 御～ 」，動詞には「 ～します 」，形容詞・副詞には「 お～ 」などを使って敬語を作る。", "「 お / ご ～ なる 」などは ⇒ <h5>付称包辞</h5> を参照。"]
+"jpnote": ["日本語では，名詞には「 御～ 」，動詞には「 ～します 」，形容詞・副詞には「 お～ 」などを使って敬語を作る。", "「 お / ご ～ なる 」などは ⇒ <h5>付称包辞</h5> を参照。"],
 "variants3": ["nos", "pa", "petnoxek⚠️"]
 },
 "petnoxek⚠️": {
@@ -103,6 +103,40 @@
   "changes": [
         { "form": "/pʲost-/　", "note": "古形"},
         { "form": "/pʲast-/　", "note": "o の広化"}
+      ]
+}
+},
+  "práska": {
+      "word": "práska",
+      "stem": "prásk",
+      "tag": ["植物"],
+      "parts": "名象",
+        "type": "a 複子音軟音化型",
+        "ruletype": "nstha",
+      "meaning": ["花", "華"],
+      "pronunciation": ["/pɾaska/<br>[pɾaskə]<br>‖praska‖"],
+      "etymology": {
+            "intro": ["単純語。", "音象徴「 春の花 」から。"],
+            "changes": []
+      }
+      "variants2": ["praska", "はな"]
+  },
+"záf": {
+"word": "záf",
+"stem": "záft",
+"stem2": "zaf",
+"tag": ["天気", "部首"],
+"parts": "名象",
+"type": "a 複子音軟音化型",
+"ruletype": "nfha",
+"meaning": ["雨", "雨粒", "雫", "（部首）<ruby>雨<rp>(</rp><rt>あめ</rt><rp>)</rp></ruby>"],
+"pronunciation": ["/pʲasta/<br>[pʲastə]<br>‖pʲosta‖"],
+"variants2": ["zaf", "あめ", "あまつぶ", "しずく"],
+  "etymology": {
+  "intro": ["単純語。", "日本語「 ザーザー 」と同印象。", "形成から以下のように変化。" ],
+  "changes": [
+        { "form": "/zafa/　", "note": "古形"},
+        { "form": "/zaf-/　", "note": "末母音の消滅"}
       ]
 }
 },
