@@ -23,16 +23,24 @@
   "pronunciation": "/bʷez/",
   "variants2": ["boiz"]
 },
-  "cýfsa": {
+  "cýfia": {
   "word": "cýfsa",
-  "stem": "cýfs",
-  "stem2": "cyfs",
+  "stem": "cýfi",
+  "stem2": "cyfi",
   "tag": ["動物名"],
   "parts": "名象",
     "type": "a 基本型",
-    "ruletype": "na",
+    "ruletype": "nsta",
   "meaning": ["リス"],
   "pronunciation": "/ʈ͡ʂɨfsə/",
+  "etymology": {
+      "intro": ["「リスの鳴き声」から", "形成から以下のように変化"],
+      "changes": [
+        { "form": "/cyfs-/" },
+        { "form": "/cyf-/", "note": "子音の簡略化" },
+        { "form": "/cyfi-/", "note": "語末母音の斜音化" }
+      ]
+    },
   "idiom": ["cyfsaf vniut（結婚する，結ばれる）"],
   "variants2": ["りす", "栗鼠"]
 },
@@ -90,6 +98,14 @@
     "vari": ["fkṓma<br>fcṓma"],
   "variants1": ["piósta"],
     "variants2": ["fhoma", "fhōma", "たれ耳うさぎ", "垂れ耳うさぎ", "ロップイヤー", "ロップイヤーラビット"],
+    "etymology": {
+      "intro": "形成から以下のように変化。",
+      "changes": [
+        { "form": "/fkoːma/" },
+        { "form": "/foːma/　", "note": "子音の簡略化" },
+        { "form": "/oːma/　", "note": "頭子音の軟音化" }
+      ]
+    },
     "explanation": ["ウサギの中でも、耳が垂れているもの。"]
   },
 "fxálo": {
@@ -187,10 +203,15 @@
       "ruletype": "nha",
       "meaning": ["りんご", "リンゴ"],
       "pronunciation": "/pip/",
-      "variants1": ["luip"],
-      "variants2": ["pipa", "アップル", "林檎"]
-    },
-    "mia": {
+      "variants2": ["pipa", "アップル", "林檎"],
+      "alert": {
+      "a1": "※ この単語は現在使われていません。以下を使用してください。",
+      "a2": [
+        { "word": "luip" }
+      ]
+    }
+  },
+  "mia": {
   "word": "mia",
   "stem": "m",
   "tag": ["人称代象", "一人称"],
@@ -208,7 +229,7 @@
   "tag": ["人称代象", "一人称"],
   "parts": "名象",
   "type": "完全不規則型",
-  "ruletype": "sia",
+  "ruletype": "mia",
   "meaning": ["（一人称女性形）","わたし", "私", "自分"],
   "pronunciation": ["/lʲa/<br>[lʲə]"],
   "variants2": ["わたくし", "じぶん"]
@@ -219,7 +240,7 @@
   "tag": ["人称代象", "一人称"],
   "parts": "名象",
   "type": "完全不規則型",
-  "ruletype": "sia",
+  "ruletype": "mia",
   "meaning": ["（一人称中性形）","ぼく", "私", "自分"],
   "pronunciation": ["/ʈ͡ʂja/<br>[ʈ͡ʂjə]"],
   "variants2": ["僕", "わたし", "じぶん"]
@@ -230,7 +251,7 @@
   "tag": ["人称代象", "二人称"],
   "parts": "名象",
   "type": "完全不規則型",
-  "ruletype": "sia",
+  "ruletype": "mia",
   "meaning": ["（二人称男性形）","あなた", "君"],
   "pronunciation": ["/sʲa/<br>[sʲə]"],
   "variants2": ["きみ", "貴方"]
@@ -286,7 +307,7 @@
   "tag": ["人称代象", "三人称"],
   "parts": "名象",
   "type": "完全不規則型",
-  "ruletype": "sia",
+  "ruletype": "mia",
   "meaning": ["（三人称中性形）", "彼", "彼女"],
   "pronunciation": ["/ʂja/<br>[ʂjə]"],
   "variants2": ["かれ", "かのじょ"]
@@ -298,7 +319,7 @@
   "tag": ["獣称代象", "二人称"],
   "parts": "名象",
   "type": "完全不規則型",
-  "ruletype": "sia",
+  "ruletype": "mia",
   "meaning": ["（二人称男性形）", "あなた", "君"],
   "pronunciation": ["/zʲa/<br>[zʲə]"],
   "variants2": ["きみ", "貴方"]
@@ -354,7 +375,7 @@
   "tag": ["獣称代象", "三人称"],
   "parts": "名象",
   "type": "完全不規則型",
-  "ruletype": "sia",
+  "ruletype": "mia",
   "meaning": ["（三人称中性形）", "彼", "彼女"],
   "pronunciation": ["/ʐja/<br>[ʐjə]"],
   "variants2": ["かれ", "かのじょ"]
