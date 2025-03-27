@@ -1,36 +1,37 @@
 {
-    "bip": {
-      "word": "bip",
-      "stem": "bip",
-      "tag": "",
+    "byp": {
+      "word": "byp",
+      "stem": "byp",
+      "tag": "身体現象",
       "parts": "動詞",
         "type": "無声音型",
         "ruletype": "vl0",
       "meaning": ["しゃっくりをする"],
-      "pronunciation": "/bip/",
-      "etymology": "「しゃっくりの音」から",
-      "idioms": [],
-      "variants1": [],
-      "variants2": ["bʲip"],
-      "related": [],
-      "examples": [],
-      "explanation": []
+      "pronunciation": ["/bʲip/<br>[bʲip]<br>‖byp‖"],
+      "etymology": {
+          "intro": ["単純語。", "擬音語「 しゃっくりの音 」から"],
+          "changes": []
+        },
+      "variants2": ["bʲip"]
     },
-    "dóf": {
-      "word": "dof",
-      "stem": "dof",
-      "tag": "",
+    "dáf": {
+      "word": "dáf",
+      "stem": "daf",
+      "tag": "学校",
       "parts": "動詞",
         "type": "無声音型",
         "ruletype": "vl0",
       "meaning": ["学ぶ ［対を］", "学習する［対を］", "勉強する［対を］"],
-      "pronunciation": "/dof/",
-      "etymology": "不明",
-      "idioms": [],
+      "pronunciation": ["/daf/<br>[daf]<br>‖dof‖"],
+      "etymology": {
+          "intro": ["単純語。", "形成の根拠は不明。", "形成から以下のように変化。"],
+          "changes": [
+            { "form": "/dof/　"},
+            { "form": "/daf/　", "note": "o の広化" }
+          ]
+        },
       "variants1": [],
-      "variants2": ["dof"],
-      "related": [],
-      "examples": []
+      "variants2": ["daf", "まなぶ", "がくしゅうする", "べんきょうする"]
     },
     "nup": {
       "word": "nup",
@@ -41,47 +42,45 @@
         "ruletype": "vl0",
       "meaning": ["入れる［対を］［副に］", "入る［副に］",  "入場する［副に］","ログインする［副に］"],
       "vulgarMeaning": ["性交する［対を］", "セックスする［対を］", "犯す［対を］"],
-      "pronunciation": "/nup/",
-      "etymology": ["音象徴「入れる」から"],
-      "idioms": [],
-      "variants1": [],
-      "variants2": ["sexする", "ぬぷる"],
-      "related": [],
-      "examples": [],
-      "explanation": []
+      "pronunciation": ["/nup/<br>[nʊp]<br>‖nup‖"],
+      "etymology": {
+          "intro": ["単純語。", "音象徴「 入れる 」から。"],
+          "changes": []
+        },
+      "variants2": ["sexする", "ぬぷる"]
     },
-    "pdát": {
-      "word": "pdat",
-      "stem": "pdat",
-      "tag": "",
+    "prát": {
+      "word": "prat",
+      "stem": "prat",
+      "tag": "身体動作",
       "parts": "動詞",
         "type": "無声音型",
         "ruletype": "vl0",
       "meaning": ["話す［対を］", "言う［対を］［与に］", "喋る［対について］"],
-      "pronunciation": "/pɾat/",
-      "etymology": ["音象徴「話す」から"],
-      "idioms": [],
-      "variants1": [],
-      "variants2": ["pdat"],
-      "related": [],
-      "examples": [],
-      "explanation": []
+      "pronunciation": ["/prat/<br>[pɾat]<br>‖prat‖"],
+      "etymology": {
+          "intro": ["単純語。", "音象徴「 話す 」から"],
+          "changes": []
+        },
+      "variants2": ["pdat", "はなす", "いう", "ゆう", "しゃべる", "しゃべる"]
     },
-    "piáre": {
-      "word": "piar",
-      "stem": "piar",
-      "tag": "",
+    "piárt": {
+      "word": "piárt",
+      "stem": "piart",
+      "tag": "身体動作",
       "parts": "動詞",
         "type": "無声音型",
         "ruletype": "vl0",
-      "meaning": ["言う［対を/と］［与に］", "発言する［対を/と］"],
-      "pronunciation": "/pʲaɾe/",
-      "etymology": "「話す」から",
-      "idioms": [],
-      "variants1": [],
-      "variants2": ["piare", "pdat"],
-      "related": [],
-      "examples": [],
-      "explanation": []
+      "meaning": ["跳ぶ［対を］","跳ねる［対を］", "ジャンプする［対を］", "言う［対を/と］［与に］", "発言する［対を/と］"],
+      "pronunciation":["/pʲaʀt/<br>[pʲaʀ̥t]<br>‖piort‖"],
+      "etymology": {
+          "intro": ["単純語。", "音象徴「 跳ねる 」から", "形成から以下のように変化。"],
+          "changes": [
+            { "form": "/pʲoʀ-/　"},
+            { "form": "/pʲoʀt/　", "note": "語末 R 回避"},
+            { "form": "/pʲaʀtː/　", "note": "o の広化" }
+          ]
+        },
+      "variants2": ["piare", "pdat", "とぶ", "はねる", "はなす", "いう", "ゆう", "しゃべる", "しゃべる"]
     }
       }
