@@ -7,8 +7,8 @@
         "ruletype": "x",
     "meaning": ["（疑問形を作る）", "～ですか？"],
     "pronunciation": ["/poj/<br>[poj]<br>‖poi‖"],
-    "variants1": ["poia"]
-    "variants2": ["ですか", "だよね", "か？", "？"]
+    "variants1": ["poia"],
+    "variants2": ["ですか", "だよね", "か？", "？"],
     "note3": ["聞きたい語の直前に置く｡", "直後に置く場合は「 poia 」を使う。"]
 },
     "poia": {
@@ -19,8 +19,8 @@
         "ruletype": "x",
     "meaning": ["（疑問形を作る）", "～ですか？"],
     "pronunciation": ["/poja/<br>[pojə]<br>‖poia‖"],
-    "variants1": ["poi"]
-    "variants2": ["ですか", "だよね", "か？", "？"]
+    "variants1": ["poi"],
+    "variants2": ["ですか", "だよね", "か？", "？"],
     "note3": ["聞きたい語の直語に置く｡", "直前に置く場合は「 poi 」を使う。"]
 },
     "sýsko": {
