@@ -96,7 +96,7 @@
     },
     "piárt": {
       "word": "piárt",
-      "stem": "piart",
+      "stem": "piárt",
       "tag": "身体動作",
       "parts": "動詞",
         "type": "無声音型",
@@ -113,6 +113,21 @@
         },
         "variants1": ["prát"],
       "variants2": ["piart", "とぶ", "はねる", "はなす", "いう", "ゆう", "しゃべる", "しゃべる"]
+    },
+    "sáf": {
+      "word": "sáf",
+      "stem": "sáf",
+      "tag": ["恋愛", "身体動作", "育児", "ペット"],
+      "parts": "動詞",
+        "type": "無声音型",
+        "ruletype": "vl0",
+      "meaning": ["撫でる［対を］", "愛撫する ［対を］"],
+      "pronunciation":["/saf/<br>[saf]<br>‖saf‖"],
+      "etymology": {
+          "intro": ["単純語。", "音象徴「 優しく撫でる 」から"],
+          "changes": []
+      },
+      "variants2": ["saf", "なでる", "さする", "摩る", "あいぶする"]
     },
     "yut": {
       "word": "yut",
