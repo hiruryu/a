@@ -760,23 +760,36 @@ if (data.ennote) {
     }
   }
 
-      if (data.variants1 && data.variants1.length) {
-        const links = data.variants1.map(v => `<a href="#" onclick="loadWord('${v}'); return false;">${v}</a>`).join(", ");
-        detailsHTML += `<table class="detailTable">
-          <tbody>
-            <tr>
-              <th>類語</th>
-              <td class="linktext" colspan="3">${links}</td>
-            </tr>
-          </tbody>
-        </table>`;
-      }
       if (data.examples && data.examples.length) {
         detailsHTML += `<table class="detailTable">
           <tbody>
             <tr>
               <th>例文</th>
               <td colspan="3">${data.examples.join("<br>")}</td>
+            </tr>
+          </tbody>
+        </table>`;
+      }
+
+      if (data.variants1 && data.variants1.length) {
+        const links = data.variants1.map(v => `<a href="#" onclick="loadWord('${v}'); return false;">${v}</a>`).join(", ");
+        detailsHTML += `<table class="detailTable">
+          <tbody>
+            <tr>
+              <th>類義語</th>
+              <td class="linktext" colspan="3">${links}</td>
+            </tr>
+          </tbody>
+        </table>`;
+      }
+
+      if (data.variants3 && data.variants3.length) {
+        const links = data.variants3.map(v => `<a href="#" onclick="loadWord('${v}'); return false;">${v}</a>`).join(", ");
+        detailsHTML += `<table class="detailTable">
+          <tbody>
+            <tr>
+              <th>関連語</th>
+              <td class="linktext" colspan="3">${links}</td>
             </tr>
           </tbody>
         </table>`;
