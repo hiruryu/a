@@ -181,8 +181,15 @@ body {
 .e-list {
   color: #998077;
 }
+.t-td {
+  color: #8888aa;
+  font-size: 15px;
+}
 .p-td {
   color: #361616;
+  font-size: 15px;
+  font-family:'Times New Roman', Times, serif;
+  line-height: 22px;
 }
 
   .inner-table {
