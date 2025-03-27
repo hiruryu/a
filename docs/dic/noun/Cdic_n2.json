@@ -69,6 +69,7 @@
 "vari": ["petnosciuk"],
 "note2": ["<span>接辞の一つで、象について関係性や丁寧さを変化させるもの。</span>","素体となっている象に合わせた活用を行う。<br><table border='1'><th><h3>使い方</h3></th><th><h3>例（ 日本語訳 ）</h3></th><tr><td><h4>名象-付称辞</h4></td><td>prāxa + nos<small><sup>（ 敬称を作る ）</sup></small> = <span>prāxnos</span><br><small>（ プラーシャさん ）</small></td></tr><tr><td><h4>動象-付称辞</h4></td><td>dof + nos = <span>dofnos</span><br><small>（ 走ります ）<small></td></tr><tr><td><h4>飾象-付称辞</h4></td><td>snolui + nos = <span>snonnosui</span><br><small>（ お美しい ）<small></td></tr></table>"],
 "jpnote": ["日本語では，名詞には「 御～ 」，動詞には「 ～します 」，形容詞・副詞には「 お～ 」などを使って敬語を作る。", "「 お / ご ～ なる 」などは ⇒ <h5>付称包辞</h5> を参照。"]
+"variants3": ["nos", "pa", "petnoxek⚠️"]
 },
 "petnoxek⚠️": {
 "word": "petnoxek",
