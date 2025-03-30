@@ -52,7 +52,11 @@
           "pronunciation": ["/ʈ͡ʂanos/<br>[ʈ͡ʂanos]<br>‖čanos‖"],
           "etymology": {
               "intro": ["単純語。", "形成の根拠は不明。", "形成から以下のように変化。"],
-              "changes": []
+              "changes": [
+                  { "form": "/ʈ͡ʂalosʲiː/", "note": "古形"},
+                  { "form": "/ʈ͡ʂalos/", "note": "末母音の消滅"},
+                  { "form": "/ʈ͡ʂanos/", "note": "Lの鼻音化"}
+              ]
         }
       },
         "nos": {
