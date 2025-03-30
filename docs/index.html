@@ -666,33 +666,45 @@ if (data.note1) {
 
         let note2HTML = "";
       if (data.note2) {
-  const notes = Array.isArray(data.note2)
-    ? data.note2
-    : data.note2.split(",").map(s => s.trim());
-  note2HTML = notes.map(note => {
-    const processedNote = note.replace(/<h5>(.*?)<\/h5>/g, (match, innerText) => {
-      const key = innerText.replace(/^⇒\s*/, '').trim();
-      const linkWord = linkMapping[key] || key;
-      return `<h5><a href="#" onclick="loadWord('${linkWord}'); return false;">${innerText.trim()}</a></h5>`;
-    });
-    return `<li class="noteList">${processedNote}</li>`;
-  }).join("");
-}
+  let note2TextHTML = "";
+  if (data.note2.txt) {
 
-    if (note2HTML) {
-      detailsHTML += `<table class="detailTable">
-        <tbody>
-          <tr>
-            <th id="stripeth">智語解説</th>
-            <td colspan="3">
-          <ul>
-            ${note2HTML}
-          </ul> 
+    const notes = Array.isArray(data.note2.txt)
+      ? data.note2.txt
+      : data.note2.txt.split(",").map(s => s.trim());
+    note2TextHTML = notes.map(note => {
+      const processedNote = note.replace(/<h5>(.*?)<\/h5>/g, (match, innerText) => {
+        const key = innerText.replace(/^⇒\s*/, '').trim();
+        const linkWord = linkMapping[key] || key;
+        return `<h5><a href="#" onclick="loadWord('${linkWord}'); return false;">${innerText.trim()}</a></h5>`;
+      });
+      return `<li class="noteList">${processedNote}</li>`;
+    }).join("");
+  }
+
+  let note2ImgHTML = "";
+  if (data.note2.img) {
+    const images = Array.isArray(data.note2.img)
+      ? data.note2.img
+      : [data.note2.img];
+    note2ImgHTML = images.map(imgTag => imgTag).join("");
+  }
+
+
+  if (note2TextHTML || note2ImgHTML) {
+    detailsHTML += `<table class="detailTable">
+      <tbody>
+        <tr>
+          <th id="stripeth">智語解説</th>
+          <td colspan="3">
+            ${ note2TextHTML ? `<ul>${note2TextHTML}</ul>` : "" }
+            ${ note2ImgHTML ? `<div class="note2-img">${note2ImgHTML}</div>` : "" }
           </td>
-          </tr>
-          </tbody>
-          </table>`;
-        }
+        </tr>
+      </tbody>
+    </table>`;
+  }
+}
 
         let jpnoteHTML = "";
         if (data.jpnote) {
