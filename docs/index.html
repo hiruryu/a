@@ -1087,114 +1087,112 @@ if (data.ennote) {
 
     // 検索処理の関数
     function performSearch() {
-      const searchTerm = searchBox.value.toLowerCase();
-      wordList.innerHTML = "";
-      details.innerHTML = `<p class="placeholder">左側のリストから単語をクリックしてください｡</p>`;
+  const searchTerm = searchBox.value.toLowerCase();
+  wordList.innerHTML = "";
+  details.innerHTML = `<p class="placeholder">左側のリストから単語をクリックしてください｡</p>`;
 
-      if (searchTerm === "") {
-        placeholder.style.display = "block";
-        searchResults = [];
-        pageInfoSpan.textContent = "0 / 0";
-        prevPageBtn.disabled = true;
-        nextPageBtn.disabled = true;
-        return;
-      } else {
-        placeholder.style.display = "none";
-      }
+  if (searchTerm === "") {
+    placeholder.style.display = "block";
+    searchResults = [];
+    pageInfoSpan.textContent = "0 / 0";
+    prevPageBtn.disabled = true;
+    nextPageBtn.disabled = true;
+    return;
+  } else {
+    placeholder.style.display = "none";
+  }
 
-      if (Object.keys(dictionary).length === 0) {
-        wordList.innerHTML = "<li>データ読み込み中...</li>";
-        return;
-      }
+  if (Object.keys(dictionary).length === 0) {
+    wordList.innerHTML = "<li>データ読み込み中...</li>";
+    return;
+  }
 
-      const searchMode = searchModeSelect.value;
+  const searchMode = searchModeSelect.value;
+  searchResults = [];
 
-      // タグ検索モードの場合は、タグのみで検索する
-      if (searchMode === "tag") {
-        const tagResults = Object.keys(dictionary).filter(word => {
-          const data = dictionary[word];
-          let matchTag = false;
-          if (data.tag) {
-            if (Array.isArray(data.tag)) {
-              matchTag = data.tag.some(t => removeAnnotations(t).toLowerCase() === searchTerm);
-            } else {
-              matchTag = removeAnnotations(data.tag).toLowerCase() === searchTerm;
-            }
-          }
-          return matchTag;
-        });
-        tagResults.sort((a, b) => a.localeCompare(b));
-        searchResults = [];
-        if (tagResults.length > 0) {
-          searchResults.push({ type: "heading", text: "【タグでの検索結果】" });
-          tagResults.forEach(word => {
-            searchResults.push({ type: "word", value: word });
-          });
+  if (searchMode === "tag") {
+    // タグ検索モード: タグのみで検索する
+    const tagResults = Object.keys(dictionary).filter(word => {
+      const data = dictionary[word];
+      if (data.tag) {
+        if (Array.isArray(data.tag)) {
+          return data.tag.some(t => removeAnnotations(t).toLowerCase() === searchTerm);
+        } else {
+          return removeAnnotations(data.tag).toLowerCase() === searchTerm;
         }
+      }
+      return false;
+    });
+
+    tagResults.sort((a, b) => a.localeCompare(b));
+
+    if (tagResults.length > 0) {
+      searchResults.push({ type: "heading", text: "【タグでの検索結果】" });
+      tagResults.forEach(word => {
+        searchResults.push({ type: "word", value: word });
+      });
+    }
+  } else {
+    // タグ以外の検索モード: 綴り、意味、関連語のみで検索する（タグは除外）
+    const primaryResults = Object.keys(dictionary).filter(word => {
+      const data = dictionary[word];
+      const cleanedWord = removeAnnotations(word).toLowerCase();
+
+      let matchKey = false;
+      if (searchMode === "exact") {
+        matchKey = (cleanedWord === searchTerm);
+      } else if (searchMode === "prefix") {
+        matchKey = cleanedWord.startsWith(searchTerm);
       } else {
-        // 綴り・意味・関連語・タグを総合的に検索する処理
-        const primaryResults = Object.keys(dictionary).filter(word => {
-          const data = dictionary[word];
-          const cleanedWord = removeAnnotations(word).toLowerCase();
-          let matchKey = false;
-          if (searchMode === "exact") {
-            matchKey = (cleanedWord === searchTerm);
-          } else if (searchMode === "prefix") {
-            matchKey = cleanedWord.startsWith(searchTerm);
-          } else {
-            matchKey = cleanedWord.includes(searchTerm);
-          }
-          let matchMeaning = false;
-          if (data.meaning) {
-            if (Array.isArray(data.meaning)) {
-              matchMeaning = data.meaning.some(m => {
-                const cleaned = removeAnnotations(m).toLowerCase();
-                if (searchMode === "exact") return cleaned === searchTerm;
-                else if (searchMode === "prefix") return cleaned.startsWith(searchTerm);
-                else return cleaned.includes(searchTerm);
-              });
-            } else {
-              const meaningLower = removeAnnotations(data.meaning).toLowerCase();
-              if (searchMode === "exact") {
-                matchMeaning = (meaningLower === searchTerm);
-              } else if (searchMode === "prefix") {
-                matchMeaning = meaningLower.startsWith(searchTerm);
-              } else {
-                matchMeaning = meaningLower.includes(searchTerm);
-              }
-            }
-          }
-          let matchVulgar = false;
-          if (data.vulgarMeaning) {
-            if (Array.isArray(data.vulgarMeaning)) {
-              matchVulgar = data.vulgarMeaning.some(v => {
-                const cleaned = removeAnnotations(v).toLowerCase();
-                if (searchMode === "exact") return cleaned === searchTerm;
-                else if (searchMode === "prefix") return cleaned.startsWith(searchTerm);
-                else return cleaned.includes(searchTerm);
-              });
-            } else {
-              const cleaned = removeAnnotations(data.vulgarMeaning).toLowerCase();
-              if (searchMode === "exact") {
-                matchVulgar = (cleaned === searchTerm);
-              } else if (searchMode === "prefix") {
-                matchVulgar = cleaned.startsWith(searchTerm);
-              } else {
-                matchVulgar = cleaned.includes(searchTerm);
-              }
-            }
-          }
-          let matchVariants2 = false;
-          if (data.variants2) {
-            matchVariants2 = data.variants2.some(v => {
-              const cleaned = removeAnnotations(v).toLowerCase();
-              if (searchMode === "exact") return cleaned === searchTerm;
-              else if (searchMode === "prefix") return cleaned.startsWith(searchTerm);
-              else return cleaned.includes(searchTerm);
-            });
-          }
-          return matchKey || matchMeaning || matchVariants2 || matchVulgar;
+        matchKey = cleanedWord.includes(searchTerm);
+      }
+
+      let matchMeaning = false;
+      if (data.meaning) {
+        if (Array.isArray(data.meaning)) {
+          matchMeaning = data.meaning.some(m => {
+            const cleaned = removeAnnotations(m).toLowerCase();
+            if (searchMode === "exact") return cleaned === searchTerm;
+            else if (searchMode === "prefix") return cleaned.startsWith(searchTerm);
+            else return cleaned.includes(searchTerm);
+          });
+        } else {
+          const meaningLower = removeAnnotations(data.meaning).toLowerCase();
+          if (searchMode === "exact") matchMeaning = (meaningLower === searchTerm);
+          else if (searchMode === "prefix") matchMeaning = meaningLower.startsWith(searchTerm);
+          else matchMeaning = meaningLower.includes(searchTerm);
+        }
+      }
+
+      let matchVulgar = false;
+      if (data.vulgarMeaning) {
+        if (Array.isArray(data.vulgarMeaning)) {
+          matchVulgar = data.vulgarMeaning.some(v => {
+            const cleaned = removeAnnotations(v).toLowerCase();
+            if (searchMode === "exact") return cleaned === searchTerm;
+            else if (searchMode === "prefix") return cleaned.startsWith(searchTerm);
+            else return cleaned.includes(searchTerm);
+          });
+        } else {
+          const cleaned = removeAnnotations(data.vulgarMeaning).toLowerCase();
+          if (searchMode === "exact") matchVulgar = (cleaned === searchTerm);
+          else if (searchMode === "prefix") matchVulgar = cleaned.startsWith(searchTerm);
+          else matchVulgar = cleaned.includes(searchTerm);
+        }
+      }
+
+      let matchVariants2 = false;
+      if (data.variants2) {
+        matchVariants2 = data.variants2.some(v => {
+          const cleaned = removeAnnotations(v).toLowerCase();
+          if (searchMode === "exact") return cleaned === searchTerm;
+          else if (searchMode === "prefix") return cleaned.startsWith(searchTerm);
+          else return cleaned.includes(searchTerm);
         });
+      }
+
+      return matchKey || matchMeaning || matchVariants2 || matchVulgar;
+    });
 
         const variantResults = Object.keys(dictionary).filter(word => {
           const data = dictionary[word];
@@ -1226,8 +1224,11 @@ if (data.ennote) {
         const primarySet = new Set(primaryResults);
         const variantOnlyResults = variantResults.filter(word => !primarySet.has(word));
         const variantSet = new Set(variantOnlyResults);
-        const tagOnlyResults = tagResults.filter(word => !primarySet.has(word) && !variantSet.has(word));
-
+        let tagOnlyResults = [];
+        if (searchMode === "tag") {
+          tagOnlyResults = tagResults.filter(word => !primarySet.has(word) && !variantSet.has(word));
+          tagOnlyResults.sort((a, b) => a.localeCompare(b));
+        }
         primaryResults.sort((a, b) => a.localeCompare(b));
         variantOnlyResults.sort((a, b) => a.localeCompare(b));
         tagOnlyResults.sort((a, b) => a.localeCompare(b));
