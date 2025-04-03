@@ -1,49 +1,49 @@
 {
-  "ask": {
-    "word": "ask",
-    "stem": "ask",
+  "ásk": {
+    "word": "ásk",
+    "stem": "ásk",
     "stem2": "ask",
     "tag": ["動物名", "智語用語"],
     "parts": "名象",
       "type": "a 軟音化型",
       "ruletype": "nha",
-    "meaning": ["（人格性の低い）生物", "動物", "生き物", "動物", "獣", "けもの", "けだもの"],
-    "pronunciation": ["/ask/<br>[əsk]<br>‖ask‖"],
+    "meaning": ["（人格性の低い）生物", "動物", "生き物", "動物", "獣", "けもの", "けだもの","アスク"],
+    "pronunciation": ["/ask/<br>[əsk]<br>‖ask‖<br>〔ás-k∅〕"],
     "etymology": ["単純語。", "形成の根拠は不明。"],
-    "variants2": ["ask", "アスク"],
+    "variants2": ["ask"],
     "note2": ["生物の分類の中で，特に人格性が低いもの。","詳しくは ⇒ <h5>人格性</h5> を参照。"]
   },
-  "es": {
-    "word": "es",
-    "stem": "es",
-    "stem2": "es",
+  "élis": {
+    "word": "élis",
+    "stem": "élis"
+    "stem2": "elis",
     "tag": ["動物名", "智語用語"],
     "parts": "名象",
       "type": "a 基本型",
-      "ruletype": "nha",
-    "meaning": ["（人格性の高い）生物", "動物", "生き物", "知的生命体"],
-    "pronunciation": ["/es/<br>[əs]<br>‖es‖"],
+      "ruletype": "na",
+    "meaning": ["（人格性の高い）生物", "動物", "生き物", "知的生命体","エリス"],
+    "pronunciation": ["/elʲs/<br>[əlʲs]<br>‖elis‖<br>〔éli-s∅〕"],
     "etymology": ["単純語。", "形成の根拠は不明。"],
-    "variants2": ["es", "エルス", "エス"],
+    "variants2": ["elis", "エルス", "エス"],
     "note2": ["生物の分類の中で，特に人格性が高いもの。","人間などもここに含まれる。","詳しくは ⇒ <h5>人格性</h5> を参照。"]
   },
-  "báiz": {
-  "word": "báiz",
-  "stem": "báiz",
+  "búoiz": {
+  "word": "buóiz",
+  "stem": "buóiz",
   "tag": ["動物名", "魚介類名"],
   "parts": "名象",
     "type": "o 基本型",
     "ruletype": "no",
   "meaning": ["クジラ", "鯨"],
-  "pronunciation": ["/baiz/<br>[baɪs]<br>‖boiz‖"],
+  "pronunciation": ["/bʷoiz/<br>[bʷo̞js]<br>‖buoiz‖<br>〔buó-i-z∅〕"],
     "etymology": {
       "intro": ["単純語。", "音象徴「 クジラ 」から。", "形成から以下のように変化。"],
       "changes": [
         { "form": "/boiz-/", "note": "古形"},
-        { "form": "/baiz-/", "note": "o の広化" }
+        { "form": "/bʷoiz-/", "note": "" }
       ]
     },
-  "variants2": ["baiz", "くじら"]
+  "variants2": ["buoiz", "くじら"]
 },
   "cýfia": {
   "word": "cýfsa",
@@ -54,7 +54,7 @@
     "type": "a 基本型",
     "ruletype": "nsta",
   "meaning": ["リス"],
-  "pronunciation": ["/ʈ͡ʂɨfʲa/<br>[ʈ͡ʂɨfʲə]<br>‖čyfia‖"],
+  "pronunciation": ["/ʈ͡ʂɨfʲa/<br>[ʈ͡ʂɨfʲə]<br>‖čyfia‖<br>〔cýf-sa〕"],
   "etymology": {
       "intro": ["単純語。", "擬音語「 リスの鳴き声 」から。", "形成から以下のように変化。"],
       "changes": [
@@ -66,9 +66,9 @@
   "idiom": ["cyfiaf vniut（結婚する，結ばれる）"],
   "variants2": ["りす", "栗鼠"]
 },
-"dapna": {
-    "word": "dapna",
-    "stem": "dapn",
+"dápna": {
+    "word": "dápna",
+    "stem": "dápn",
     "lexemic": "dop-",
     "fix": ["dop-"],
     "tag": ["動物名", "魚介類名"],
@@ -76,7 +76,7 @@
       "type": "a 複子音軟音化型",
       "ruletype": "nstha",
     "meaning": ["シャチ", "しゃち"],
-    "pronunciation": ["/dapna/<br>[dapnə]<br>‖dôpna‖"],
+    "pronunciation": ["/dapna/<br>[dapnə]<br>‖dapna‖<br>〔dáp-na〕"],
     "etymology": {
   "intro": ["単純語。", "音象徴「 シャチ 」から。"],
   "changes": [
@@ -85,18 +85,18 @@
     { "form": "/dapn-/　", "note": "o の広化" }
   ]
 },
-    "variants2": ["doppna", "オルカ", "鯱"]
+    "variants2": ["dapna", "オルカ", "鯱"]
   },
-"ētika": {
-  "word": "ētika",
-  "stem": "ḗtik",
-  "stem2": "ētik",
+"yétka": {
+  "word": "yétka",
+  "stem": "yétk",
+  "stem2": "yetk",
   "tag": ["家具"],
   "parts": "名象",
     "type": "a 複子音軟音化型",
     "ruletype": "nstha",
   "meaning": ["机", "デスク", "テーブル"],
-  "pronunciation": ["/eːtʲka/<br>[eːtʲkə]<br>‖eetiko‖"],
+  "pronunciation": ["/jetka/<br>[jetkə]<br>‖jetka‖<br>〔jét-ka〕"],
   "etymology": {
   "intro": ["単純語。", "夢の中で見た単語「 étiko（テーブル）」から。"],
   "changes": [
@@ -105,24 +105,25 @@
         { "form": "/eːtʲka/　", "note": "o の広化" }
   ]
 },
-  "variants2": ["つくえ"]
+  "variants2": ["jetka","つくえ"]
 },
 "fáska": {
-  "word": "faska",
-  "stem": "fask",
+  "word": "fáska",
+  "stem": "fásk",
+  "stem2": "fask",
   "tag": ["動物名", "智語用語"],
   "parts": "名象",
     "type": "a 軟音化型",
     "ruletype": "nha",
   "meaning": ["鳥", "トリ"],
-  "pronunciation": ["/faska/<br>[faskə]<br>‖faska‖"],
+  "pronunciation": ["/faska/<br>[faskə]<br>‖faska‖<br>〔fás-ka〕"],
   "etymology": ["単純語", "音象徴「鳥がはばたく音」から。"],
   "variants2": ["faska", "ファスカ", "とり"]
 },
-"fhṓma": {
-    "word": "fhōma",
-    "stem": "fhṓm",
-    "stem2": "fhōm",
+"wóma": {
+    "word": "wóma",
+    "stem": "wóm",
+    "stem2": "wom",
     "lexemic": ["fkom-"],
     "fix": ["fkom-", "-vom"],
     "tag": ["動物名"],
@@ -130,10 +131,10 @@
       "type": "ma 長母音型（部分不規則）",
       "ruletype": "nāM",
     "meaning": ["（ロップイヤーの）うさぎ, 兎"],
-    "pronunciation": ["/oːma/<br>[oːmə]<br>‖ooma‖"],
+    "pronunciation": ["/woma/<br>[womə]<br>‖woma‖"],
     "vari": ["fkṓma<br>fcṓma"],
   "variants1": ["piósta"],
-    "variants2": ["fhoma", "fhōma", "たれ耳うさぎ", "垂れ耳うさぎ", "ロップイヤー", "ロップイヤーラビット"],
+    "variants2": ["woma", "fhoma", "たれ耳うさぎ", "垂れ耳うさぎ", "ロップイヤー", "ロップイヤーラビット"],
     "etymology": {
       "intro": ["単純語。", "形成から以下のように変化。"],
       "changes": [
