@@ -10,25 +10,25 @@
       "type": "a 基本型（部分不規則）",
       "ruletype": "na",
     "meaning": ["猫", "ネコ"],
-    "pronunciation": ["/nʲafa/<br>[nʲafə]<br>‖niafa‖"],
+    "pronunciation": ["/nʲafa/<br>[nʲäfə]<br>‖niafa‖"],
     "etymology": {
   "intro": ["単純語。", "擬音語「 猫の鳴き声 」から。"],
   "changes": []
 },
     "vari": ["náfa"]
   },
-  "nṓx": {
-    "word": "nōx",
-    "stem": "nṓx",
-    "stem2": "nōx",
-    "lexemic": ["nōx-"],
-    "fix": ["nōx-", "-nōx"],
+  "náx": {
+    "word": "náx",
+    "stem": "náx",
+    "stem2": "nax",
+    "lexemic": ["nax-"],
+    "fix": ["nax-", "-nax"],
     "tag": ["部位"],
     "parts": "名象",
       "type": "長母音双数型（部分不規則）",
       "ruletype": "nā",
     "meaning": ["耳"],
-    "pronunciation": ["/noːʂ/<br>[noːʂ]<br>‖nooš‖"],
+    "pronunciation": ["/naʂ/<br>[näʂ]<br>‖naš‖"],
      "etymology": {
   "intro": ["単純語。", "形成の根拠は不明。"],
   "changes": []
@@ -95,7 +95,7 @@
 "type": "a 複子音軟音化型",
 "ruletype": "nstha",
 "meaning": ["うさぎ", "兎", "（干支の）卯"],
-"pronunciation": ["/pʲasta/<br>[pʲastə]<br>‖pʲosta‖"],
+"pronunciation": ["/pʲasta/<br>[pʲästə]<br>‖pʲosta‖"],
 "variants1": ["fhṓma"],
 "variants2": ["piasta", "piosta", "ウサギ", "十二支"],
   "etymology": {
@@ -114,7 +114,7 @@
         "type": "a 複子音軟音化型",
         "ruletype": "nstha",
       "meaning": ["花", "華"],
-      "pronunciation": ["/pɾaska/<br>[pɾaskə]<br>‖praska‖"],
+      "pronunciation": ["/pɾaska/<br>[pɾäskə]<br>‖praska‖"],
       "etymology": {
             "intro": ["単純語。", "音象徴「 春の花 」から。"],
             "changes": []
@@ -130,7 +130,7 @@
 "type": "a 複子音軟音化型",
 "ruletype": "nfha",
 "meaning": ["雨", "雨粒", "雫", "（部首）<ruby>雨<rp>(</rp><rt>あめ</rt><rp>)</rp></ruby>"],
-"pronunciation": ["/pʲasta/<br>[pʲastə]<br>‖pʲosta‖"],
+"pronunciation": ["/zaf/<br>[zəf]<br>‖zaf‖"],
 "variants2": ["zaf", "あめ", "あまつぶ", "しずく"],
   "etymology": {
   "intro": ["単純語。", "日本語「 ザーザー 」と同印象。", "形成から以下のように変化。" ],
@@ -149,7 +149,7 @@
 "type": "a 軟音化型",
 "ruletype": "nha",
 "meaning": ["トキポナ"],
-"pronunciation": ["/takʲpanʲa/<br>[takʲpanʲə]<br>‖tokipona‖"],
+"pronunciation": ["/takʲpanʲa/<br>[täkʲpänʲə]<br>‖tokipona‖"],
 "variants2": ["ときぽな", "Takipania", "Tokiponia", "Tokipona", "tokipona", "Toki pona", "Toki Pona"],
   "etymology": {
   "intro": ["借用語。", "トキポナの「 Toki Pona 」が訛ったもの。"],
