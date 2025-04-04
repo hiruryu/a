@@ -27,7 +27,7 @@
     "variants2": ["elis", "エルス", "エス"],
     "note2": ["生物の分類の中で，特に人格性が高いもの。","人間などもここに含まれる。","詳しくは ⇒ <h5>人格性</h5> を参照。"]
   },
-  "búoiz": {
+  "buóiz": {
   "word": "buóiz",
   "stem": "buóiz",
   "tag": ["動物名", "魚介類名"],
@@ -77,7 +77,7 @@
       "type": "a 複子音軟音化型",
       "ruletype": "nstha",
     "meaning": ["シャチ", "しゃち"],
-    "pronunciation": ["/dapna/<br>[dapnə]<br>‖dapna‖"],
+    "pronunciation": ["/dapna/<br>[däpnə]<br>‖dapna‖"],
     "etymology": {
   "intro": ["単純語。", "音象徴「 シャチ 」から。"],
   "changes": [
@@ -117,7 +117,7 @@
     "type": "a 軟音化型",
     "ruletype": "nha",
   "meaning": ["鳥", "トリ"],
-  "pronunciation": ["/faska/<br>[faskə]<br>‖faska‖"],
+  "pronunciation": ["/faska/<br>[fäskə]<br>‖faska‖"],
   "etymology": ["単純語", "音象徴「鳥がはばたく音」から。"],
   "variants2": ["faska", "ファスカ", "とり"]
 },
@@ -186,7 +186,7 @@
   "type": "fa 軟音化型",
   "ruletype": "nfha",
   "meaning": ["（昼間の）空", "青空", "天空", "天気", "空模様", "天国", "天界"],
-  "pronunciation": ["/xafa/<br>[xafa]<br>‖hafa‖"],
+  "pronunciation": ["/xafa/<br>[xäfa]<br>‖hafa‖"],
   "variants2": ["hafa","そら", "あおぞら", "てんくう", "てんき", "そらもよう", "てんごく", "てんかい"]
 },
 "luip": {
@@ -202,9 +202,9 @@
   "variants1": ["píp"],
   "variants2": ["luip","アップル, apple"]
 },
-  "lúpo": {
-  "word": "lupo",
-  "stem": "lup",
+  "lů́po": {
+  "word": "lůpo",
+  "stem": "lů́p",
   "tag": ["果物", "植物名"],
   "parts": "名象",
   "type": "o 軟音化型",
@@ -215,7 +215,7 @@
   "intro": ["単純語。", "音象徴「紫の甘い丸いもの」から"],
   "changes": []
 },
-  "variants2": ["lupo", "grape"]
+  "variants2": ["lupo", "lůpo", "grape"]
 },
 "lukátt": {
   "word": "lukátt",
