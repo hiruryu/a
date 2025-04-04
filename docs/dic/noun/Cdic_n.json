@@ -15,7 +15,7 @@
   },
   "élis": {
     "word": "élis",
-    "stem": "élis"
+    "stem": "élis",
     "stem2": "elis",
     "tag": ["動物名", "智語用語"],
     "parts": "名象",
@@ -41,6 +41,7 @@
       "changes": [
         { "form": "/boiz-/", "note": "古形"},
         { "form": "/bʷoiz-/", "note": "" }
+        { "form": "/bʷoiz-/", "note": "綴りの変更" }
       ]
     },
   "variants2": ["buoiz", "くじら"]
