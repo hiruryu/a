@@ -1,135 +1,132 @@
 {
-    "poi": {
-    "word": "poi",
-    "stem": "poi",
-    "tag": "離辞",
-        "ruletype": "x",
-    "meaning": ["（疑問形を作る）", "～ですか？"],
-    "pronunciation": ["/poj/<br>[poj]<br>‖poi‖"],
-    "variants1": ["poia"],
-    "variants2": ["ですか", "だよね", "か？", "？"],
-    "note3": ["聞きたい語の直前に置く｡", "直後に置く場合は「 poia 」を使う。"]
+  "poi": {
+  "word": "poi",
+  "stem": "poi",
+  "tag": "離辞",
+      "ruletype": "x",
+  "meaning": ["（疑問形を作る）", "～ですか？"],
+  "pronunciation": ["/poj/<br>[poj]<br>‖poi‖"],
+  "variants1": ["poia"],
+  "variants2": ["ですか", "だよね", "か？", "？"],
+  "note3": ["聞きたい語の直前に置く｡", "直後に置く場合は「 poia 」を使う。"]
 },
-    "poia": {
-    "word": "poia",
-    "stem": "poia",
-    "tag": "離辞",
-        "ruletype": "x",
-    "meaning": ["（疑問形を作る）", "～ですか？"],
-    "pronunciation": ["/poja/<br>[pojə]<br>‖poia‖"],
-    "variants1": ["poi"],
-    "variants2": ["ですか", "だよね", "か？", "？"],
-    "note3": ["聞きたい語の直語に置く｡", "直前に置く場合は「 poi 」を使う。"]
+  "poia": {
+  "word": "poia",
+  "stem": "poia",
+  "tag": "離辞",
+      "ruletype": "x",
+  "meaning": ["（疑問形を作る）", "～ですか？"],
+  "pronunciation": ["/poja/<br>[pojə]<br>‖poia‖"],
+  "variants1": ["poi"],
+  "variants2": ["ですか", "だよね", "か？", "？"],
+  "note3": ["聞きたい語の直語に置く｡", "直前に置く場合は「 poi 」を使う。"]
 },
-    "sýsko": {
-    "word": "sýsko",
-    "stem": "sysko",
-    "tag": "副飾",
-        "type": "基本型",
-        "ruletype": "x",
-    "meaning": ["やっぱり", "予想通り", "思った通り", "案の定", "例によって"],
-    "pronunciation": ["/sʲisko/<br>[sʲisko]<br>‖sysko‖"],
-    "variants2": ["やはり", "道理で", "どうりで", "どおりで", "よそうどおり", "おもったとおり", "あんのじょう"]
+  "sýsko": {
+  "word": "sýsko",
+  "stem": "sysko",
+  "tag": "副飾",
+      "type": "基本型",
+      "ruletype": "x",
+  "meaning": ["やっぱり", "予想通り", "思った通り", "案の定", "例によって"],
+  "pronunciation": ["/sʲisko/<br>[sʲisko]<br>‖sysko‖"],
+  "variants2": ["やはり", "道理で", "どうりで", "どおりで", "よそうどおり", "おもったとおり", "あんのじょう"]
 },
-    "a": {
-      "word": "a",
-      "stem": "a",
-      "tag": "a",
-      "parts": "離辞",
-        "ruletype": "x",
-      "meaning": "［a + 動詞の呼称型 で］呼称型を作る",
-      "pronunciation": ["/a/<br>[ə]<br>‖a‖"],
-      "variants2": ["ar"],
-      "note3": ["母音で始まる場合は「 ar 」という形になる。"]
+  "a": {
+    "word": "a",
+    "stem": "a",
+    "tag": "a",
+    "parts": "離辞",
+      "ruletype": "x",
+    "meaning": "［a + 動詞の呼称型 で］呼称型を作る",
+    "pronunciation": ["/a/<br>[ə]<br>‖a‖"],
+    "variants2": ["ar"],
+    "note3": ["母音で始まる場合は「 ar 」という形になる。"]
+  },
+    "Cianós": {
+      "word": "Cianos",
+        "stem": "Cianos",
+        "tag": "挨拶",
+        "parts": "間投詞",
+          "ruletype": "x",
+        "meaning": ["こんにちは"],
+        "pronunciation": ["/ʈ͡ʂanos/<br>[ʈ͡ʂanos]<br>‖čanos‖"],
+        "etymology": {
+            "intro": ["単純語。", "形成の根拠は不明。", "形成から以下のように変化。"],
+            "changes": []
+      }
     },
-      "Cianós": {
-        "word": "Cianos",
-          "stem": "Cianos",
-          "tag": "挨拶",
-          "parts": "間投詞",
-            "ruletype": "x",
-          "meaning": ["こんにちは"],
-          "pronunciation": ["/ʈ͡ʂanos/<br>[ʈ͡ʂanos]<br>‖čanos‖"],
-          "etymology": {
-              "intro": ["単純語。", "形成の根拠は不明。", "形成から以下のように変化。"],
-              "changes": [
-                  { "form": "/ʈ͡ʂalosʲiː/", "note": "古形"},
-                  { "form": "/ʈ͡ʂalos/", "note": "末母音の消滅"},
-                  { "form": "/ʈ͡ʂanos/", "note": "Lの鼻音化"}
-              ]
-        }
+      "nos": {
+      "word": "nos",
+        "stem": "nos",
+        "tag": "付称辞",
+        "parts": "付称辞",
+        "rule": "付称辞",
+          "type": "a 基本型",
+          "ruletype": "pa",
+        "meaning": ["（敬称）さん", "～さん"],
+        "pronunciation": ["/nos/<br>[nəs]<br>‖nos‖"],
+        "note2": ["詳細は ⇒ <h5>付称辞</h5> を参照。"],
+          "variants3": ["pa"]
       },
-        "nos": {
-        "word": "nos",
-          "stem": "nos",
-          "tag": "付称辞",
-          "parts": "付称辞",
-            "type": "完全不規則型",
-            "ruletype": "pa",
-          "meaning": ["（敬称）さん", "～さん"],
-          "pronunciation": ["/nos/<br>[nəs]<br>‖nos‖"],
-          "note2": ["詳細は ⇒ <h5>付称辞</h5> を参照。"],
-            "variants3": ["pa"]
-        },
-        "pa": {
-        "word": "pa",
-          "stem": "pa",
-          "tag": "付称辞",
-          "parts": "付称辞",
-            "type": "完全不規則型",
-            "ruletype": "pa",
-          "meaning": ["（親称）くん", "ちゃん"],
-          "pronunciation": ["/pa/<br>[pə]<br>‖pa‖"],
-          "etymology": [],
-          "note2": ["詳細は ⇒ <h5>付称辞</h5> を参照。"],
-        "variants3": ["nos"]
-        },
-        "si": {
-        "word": "si",
-          "stem": "si",
-          "tag": "包飾",
-            "ruletype": "x",
-          "meaning": ["もし", "もしも"],
-          "pronunciation": ["/sʲ/<br>[sʲ]<br>‖si‖"],
-        "variants2": ["したら", "だったら", "なら", "ならば", "if"]
-        },       
-        "fciát": {
-        "word": "fciát",
-          "stem": "fciát",
-          "tag": "連包表現",
-          "parts": "包飾",
-            "ruletype": "x",
-          "meaning": ["しかし", "だけど", "ところが", "しかしながら"],
-          "pronunciation": ["/fʈ͡ʂat/<br>[fʈ͡ʂət]<br>‖fčat‖"],
-          "variants2": ["fciat", "だが"]
-        },
-        "yep": {
-        "word": "yep",
-          "stem": "yep",
-          "tag": "連包表現",
-          "parts": "包飾",
-            "ruletype": "x",
-          "meaning": ["だから", "なので"],
-          "pronunciation": ["/jep/<br>[jəp]<br>‖jep‖"],
-          "variants2": ["yep", "さよなら", "じゃあね", "また明日", "またあした"]
-        },
-        "Xéska": {
-        "word": "Xeska",
-          "stem": "Xeska",
-          "tag": "挨拶",
-          "parts": "間投詞",
-            "ruletype": "x",
-          "meaning": ["さようなら", "またね", "バイバイ"],
-          "pronunciation": ["/ʂɨska/<br>[ʂɨskə]<br>‖šeska‖"],
-          "variants2": ["Xeska", "さよなら", "じゃあね", "また明日", "またあした"]
-        },
-       "Nei": {
-        "word": "nei",
-          "stem": "nei",
-          "tag": "相槌",
-          "parts": "間投詞",
-            "ruletype": "x",
-          "meaning": ["ええ", "えっ", "待って", "うそ"],
-          "pronunciation": ["/nej/<br>[nej]<br>‖nei‖"]
-        }
- }
+      "pa": {
+      "word": "pa",
+        "stem": "p",
+        "tag": "付称辞",
+        "parts": "付称辞",
+          "type": "完全不規則型",
+          "ruletype": "pa",
+        "meaning": ["（親称）くん", "ちゃん"],
+        "pronunciation": ["/pa/<br>[pə]<br>‖pa‖"],
+        "etymology": [],
+        "note2": ["詳細は ⇒ <h5>付称辞</h5> を参照。"],
+      "variants3": ["nos"]
+      },
+      "si": {
+      "word": "si",
+        "stem": "si",
+        "tag": "包飾",
+          "ruletype": "x",
+        "meaning": ["もし", "もしも"],
+        "pronunciation": ["/sʲ/<br>[sʲ]<br>‖si‖"],
+      "variants2": ["したら", "だったら", "なら", "ならば", "if"]
+      },       
+      "fciát": {
+      "word": "fciát",
+        "stem": "fciát",
+        "tag": "連包表現",
+        "parts": "包飾",
+          "ruletype": "x",
+        "meaning": ["しかし", "だけど", "ところが", "しかしながら"],
+        "pronunciation": ["/fʈ͡ʂat/<br>[fʈ͡ʂət]<br>‖fčat‖"],
+        "variants2": ["fciat", "だが"]
+      },
+      "yep": {
+      "word": "yep",
+        "stem": "yep",
+        "tag": "連包表現",
+        "parts": "包飾",
+          "ruletype": "x",
+        "meaning": ["だから", "なので"],
+        "pronunciation": ["/jep/<br>[jəp]<br>‖jep‖"],
+        "variants2": ["yep", "さよなら", "じゃあね", "また明日", "またあした"]
+      },
+      "Xéska": {
+      "word": "Xeska",
+        "stem": "Xeska",
+        "tag": "挨拶",
+        "parts": "間投詞",
+          "ruletype": "x",
+        "meaning": ["さようなら", "またね", "バイバイ"],
+        "pronunciation": ["/ʂɨska/<br>[ʂɨskə]<br>‖šeska‖"],
+        "variants2": ["Xeska", "さよなら", "じゃあね", "また明日", "またあした"]
+      },
+     "Nei": {
+      "word": "nei",
+        "stem": "nei",
+        "tag": "相槌",
+        "parts": "間投詞",
+          "ruletype": "x",
+        "meaning": ["ええ", "えっ", "待って", "うそ"],
+        "pronunciation": ["/nej/<br>[nej]<br>‖nei‖"]
+      }
+}
