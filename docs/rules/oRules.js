@@ -16,7 +16,7 @@ function getConjot(word, stem, type, ruletype) {
         const adpI = stem + "ikotta";
     
         return {
-          ansC: stem + "a",
+          ansC: stem,
           f_ansC: stem + "af",
           e_ansC: stem + "on",
           d_ansC: stem + "e",
