@@ -257,11 +257,11 @@ window.toggleVulgarMeaning = function(linkElem) {
     tableHTML = `<tr><td colspan="7">この動詞は活用型がありません。</td></tr>`;
   } else {
     const rows = [
-      { label: "素格一致", keys: ["s", "p", "s2", "p2", "s3", "p3"] },
-      { label: "獣格一致", keys: ["fs", "fp", "fs2", "fp2", "fs3", "fp3"] },
-      { label: "生/奪格一致", keys: ["es", "ep", "es2", "ep2", "es3", "ep3"] },
-      { label: "与/呼格一致", keys: ["ds", "dp", "ds2", "dp2", "ds3", "dp3"] },
-      { label: "副飾格一致", keys: ["ads", "adp", "ads2", "adp2", "ads3", "adp3"] }
+      { label: "素格一致", keys: ["s", "s2", "s3"] },
+      { label: "獣格一致", keys: ["fs", "fs2","fs3"] },
+      { label: "生/奪格一致", keys: ["es", "es2", "es3"] },
+      { label: "与/呼格一致", keys: ["ds", "ds2", "ds3"] },
+      { label: "副飾格一致", keys: ["ads", "ads2", "ads3"] }
     ];
 
     tableHTML = rows.map((row, index) => {
