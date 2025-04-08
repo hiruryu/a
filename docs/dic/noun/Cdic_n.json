@@ -58,7 +58,7 @@
     "type": "fi 基本型",
     "ruletype": "fha",
   "meaning": ["リス"],
-  "pronunciation": ["/ʈ͡ʂɨfʲa/<br>[ʈ͡ʂɨfʲə]<br>‖čyfia‖"],
+  "pronunciation": ["/ʈ͡ʂɨfʲa/<br>[ʈ͡ʂɨfʲə]<br>‖čïfia‖"],
   "etymology": {
       "intro": ["単純語。", "擬音語「 リスの鳴き声 」から。", "形成から以下のように変化。"],
       "changes": [
@@ -70,6 +70,34 @@
   "idiom": ["cyfiaf vniut（結婚する，結ばれる）"],
   "variants2": ["りす", "栗鼠"]
 },
+  "hluína": {
+    "word": "hluína",
+    "stem": "hluín",
+    "stem2": "hluin",
+    "tag": ["動物名", "鳥名"],
+    "parts": "名象",
+    "rule": "単性",
+      "type": "n 軟音化型（部分不規則）",
+      "ruletype": "nha",
+    "meaning": ["カモメ"],
+    "pronunciation": ["/xlɨna/<br>[xlɨnə]<br>‖hlïna‖"],
+    "etymology": ["単純語。", "形成の根拠は不明。"],
+    "variants2": ["hluina"],
+  },
+  "niahluína": {
+    "word": "niahluína",
+    "stem": "niahluín",
+    "stem2": "niahluin",
+    "tag": ["動物名", "鳥名"],
+    "parts": "名象",
+    "rule": "単性",
+      "type": "n 軟音化型（部分不規則）",
+      "ruletype": "nha",
+    "meaning": ["ウミネコ"],
+    "pronunciation": ["/xlɨna/<br>[xlɨnə]<br>‖hlïna‖"],
+    "etymology": ["合成語。", "「 nia-（猫）」+「 chluina（カモメ）」が組み合わさった単語。"],
+    "variants2": ["hluina"],
+  },
 "dápna": {
     "word": "dápna",
     "stem": "dápn",
