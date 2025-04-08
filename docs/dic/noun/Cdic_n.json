@@ -38,12 +38,12 @@
     "type": "z 基本型",
     "ruletype": "a",
   "meaning": ["クジラ", "鯨"],
-  "pronunciation": ["/bʷoiz/<br>[bʷo̞js]<br>‖buoiz‖"],
+  "pronunciation": ["/boiz/<br>[bo̞js]<br>‖boiz‖"],
     "etymology": {
       "intro": ["単純語。", "音象徴「 クジラ 」から。", "形成から以下のように変化。"],
       "changes": [
         { "form": "/boiz-/", "note": "古形"},
-        { "form": "/bʷoiz-/", "note": "" }
+        { "form": "/boiz-/", "note": "" }
       ]
     },
   "variants2": ["boiz", "くじら"]
@@ -153,7 +153,7 @@
     },
     "explanation": ["ウサギの中でも、耳が垂れているもの。"]
   },
-"fsiálo": {
+"fxálo": {
   "word": "fxalo",
   "stem": "fxal",
   "tag": ["動物名"],
