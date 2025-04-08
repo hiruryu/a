@@ -1,3 +1,4 @@
+
 body {
     display: flex;
     min-width: 1300px;
@@ -92,6 +93,10 @@ body {
     font-weight: bold;
     border-bottom: solid 4px #ffe45f;
   }
+ img {
+ padding: 0px 0px 0px 5%;
+  }
+  
   h3 {
     color: #444a4e;
     font-size: 20px;
@@ -121,7 +126,6 @@ body {
   }
   .noteList {
     background-color: #fcf9f7;
-    padding: 1px;
     list-style-position: inside;
     font-size: 16px;
     color: #998070;
@@ -337,29 +341,8 @@ body {
   letter-spacing: 1px;
 }
 
-#ans {
-font-size: 13px;
-}
-#fns {
-  font-size: 13px;
-  }
-#ens {
-    font-size: 13px;
-  }
-#dns {
-  font-size: 13px;
-  }
-#adns {
-    font-size: 13px;
-  }
-#gns {
-  font-size: 13px;
-}
-#vns {
-  font-size: 13px;
-}
-#ins {
-   font-size: 13px;
+.con {
+font-size: 12.5px;
 }
 #stripeth {
   background-image: linear-gradient(
