@@ -26,7 +26,7 @@
     <p id="placeholder" class="placeholder">
       入力欄に単語を入力して<br>
       Enter/Return キーを押してください｡<br><br>
-      （ 現在の収録語数：34 語 ）<br><br>
+      （ 現在の収録語数： <span id="word-count"></span> 語 ）<br><br>
       ⚠️ 本辞書内蔵の用語辞典は<br>
       智式言語学・智式音楽理論に基づくため，<br>
       一般的な定義とは異なる可能性があります。<br><br>
@@ -450,6 +450,18 @@ if (data.note1) {
           </tbody>
           </table>`;
         }
+
+      
+        let note2TitleHTML = "";
+if (data.note2 && data.note2.title) {
+  const titles = Array.isArray(data.note2.title)
+    ? data.note2.title
+    : data.note2.title.split(",").map(s => s.trim());
+  note2TitleHTML = titles.map(title => {
+    return `<div class="note2-title">${title}</div>`;
+  }).join("");
+}
+
         let note2HTML = "";
         if (data.note2) {
   let note2TextHTML = "";
@@ -476,22 +488,21 @@ if (data.note1) {
     note2ImgHTML = images.map(imgTag => imgTag).join("");
   }
 
-
-  if (note2TextHTML || note2ImgHTML) {
-    detailsHTML += `<table class="detailTable">
-      <tbody>
-        <tr>
-          <th id="stripeth">智語解説</th>
-          <td colspan="3">
-            ${ note2TextHTML ? `<ul>${note2TextHTML}</ul>` : "" }
-            ${ note2ImgHTML ? `<div class="note2-img">${note2ImgHTML}</div>` : "" }
-          </td>
-        </tr>
-      </tbody>
-    </table>`;
-  }
+  if (note2TitleHTML || note2TextHTML || note2ImgHTML) {
+  detailsHTML += `<table class="detailTable">
+    <tbody>
+      <tr>
+        <th id="stripeth">智語解説</th>
+        <td colspan="3">
+          ${ note2TitleHTML ? note2TitleHTML : "" }
+          ${ note2TextHTML ? `<ul>${note2TextHTML}</ul>` : "" }
+          ${ note2ImgHTML ? note2ImgHTML : "" }
+        </td>
+      </tr>
+    </tbody>
+  </table>`;
 }
-     
+}
 
 let jpnoteHTML = "";
         if (data.jpnote) {
@@ -1072,6 +1083,26 @@ let jpnoteHTML = "";
       renderPage();
     });
 
+  const files = [
+  'dic/Cdic_a.json',
+  'dic/noun/Cdic_n.json',
+  'dic/noun/Cdic_n2.json',
+  'dic/Cdic_o.json',
+  'dic/Cdic_v.json'
+];
+
+async function countWords() {
+  try {
+    const responses = await Promise.all(files.map(file => fetch(file).then(res => res.json())));
+    const mergedData = Object.assign({}, ...responses);
+    const wordCount = Object.keys(mergedData).length;
+    document.getElementById('word-count').textContent = wordCount;
+  } catch (error) {
+    console.error('語数カウント中にエラー:', error);
+    document.getElementById('word-count').textContent = 'エラー';
+  }
+}
+document.addEventListener('DOMContentLoaded', countWords);
   </script>
 </body>
 </html>
