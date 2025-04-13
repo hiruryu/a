@@ -10,7 +10,7 @@
     "rule": "単性",
       "type": "k 基本型（部分不規則）",
       "ruletype": "kha",
-    "meaning": ["（人格性の低い）生物", "動物", "生き物", "動物", "獣", "けもの", "けだもの","アスク"],
+    "meaning": ["（ 人格性の低い ）生物", "動物", "生き物", "動物", "獣", "けもの", "けだもの","アスク"],
     "pronunciation": ["/ask/<br>[əsk]<br>‖ask‖"],
     "etymology": ["単純語。", "形成の根拠は不明。"],
     "variants2": ["ask"],
@@ -27,7 +27,7 @@
     "rule": "単性",
       "type": "m 基本型",
       "ruletype": "ha",
-    "meaning": ["（人格性の高い）生物", "動物", "生き物", "知的生命体","エルマ"],
+    "meaning": ["（ 人格性の高い ）生物", "動物", "生き物", "知的生命体","エルマ"],
     "pronunciation": ["/elʲs/<br>[əlʲs]<br>‖elis‖"],
     "etymology": ["単純語。", "形成の根拠は不明。"],
     "variants2": ["erma", "エルマ"],
@@ -71,7 +71,7 @@
         { "form": "/cyfi-/", "note": "末母音の斜音化" }
       ]
     },
-  "idiom": ["cyfiaf vniut（結婚する，結ばれる）"],
+  "idiom": ["cyfiaf vniut（ 結婚する，結ばれる ）"],
   "variants2": ["りす", "栗鼠"]
 },
   "hlýna": {
@@ -81,8 +81,9 @@
     "lexemic": "hlyn-",
     "tag": ["動物名", "鳥名"],
     "parts": "名象",
+    "variants1": ["niáhlyna"],
     "rule": "単性",
-      "type": "n 基本型（部分不規則）",
+      "type": "n 基本型（ 部分不規則 ）",
       "ruletype": "nha",
     "meaning": ["カモメ"],
     "pronunciation": ["/xlɨna/<br>[xlɨnə]<br>‖hlïna‖"],
@@ -96,12 +97,13 @@
     "lexemic": "niahlyn-",
     "tag": ["動物名", "鳥名"],
     "parts": "名象",
+      "variants1": ["hlýna"],
     "rule": "単性",
-      "type": "n 基本型（部分不規則）",
+      "type": "n 基本型（ 部分不規則 ）",
       "ruletype": "nha",
     "meaning": ["ウミネコ"],
     "pronunciation": ["/xlɨna/<br>[xlɨnə]<br>‖hlïna‖"],
-    "etymology": ["合成語。", "「 nia-（猫）」+「 chluina（カモメ）」が組み合わさった単語。"],
+    "etymology": ["合成語。", "「 nia-（ 猫 ）」+「 chluina（ カモメ ）」が組み合わさった単語。"],
     "variants2": ["hluina"]
   },
 "dápna": {
@@ -138,7 +140,7 @@
   "meaning": ["机", "デスク", "テーブル"],
   "pronunciation": ["/jetka/<br>[jetkə]<br>‖jetka‖"],
   "etymology": {
-  "intro": ["単純語。", "夢の中で見た単語「 étiko（テーブル）」から。"],
+  "intro": ["単純語。", "夢の中で見た単語「 étiko（ テーブル ）」から。","形成から以下のように変化。"],
   "changes": [
     { "form": "/eːtʲko/" },
         { "form": "/eːtʲko/　"},
@@ -159,24 +161,24 @@
     "ruletype": "kha",
   "meaning": ["鳥", "トリ"],
   "pronunciation": ["/faska/<br>[fäskə]<br>‖faska‖"],
-  "etymology": ["単純語", "音象徴「鳥がはばたく音」から。"],
+  "etymology": ["単純語", "音象徴「 鳥がはばたく音 」から。"],
   "variants2": ["faska", "ファスカ", "とり"]
 },
 "wóma": {
     "word": "wóma",
     "stem": "wóm",
     "stem2": "wom",
-    "lexemic": ["fkom-"],
-    "fix": ["fkom-", "-vom"],
+    "lexemic": ["wom-"],
+    "fix": ["wom"],
     "tag": ["動物名"],
     "parts": "名象",
     "rule": "単性",
       "type": "m 基本型（部分不規則）",
       "ruletype": "ha",
-    "meaning": ["（ロップイヤーの）うさぎ, 兎"],
+    "meaning": ["（ ロップイヤーの ）うさぎ, 兎"],
     "pronunciation": ["/woma/<br>[womə]<br>‖woma‖"],
     "vari": ["fkṓma<br>fcṓma"],
-  "variants1": ["piósta"],
+  "variants1": ["piásta"],
     "variants2": ["woma", "fhoma", "たれ耳うさぎ", "垂れ耳うさぎ", "ロップイヤー", "ロップイヤーラビット"],
     "etymology": {
       "intro": ["単純語。", "形成から以下のように変化。"],
@@ -199,7 +201,7 @@
   "meaning": ["オコジョ"],
   "pronunciation": ["/fʂalo/<br>[fʂalə]<br>‖fšalo‖"],
   "etymology": {
-  "intro": ["単純語。", "音象徴「モフモフの白い細長い動物」から。"],
+  "intro": ["単純語。", "音象徴「 モフモフの白い細長い動物 」から。"],
   "changes": []
 },
   "variants2": ["fxalo", "白鼬","おこじょ","フシャロ"]
@@ -208,7 +210,8 @@
   "word": "gýxka",
   "stem": "gýxk",
   "stem2": "gyxk",
-  "lexemic": "-xka",
+  "lexemic": "gixk-",
+  "fix": ["-xka"],
   "tag": ["虫名"],
   "parts": "名象",
   "rule": "単性",
@@ -217,7 +220,7 @@
   "meaning": ["ムシ", "虫"],
   "pronunciation": ["/gʲiʂka/<br>[gʲiʂka]<br>‖gyška‖"],
   "etymology": {
-  "intro": ["単純語。", "音象徴「不快な」から。"],
+  "intro": ["単純語。", "音象徴「 不快な 」から。"],
   "changes": []
 },
   "variants2": ["むし", "蟲"]
@@ -260,7 +263,7 @@
   "meaning": ["ぶどう", "ブドウ", "葡萄"],
   "pronunciation": ["/lupa/<br>[lupə]<br>‖lupa‖"],
   "etymology": {
-  "intro": ["単純語。", "音象徴「紫の甘い丸いもの」から"],
+  "intro": ["単純語。", "音象徴「 紫の甘い丸いもの 」から"],
   "changes": []
 },
   "variants2": ["lupo", "lůpo", "grape"]
@@ -276,7 +279,7 @@
   "meaning": ["砂糖", "シュガー"],
   "pronunciation": ["/lukatː/<br>[lukɑtː]<br>‖lukott‖"],
   "etymology": {
-  "intro": ["借用語。", "古トシュカ語「lukotto（金平糖）」から", "形成から以下のように変化。"],
+  "intro": ["借用語。", "古トシュカ語「lukotto（ 金平糖 ）」から", "形成から以下のように変化。"],
   "changes": [
         { "form": "/lukotːo/　"},
         { "form": "/lukotː/　", "note": "末母音の消滅"},
@@ -297,7 +300,7 @@
   "meaning": ["みゅるくるー", "ひるりゅー", "智語の制作者"],
   "pronunciation": ["/mʲɯlɯklɯf/<br>[mʲɯlɯklɯf]<br>‖mʲɯlɯklɯf‖"],
   "etymology": {
-  "intro": ["合成語。", "古智語「 Miul（竜）+ klout（昼）」から。"],
+  "intro": ["合成語。", "古智語「 Miul（ 竜 ）+ klout（ 昼 ）」から。"],
   "changes": []
 },
   "variants2": ["Miulukluv", "ひるりゅう", "みゅるくるう"]
@@ -310,11 +313,11 @@
     "parts": "名象",
     "rule": "単性",
       "type": "k 基本型",
-      "ruletype": "ka",
+      "ruletype": "kha",
     "meaning": ["ナメクジ", "蛞蝓"],
     "pronunciation": ["/nʲːak/<br>[nʲːæk]<br>‖nniak‖"],
     "etymology": {
-  "intro": ["単純語。", "音象徴「 湿っている 」から。", "「 nniev（官能的な）」「 bnia（ナマズ）」などと同印象"],
+  "intro": ["単純語。", "音象徴「 湿っている 」から。", "「 nniev（ 官能的な ）」「 bnia（ ナマズ ）」などと同印象"],
   "changes": []
     },
     "variants2": ["nniak", "なめくじ"]
@@ -353,6 +356,87 @@
 },
   "variants2": ["pnyqk", "あいじゅう","ペット","ぺっと","愛玩動物", "あいがんどうぶつ","うちのこ"]
 },
+  "dál": {
+  "word": "dál",
+  "stem": "dál",
+  "stem2": "dal",
+  "lexemic": "dal-",
+  "fix": ["dal-"],
+  "parts": "名象",
+  "rule": "複性",
+  "type": "l 基本形",
+  "ruletype": "a",
+  "meaning": ["群れ", "群"],
+  "pronunciation": ["/dal/<br>[dal]<br>‖dal‖"],
+  "etymology": {
+  "intro": ["単純語。", "古智語「 fedol（ 群れ ）」から。", "形成から以下のように変化。"],
+  "changes": [
+        { "form": "/fedol/　"},
+        { "form": "/fedal/　", "note": "o の広い化"},
+        { "form": "/fdal/　", "note": "単音節化" }
+        { "form": "/dal/　", "note": "f の軟音化" }
+  ]
+},
+      "alert": {
+      "a1": "※ この単語は現在使われていません。以下を使用してください。",
+      "a2": [
+        { "word": "erbal" }
+      ]
+    }
+  },
+  "variants2": ["dal"]
+},
+  "erbál": {
+  "word": "erbál",
+  "stem": "erbál",
+  "stem2": "erbal",
+  "lexemic": "erbal-",
+  "fix": ["erbal-", "-rba"],
+  "parts": "名象",
+  "tag": ["分類学", "集まり"],
+  "rule": "複性",
+  "type": "l 基本形",
+  "ruletype": "a",
+  "meaning": ["群れ", "群", "（ 分類学 ）群"],
+  "pronunciation": ["/eɾbal/<br>[eɾbal]<br>‖erbal‖"],
+  "etymology": {
+  "intro": ["合成語。", "「 er-（ erma ）」+「 -dal（ 群れ ）」から。"],
+  "changes": []
+},
+  "variants2": ["erbal", "むれ", "ぐん"]
+},
+  "fyxiár": {
+  "word": "fyxiár",
+  "stem": "fyxiár",
+  "stem2": "fyxiar",
+  "parts": "名象",
+  "rule": "単性",
+  "type": "r 基本形",
+  "ruletype": "a",
+  "meaning": ["睡眠", "眠り"],
+  "pronunciation": ["/fʲiʃʲaɾ/<br>[fʲiʃʲaɾ]<br>‖fyxiar‖"],
+  "etymology": {
+  "intro": ["合成語。", "「 fyx-（ 眠る ）」+「 -iar（〜こと）」から。"],
+  "changes": []
+},
+  "variants2": ["fyxiar", "すいみん", "ねむり"]
+},
+  "nýci": {
+  "word": "nýci",
+  "stem": "nýci",
+  "stem2": "nyci",
+  "parts": "名象",
+  "rule": "単性",
+  "type": "ci 基本形",
+  "ruletype": "a",
+  "meaning": ["名前", "名称"],
+  "pronunciation": ["/nʲit͡ʃʲ/<br>[nʲit͡ʃʲ]<br>‖nyči‖"],
+  "etymology": {
+  "intro": ["単純語。", "音象徴「 くっつける 」から。"],
+  "changes": []
+},
+  "variants2": ["nyci", "なまえ", "めいしょう"]
+},
    "píp": {
       "word": "pip",
       "stem": "píp",
@@ -371,7 +455,29 @@
       ]
     }
   },
-  
+  "pnórfa": {
+    "word": "pnórfa",
+    "stem": "pnórf",
+    "stem2": "pnorf",
+    "lexemic": ["pnorf-"],
+    "fix": ["pno-"],
+    "tag": ["動物名"],
+    "parts": "名象",
+    "rule": "単性",
+      "type": "f 基本型",
+      "ruletype": "fha",
+    "meaning": ["夜", "晩"],
+    "pronunciation": ["/pnoɾmfa/<br>[pnoɾmfə]<br>‖pnorfa‖"],
+    "variants2": ["pnorfa", "よる", "ばん", "宵", "よい"],
+    "etymology": {
+      "intro": ["単純語。", "形成の根拠は不明。"],
+      "changes": [
+        { "form": "/fkoːm-/" },
+        { "form": "/foːm-/　", "note": "子音の簡略化" },
+        { "form": "/oːm-/　", "note": "頭子音の軟音化" }
+      ]
+    }
+  },
   "mia": {
   "word": "mia",
   "stem": "m",
