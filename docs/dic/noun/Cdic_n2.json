@@ -271,7 +271,6 @@
 "type": "a 基本型",
 "ruletype": "a",
 "meaning": ["原数"],
-"variants2": ["げんすう", "Base Number"],
   "alert": {
       "a1": "※ この単語は仮置きです。正式なものではありません。",
       "a2": []
@@ -295,7 +294,6 @@
 "type": "a 基本型",
 "ruletype": "a",
 "meaning": ["原数性"],
-"variants2": ["げんすうせい", "Base Numberality"],
   "alert": {
       "a1": "※ この単語は仮置きです。正式なものではありません。",
       "a2": []
@@ -319,7 +317,6 @@
 "type": "a 基本型",
 "ruletype": "a",
 "meaning": ["示双形"],
-"variants2": ["しそうけい", "Demonstrative Dual Form"],
   "alert": {
       "a1": "※ この単語は仮置きです。正式なものではありません。",
       "a2": []
@@ -343,7 +340,6 @@
 "type": "a 基本型",
 "ruletype": "a",
 "meaning": ["一数形"],
-"variants2": ["いっすうけい", "singulative mode"],
   "alert": {
       "a1": "※ この単語は仮置きです。正式なものではありません。",
       "a2": []
@@ -367,7 +363,6 @@
 "type": "a 基本型",
 "ruletype": "a",
 "meaning": ["単性名象"],
-"variants2": ["たんせいめいしょう", "Singular-numeral nouns"],
   "alert": {
       "a1": "※ この単語は仮置きです。正式なものではありません。",
       "a2": []
@@ -391,7 +386,6 @@
 "type": "a 基本型",
 "ruletype": "a",
 "meaning": ["双性名象"],
-"variants2": ["そうせいめいしょう", "Dual-numeral nouns"],
   "alert": {
       "a1": "※ この単語は仮置きです。正式なものではありません。",
       "a2": []
@@ -415,7 +409,6 @@
 "type": "a 基本型",
 "ruletype": "a",
 "meaning": ["名象"],
-"variants2": ["めいしょう", "nomant"],
   "alert": {
       "a1": "※ この単語は仮置きです。正式なものではありません。",
       "a2": []
@@ -439,7 +432,6 @@
 "type": "a 基本型",
 "ruletype": "a",
 "meaning": ["動象"],
-"variants2": ["どうしょう", "movant"],
   "alert": {
       "a1": "※ この単語は仮置きです。正式なものではありません。",
       "a2": []
@@ -463,7 +455,6 @@
 "type": "a 基本型",
 "ruletype": "a",
 "meaning": ["飾象"],
-"variants2": ["しょくしょう", "modificant "],
   "alert": {
       "a1": "※ この単語は仮置きです。正式なものではありません。",
       "a2": []
@@ -487,7 +478,6 @@
 "type": "a 基本型",
 "ruletype": "a",
 "meaning": ["動詞"],
-"variants2": ["どうし", "movicle"],
   "alert": {
       "a1": "※ この単語は仮置きです。正式なものではありません。",
       "a2": []
@@ -511,7 +501,6 @@
 "type": "a 基本型",
 "ruletype": "a",
 "meaning": ["名飾詞"],
-"variants2": ["めいしょくし", "connomant"],
   "alert": {
       "a1": "※ この単語は仮置きです。正式なものではありません。",
       "a2": []
@@ -535,7 +524,6 @@
 "type": "a 基本型",
 "ruletype": "a",
 "meaning": ["副飾詞"],
-"variants2": ["ふくしょくし", "commalacary"],
   "alert": {
       "a1": "※ この単語は仮置きです。正式なものではありません。",
       "a2": []
@@ -559,7 +547,6 @@
 "type": "a 基本型",
 "ruletype": "a",
 "meaning": ["包飾詞"],
-"variants2": ["ほうしょくし", "convelopial"],
   "alert": {
       "a1": "※ この単語は仮置きです。正式なものではありません。",
       "a2": []
@@ -583,7 +570,6 @@
 "type": "a 基本型",
 "ruletype": "a",
 "meaning": ["象然"],
-"variants2": ["しょうぜん", "malacary"],
   "alert": {
       "a1": "※ この単語は仮置きです。正式なものではありません。",
       "a2": []
