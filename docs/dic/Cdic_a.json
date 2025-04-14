@@ -1,50 +1,50 @@
 {
-  "hádui": {
-        "word": "hadui",
+  "hády": {
+        "word": "hady",
         "stem": "had",
         "tag": ["性格", "容姿"],
         "parts": "名飾",
           "type": "子音型",
           "ruletype": "c0",
         "meaning": ["かわいい", "かわいらしい", "キュートな"],
-        "pronunciation": ["/xadɨ/<br>[xadɨ]<br>‖hadï‖"],
+        "pronunciation": ["/xadʲi/<br>[xadʲi]"],
         "etymology": {
               "intro": ["単純語。", "形成の根拠は不明。"],
               "changes": []
         },
-        "variants1": ["lútui"],
-        "variants2": ["hadui", "可愛い", "可愛らしい"]
+        "variants1": ["lúty"],
+        "variants2": ["hady", "可愛い", "可愛らしい"]
     },
-  "lútui": {
-        "word": "lutui",
+  "lúty": {
+        "word": "luty",
         "stem": "lut",
         "tag": ["性格", "容姿", "食レポ"],
         "parts": "名飾",
           "type": "子音型",
           "ruletype": "c0",
         "meaning": ["甘い", "スイートな", "かわいい", "かわいらしい", "キュートな"],
-        "pronunciation": ["/lutɨ/<br>[lutɨ]<br>‖lutï‖"],
+        "pronunciation": ["/lutʲi/<br>[lutʲi]"],
         "etymology": {
               "intro": ["単純語。", "音象徴「 甘い 」から。"],
               "changes": []
         },
-        "variants1": ["hádui"],
-        "variants2": ["lutui", "可愛い", "可愛らしい", "あまい"]
+        "variants1": ["hády"],
+        "variants2": ["luty", "可愛い", "可愛らしい", "あまい"]
     },
-  "snṓlui": {
-        "word": "snōlui",
-        "stem": "snōl",
+  "snóly": {
+        "word": "snóly",
+        "stem": "snól",
         "tag": ["性格", "容姿", "食レポ"],
         "parts": "名飾",
           "type": "l 変則型",
           "ruletype": "c0",
         "meaning": ["美しい", "綺麗な", "素晴らしい","端正な", "素敵な","上手い", "よろしい", "良い", "順調な", "上出来な", "完璧な"],
-        "pronunciation": ["/snoːlɨ/<br>[snoːlɨ]<br>‖snoolï‖"],
+        "pronunciation": ["/snoːlʲi/<br>[snoːlʲi]"],
         "etymology": {
               "intro": ["単純語。", "音象徴「 美しい 」から。"],
               "changes": []
         },
-        "variants2": ["snolui","snōlui", "うつくしい", "きれいな", "すばらしい", "たんせいな", "すてきな", "うまい", "いい", "よい", "じゅんちょうな", "じょうできな", "かんぺきな"]
+        "variants2": ["snoly", "うつくしい", "きれいな", "すばらしい", "たんせいな", "すてきな", "うまい", "いい", "よい", "じゅんちょうな", "じょうできな", "かんぺきな"]
     },
   "dóy": {
         "word": "dóy",
@@ -54,23 +54,38 @@
           "type": "母音型",
           "ruletype": "c0",
         "meaning": ["大きい", "大きな", "巨大な"],
-        "pronunciation": ["/doj/<br>[doj]<br>‖doi‖"],
+        "pronunciation": ["/doj/<br>[doj]"],
         "etymology": {
               "intro": ["単純語。", "音象徴「 大きい 」から。"],
               "changes": []
         },
-        "variants2": ["doi","doy", "おおきい", "おおきな", "きょだいな", "でかい"]
+        "variants2": ["doy", "おおきい", "おおきな", "きょだいな", "でかい"]
     },
-  
-   "pávui": {
-        "word": "pávui",
+    "pnýcy": {
+      "word": "pnýcy",
+      "stem": "pnýcy",
+      "stem2": "pnycy",
+      "tag": ["性格"],
+      "parts": "名飾",
+      "type": "子音形",
+      "ruletype": "c0",
+      "meaning": ["親しい", "仲の良い", "仲良しの", "友好的な", "仲睦まじい", "フレンドリーな","親密な"],
+      "pronunciation": ["/pnʲit͡ʃʲi/<br>[pnʲit͡ʃʲi]"],
+      "etymology": {
+      "intro": ["合成語。", "「 pny-（友達）」+「 -ci（〜ような）」を組み合わせた語。"],
+      "changes": []
+    },
+      "variants2": ["pnyci", "仲のいい", "仲のよい", "したしい", "なかよしの"]
+    },
+   "pávy": {
+        "word": "pávy",
         "stem": "páv",
         "tag": ["恋愛", "感情", "性格"],
         "parts": "名飾",
           "type": "子音型",
           "ruletype": "c0",
         "meaning": ["恥ずかしい［与が］", "照れくさい［与が］", "照れた"],
-        "pronunciation": ["/pavɨ/<br>[pavɨ]<br>‖pavï‖"],
+        "pronunciation": ["/pavʲi/<br>[pavʲi]"],
         "etymology": {
               "intro": ["単純語。", "音象徴「 紅潮する 」から。", "形成から以下のように変化。"],
               "changes": [
@@ -78,40 +93,57 @@
                 { "form": "/pav-/", "note": "唇音化解除" }
               ]
         },
-        "variants2": ["pavui", "はずかしい", "てれた", "てれくさい", "(*ﾉωﾉ)"]
+        "variants2": ["pavy", "はずかしい", "てれた", "てれくさい", "(*ﾉωﾉ)"]
     },
-  "tvépui": {
-        "word": "tvépui",
-        "stem": "tvép",
+  "týpy": {
+        "word": "týpy",
+        "stem": "týp",
         "tag": ["学校"],
         "parts": "名飾",
           "type": "子音型",
           "ruletype": "c0",
         "meaning": ["正しい", "その通りである", "合っている", "きちんとした", "正常な", "直った", "まともな", "真っ当な", "順当な"],
-        "pronunciation": ["/tvepɨ/<br>[tvepɨ]<br>‖tuepï‖"],
+        "pronunciation": ["/tʲipʲi/<br>[tʲipʲi]"],
         "etymology": {
               "intro": ["単純語。", "形成の根拠は不明。", "形成から以下のように変化。"],
               "changes": [
                 { "form": "/toip-/", "note": "古形"},    
                 { "form": "/tʷep-/", "note": "唇音化" },
-                { "form": "/tvep-/", "note": "唇音化解除" }
+                { "form": "/tvep-/", "note": "唇音化解除" },
+                { "form": "/tʲip-/", "note": "狭化" }
               ]
         },
-        "variants2": ["toipui", "ただしい", "そのとおり", "あっている", "せいじょうである", "なおった", "まっとうな", "じゅんとうな", "正解である", "正解の"]
+        "variants2": ["typy", "ただしい", "そのとおり", "あっている", "せいじょうである", "なおった", "まっとうな", "じゅんとうな", "正解である", "正解の"]
     },
-    "kátui": {
-        "word": "kátui",
-        "stem": "kátui",
+    "káty": {
+        "word": "káty",
+        "stem": "káty",
         "tag": ["形", "感触", "食レポ"],
         "parts": "名飾",
           "type": "l 変則型",
           "ruletype": "c0",
         "meaning": ["固い", "硬い", "堅い", "きつい", "凝った", "強い", "こわい", "カチコチな", "カチンコチンな", "コテコテの"],
-        "pronunciation": ["/katɨ/"],
+        "pronunciation": ["/katʲi/"],
         "etymology": {
               "intro": ["単純語。", "音象徴「 硬い 」から。"],
               "changes": []
         },
-        "variants2": ["katui","snōlui"]
+        "variants2": ["katy"]
+    },
+    "pnýnia": {
+      "word": "pnýnia",
+      "stem": "pnýnia",
+      "stem2": "pnynia",
+      "tag": ["性格"],
+      "parts": "副飾",
+      "type": "子音形",
+      "ruletype": "c0",
+      "meaning": ["親しく", "仲良く", "友好的に", "仲睦まじく", "フレンドリーに","親密に"],
+      "pronunciation": ["/pnʲinʲa/<br>[pnʲinʲa]"],
+      "etymology": {
+      "intro": ["合成語。", "「 pny-（友達）」+「 -nia（〜ように）」を組み合わせた語。"],
+      "changes": []
+    },
+      "variants2": ["pnyci", "したしく", "なかよく"]
     }
   }
