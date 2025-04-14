@@ -7,7 +7,7 @@
         "type": "無声音型",
         "ruletype": "vl0",
       "meaning": ["しゃっくりをする"],
-      "pronunciation": ["/bʲip/<br>[bʲip]<br>‖byp‖"],
+      "pronunciation": ["/bʲip/<br>[bʲip]"],
       "etymology": {
           "intro": ["単純語。", "擬音語「 しゃっくりの音 」から"],
           "changes": []
@@ -22,7 +22,7 @@
         "type": "無声音型",
         "ruletype": "vl0",
       "meaning": ["学ぶ［ 対を ］", "学習する［ 対を ］", "勉強する［ 対を ］"],
-      "pronunciation": ["/daf/<br>[daf]<br>‖dof‖"],
+      "pronunciation": ["/daf/<br>[daf]"],
       "etymology": {
           "intro": ["単純語。", "形成の根拠は不明。", "形成から以下のように変化。"],
           "changes": [
@@ -40,7 +40,7 @@
         "type": "無声音型",
         "ruletype": "vl0",
       "meaning": ["（足を）踏み下ろす［ 対を ］", "（地面などを）踏みつける［ 対を ］", "踏みつぶす［ 対を ］", "踏み鳴らす［ 対を ］", "足踏みをする", "足を踏み鳴らして歩く［ 副を ］"],
-      "pronunciation": ["/dof/<br>[dof]<br>‖dof‖"],
+      "pronunciation": ["/dof/<br>[dof]"],
       "etymology": {
           "intro": ["単純語。", "擬音語「 足を踏み鳴らして歩く 」から。"],
           "changes": []
@@ -55,7 +55,7 @@
         "type": "無声音型",
         "ruletype": "vl0",
       "meaning": ["含む［ 対を ］", "包含する［ 対を ］", "内包する［ 対を ］", "包括する［ 対を ］", "兼ねる［ 対を ］"],
-      "pronunciation": ["/gop/<br>[gop]<br>‖gop‖"],
+      "pronunciation": ["/gop/<br>[gop]"],
       "etymology": {
           "intro": ["単純語。", "擬音語「 ものを含む音 」から。"],
           "changes": []
@@ -71,7 +71,7 @@
         "ruletype": "vl0",
       "meaning": ["入れる［ 対を ］［ 副に ］", "入る［ 副に ］",  "入場する［ 副に ］","ログインする［ 副に ］"],
       "vulgarMeaning": ["性交する［ 対を ］", "セックスする［ 対を ］", "犯す［ 対を ］"],
-      "pronunciation": ["/nup/<br>[nʊp]<br>‖nup‖"],
+      "pronunciation": ["/nup/<br>[nʊp]"],
       "etymology": {
           "intro": ["単純語。", "音象徴「 入れる 」から。"],
           "changes": []
@@ -86,7 +86,7 @@
         "type": "無声音型",
         "ruletype": "vl0",
       "meaning": ["話す［ 対を ］", "言う［ 対を ］［ 与に ］", "喋る［ 対について ］"],
-      "pronunciation": ["/prat/<br>[pɾat]<br>‖prat‖"],
+      "pronunciation": ["/prat/<br>[pɾat]"],
       "etymology": {
           "intro": ["単純語。", "音象徴「 話す 」から"],
           "changes": []
@@ -102,15 +102,21 @@
         "type": "無声音型",
         "ruletype": "vl0",
       "meaning": ["跳ぶ［ 対を ］","跳ねる［ 対を ］", "ジャンプする［ 対を ］", "言う［ 対を / と ］［ 与に ］", "発言する［ 対を / と ］"],
-      "pronunciation":["/pʲaɾp/<br>[pʲaɾp]<br>‖piorp‖"],
+      "pronunciation":["/pʲaɾp/<br>[pʲaɾp]"],
       "etymology": {
           "intro": ["合成語。", "「 跳ねる 」から", "形成から以下のように変化。"],
           "changes": [
             { "form": "/pʲaɾt/　"},
-            { "form": "/pʲaɾp/　", "note": "巻音唇化"},
+            { "form": "/pʲaɾp/　", "note": "巻音唇化"}
           ]
         },
-        "variants1": ["prát"],
+        "alert": {
+      "a1": "※ この単語は現在使われていません。以下を使用してください。",
+      "a2": [
+        { "word": "erbal" }
+      ]
+    },
+      "variants1": ["prát"],
       "variants2": ["piart", "とぶ", "はねる", "はなす", "いう", "ゆう", "しゃべる", "しゃべる"]
     },
      "piósxie": {
@@ -121,7 +127,7 @@
         "type": "無声音型",
         "ruletype": "vl0",
       "meaning": ["跳ぶ［ 対を ］","跳ねる［ 対を ］", "ジャンプする［ 対を ］"],
-      "pronunciation":["/pʲoʃʲːɛ/<br>[pʲoʃʲːɛ]<br>‖piosxie‖"],
+      "pronunciation":["/pʲoʃʲːɛ/<br>[pʲoʃʲːɛ]"],
       "etymology": {
           "intro": ["合成語。", "「 pio-（ うさぎ ）」+「 -xie（ 〜する ）」から"],
           "changes": []
@@ -137,15 +143,14 @@
         "type": "無声音型",
         "ruletype": "vl0",
       "meaning": ["寝る","眠る", "床につく", "入眠する", "就寝する"],
-      "pronunciation":["/fʲiʃʲːɛ/<br>[fʲiʃʲːɛ]<br>‖fixie‖"],
+      "pronunciation":["/fʲiʃʲːɛ/<br>[fʲiʃʲːɛ]"],
       "etymology": {
           "intro": ["合成語。", "「 fyx-（ 眠る ）」+「 -xie（ 〜する ）」から"],
           "changes": []
         },
-        "variants1": ["spýx"],
       "variants2": ["fyxie", "ねる", "ねむる", "にゅうみんする", "しゅうしんする", "床に就く", "宿る"]
     },
-        "spýx": {
+    "spýx": {
       "word": "spýx",
       "stem": "spýx",
       "tag": ["習慣", "身体現象", "身体動作", "ペット"],
@@ -153,11 +158,17 @@
         "type": "無声音型",
         "ruletype": "vl0",
       "meaning": ["寝る","眠る", "床につく", "入眠する", "就寝する"],
-      "pronunciation":["/fʲiʃʲːɛ/<br>[fʲiʃʲːɛ]<br>‖fixie‖"],
+      "pronunciation":["/spʲiʂ/<br>[spʲiʂ]"],
       "etymology": {
-          "intro": ["合成語。", "「 fyx-（ 眠る ）」+「 -xie（ 〜する ）」から"],
+          "intro": ["単純語。", "擬音語「 眠る 」から"],
           "changes": []
         },
+        "alert": {
+      "a1": "※ この単語は現在使われていません。以下を使用してください。",
+      "a2": [
+        { "word": "fýxie" }
+      ]
+    },
         "variants1": ["spýx"],
       "variants2": ["fyxie", "ねる", "ねむる", "にゅうみんする", "しゅうしんする", "床に就く", "宿る"]
     },
@@ -169,7 +180,7 @@
         "type": "無声音型",
         "ruletype": "vl0",
       "meaning": ["撫でる［ 対を ］", "愛撫する ［ 対を ］"],
-      "pronunciation":["/saf/<br>[saf]<br>‖saf‖"],
+      "pronunciation":["/saf/<br>[saf]"],
       "etymology": {
           "intro": ["単純語。", "音象徴「 優しく撫でる 」から"],
           "changes": []
@@ -183,7 +194,7 @@
         "type": "無声音型",
         "ruletype": "vl0",
       "meaning": ["名付ける［ 与を　］", "命名する［ 与に　］ ［　対を ］"],
-      "pronunciation":["/saf/<br>[saf]<br>‖saf‖"],
+      "pronunciation":["/nʲiʃʲːɛ/<br>[nʲiʃʲːɛ]"],
       "etymology": {
           "intro": ["単純語。", "音象徴「 優しく撫でる 」から"],
           "changes": []
@@ -198,7 +209,7 @@
         "type": "無声音型",
         "ruletype": "vl0",
       "meaning": ["抱く［ 対を ］", "抱きしめる［ 対を ］", "ハグする［ 対を ］", "抱擁する［ 対を ］"],
-      "pronunciation": ["/yut/<br>[yʊt]<br>‖yut‖"],
+      "pronunciation": ["/yut/<br>[yʊt]"],
       "etymology": {
           "intro": ["単純語。", "音象徴「 抱きしめる 」から"],
           "changes": []
