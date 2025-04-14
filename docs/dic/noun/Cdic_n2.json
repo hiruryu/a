@@ -11,7 +11,7 @@
       "type": "f 軟音化型（部分不規則）",
       "ruletype": "fha",
     "meaning": ["猫", "ネコ"],
-    "pronunciation": ["/nʲafa/<br>[nʲäfə]<br>‖niafa‖"],
+    "pronunciation": ["/nʲafa/<br>[nʲæfə]"],
     "etymology": {
   "intro": ["単純語。", "擬音語「 猫の鳴き声 」から。"],
   "changes": []
@@ -30,7 +30,7 @@
       "type": "双数Ⅱ型（部分不規則）",
       "ruletype": "ad",
     "meaning": ["耳"],
-    "pronunciation": ["/naʂ/<br>[näʂ]<br>‖naš‖"],
+    "pronunciation": ["/naʂ/<br>[naʂ]"],
      "etymology": {
   "intro": ["単純語。", "形成の根拠は不明。"],
   "changes": []
@@ -47,7 +47,7 @@
   "type": "a 基本型",
   "ruletype": "a",
   "meaning": ["言語", "言葉"],
-  "pronunciation": ["/lɯfa/<br>[lufə]<br>‖lɯpa‖"],
+  "pronunciation": ["/lɯfa/<br>[lɯfə]"],
   "etymology": {
   "intro": ["単純語。", "音象徴「 喋る 」から？", "「 prat 」と同印象？", "形成から以下のように変化。" ],
   "changes": [
@@ -72,6 +72,7 @@
     },
 "vari": ["petnosciuk"],
 "note2": {
+  "title": ["《 付称辞「<sub>ふ</sub><sup>しょう</sup><sub>じ - ガ</sub>」 》 / <small>?</small>"],
   "txt": ["<span>接辞の一つで、象について関係性や丁寧さを変化させるもの。</span>","素体となっている象に合わせた活用を行う。<br><table border='1'><th><h3>使い方</h3></th><th><h3>例（ 日本語訳 ）</h3></th><tr><td><h4>名象-付称辞</h4></td><td>prāxa + nos<small><sup>（ 敬称を作る ）</sup></small> = <span>prāxnos</span><br><small>（ プラーシャさん ）</small></td></tr><tr><td><h4>動象-付称辞</h4></td><td>dof + nos = <span>dofnos</span><br><small>（ 走ります ）<small></td></tr><tr><td><h4>飾象-付称辞</h4></td><td>snolui + nos = <span>snonnosui</span><br><small>（ お美しい ）<small></td></tr></table>"]
 },
 "jpnote": ["日本語では，名詞には「 御～ 」，動詞には「 ～します 」，形容詞・副詞には「 お～ 」などを使って敬語を作る。", "「 お / ご ～ なる 」などは ⇒ <h5>付称包辞</h5> を参照。"],
@@ -87,6 +88,7 @@
 "ruletype": "kha",
 "meaning": ["付称包辞"],
 "note2": {
+  "title": ["《 付称包辞「<sub>ふ</sub><sup>しょうほう</sup><sub>じ - ガ</sub>」 》 / <small>?</small>"],
   "txt": ["⇒ <h5>付称辞</h5> の中でも，包辞的性質を持つもの。"]
 },
 "jpnote": ["日本語では，「 お / ご ～ なる 」などが該当する。", "「 待つ 」 → 「 お待ちになる 」など。"],
@@ -105,7 +107,7 @@
 "type": "t 複子音軟音化型",
 "ruletype": "tha",
 "meaning": ["うさぎ", "兎", "（干支の）卯"],
-"pronunciation": ["/pʲasta/<br>[pʲästə]<br>‖pʲosta‖"],
+"pronunciation": ["/pʲasta/<br>[pʲæstə]"],
 "variants1": ["fhṓma"],
 "variants2": ["piasta", "piosta", "ウサギ", "十二支"],
   "etymology": {
@@ -125,7 +127,7 @@
         "type": "a 複子音軟音化型",
         "ruletype": "kha",
       "meaning": ["花", "華"],
-      "pronunciation": ["/pɾaska/<br>[pɾäskə]<br>‖praska‖"],
+      "pronunciation": ["/pɾaska/<br>[pɾaskə]"],
       "etymology": {
             "intro": ["単純語。", "音象徴「 春の花 」から。"],
             "changes": []
@@ -142,7 +144,7 @@
 "type": "a 複子音軟音化型",
 "ruletype": "fha",
 "meaning": ["雨", "雨粒", "雫", "（部首）<ruby>雨<rp>(</rp><rt>あめ</rt><rp>)</rp></ruby>"],
-"pronunciation": ["/zaf/<br>[zəf]<br>‖zaf‖"],
+"pronunciation": ["/zaf/<br>[zəf]"],
 "variants2": ["zaf", "あめ", "あまつぶ", "しずく"],
   "etymology": {
   "intro": ["単純語。", "日本語「 ザーザー 」と同印象。", "形成から以下のように変化。" ],
@@ -162,7 +164,7 @@
 "type": "n 軟音化型",
 "ruletype": "nha",
 "meaning": ["トキポナ"],
-"pronunciation": ["/takʲpanʲa/<br>[täkʲpänʲə]<br>‖tokipona‖"],
+"pronunciation": ["/takʲpanʲa/<br>[takʲpanʲə]"],
 "variants2": ["ときぽな", "Takipania", "Tokiponia", "Tokipona", "tokipona", "Toki pona", "Toki Pona"],
   "etymology": {
   "intro": ["借用語。", "トキポナの「 Toki Pona 」が訛ったもの。"],
@@ -179,13 +181,350 @@
 "type": "a 基本型",
 "ruletype": "tha",
 "meaning": ["人格性"],
-"variants2": ["askesta","じんかくせい"],
+"variants2": ["askesta","じんかくせい", "Personality"],
   "alert": {
       "a1": "※ この単語は仮置きです。正式なものではありません。",
       "a2": []
     },
 "note2":{
+  "title": ["《 人格性「<sup>じんかくせい - ガ</sup>」 》 / <small>personality</small>"],
   "txt":  ["<span>文法カテゴリーの一種で，対象が持つ自律的な意思や感情，判断力といった主体性の度合いを示す性質をいう。</span>", "人格性が高い対象は，行為者としての意図や情緒的な反応が認められ，言語表現において特定の敬意表現や主体的な構文が採用される傾向にある。", "一方，人格性が低い対象は，単なる事実や物質として扱われ，動作の主体性が限定的に捉えられる。"]
+}
+},
+"▱kari": {
+"word": "kari",
+"stem": "kar",
+"stem2": "kar",
+"tag": ["智語用語"],
+"parts": "名象",
+"rule": "単性",
+"type": "a 基本型",
+"ruletype": "a",
+"meaning": ["原数"],
+"variants2": ["げんすう", "Base Number"],
+  "alert": {
+      "a1": "※ この単語は仮置きです。正式なものではありません。",
+      "a2": []
+    },
+"etymology": {
+  "intro": ["合成語。", "「（基本形）」+「（数）」が組み合わさった単語。"],
+  "changes": []
+},
+"note2":{
+  "title": ["《 原数「<sub>げ</sub><sup>んす</sup><sub>う - ガ</sub>」 》 / <small>base numberality</small>"],
+  "txt":  ["<span>語彙素が本来持つ数的な基本形。</span>"]
+}
+},
+"▱kari2": {
+"word": "kari",
+"stem": "kar",
+"stem2": "kar",
+"tag": ["智語用語"],
+"parts": "名象",
+"rule": "単性",
+"type": "a 基本型",
+"ruletype": "a",
+"meaning": ["原数性"],
+"variants2": ["げんすうせい", "Base Numberality"],
+  "alert": {
+      "a1": "※ この単語は仮置きです。正式なものではありません。",
+      "a2": []
+    },
+"etymology": {
+  "intro": ["合成語。", "「（ 原数 ）」+「（ ～性の ）」が組み合わさった単語。"],
+  "changes": []
+},
+"note2":{
+  "title": ["《 原数性「<sub>げ</sub><sup>んすうせい - ガ</sup>」 》 / <small>base numberality</small>"],
+  "txt":  ["<span>文法カテゴリーの一種で，語彙素が本来備える数的性質をいう。</span>"]
+}
+},
+"▱kari3": {
+"word": "kari",
+"stem": "kar",
+"stem2": "kar",
+"tag": ["智語用語"],
+"parts": "名象",
+"rule": "単性",
+"type": "a 基本型",
+"ruletype": "a",
+"meaning": ["示双形"],
+"variants2": ["しそうけい", "Demonstrative Dual Form"],
+  "alert": {
+      "a1": "※ この単語は仮置きです。正式なものではありません。",
+      "a2": []
+    },
+"etymology": {
+  "intro": ["合成語。", "「（2）」+「（指す）」が組み合わさった単語。"],
+  "changes": []
+},
+"note2":{
+  "title": ["《 示双形「<sub>し</sub><sup>そうけい - ガ</sup>」 》 / <small>demonstrative dual form</small>"],
+  "txt":  ["<span>「 2つであること 」を強調したいときに用いる形。</span>", "単性名象を双数形にすることで表される。"]
+}
+},
+"▱kari4": {
+"word": "kari",
+"stem": "kar",
+"stem2": "kar",
+"tag": ["智語用語"],
+"parts": "名象",
+"rule": "単性",
+"type": "a 基本型",
+"ruletype": "a",
+"meaning": ["一数形"],
+"variants2": ["いっすうけい", "singulative mode"],
+  "alert": {
+      "a1": "※ この単語は仮置きです。正式なものではありません。",
+      "a2": []
+    },
+"etymology": {
+  "intro": ["合成語。", "「（ 1 ）」+「（ 形 ）」が組み合わさった単語。"],
+  "changes": []
+},
+"note2":{
+  "title": ["《 原数性「<sub>げ</sub><sup>んすうせい - ガ</sup>」 》 / <small>base numberality</small>"],
+  "txt":  ["<span>その対象の最小単位にして明確に区別できる一つの形。</span>"]
+}
+},
+"▱kari6": {
+"word": "kari",
+"stem": "kar",
+"stem2": "kar",
+"tag": ["智語用語"],
+"parts": "名象",
+"rule": "単性",
+"type": "a 基本型",
+"ruletype": "a",
+"meaning": ["単性名象"],
+"variants2": ["たんせいめいしょう", "Singular-numeral nouns"],
+  "alert": {
+      "a1": "※ この単語は仮置きです。正式なものではありません。",
+      "a2": []
+    },
+"etymology": {
+  "intro": ["合成語。", "｢（単数）」+「（名象）」が組み合わさった単語。"],
+  "changes": []
+},
+"note2":{
+  "title": ["《 単性名象「<sub>た</sub><sup>んせいめ</sup><sub>いしょう - ガ</sub>」 》 / <small>singular-numeral nouns</small>"],
+  "txt":  ["<span>語彙素が本来持つ数的な基本形が、単数形の名象。</span>", "2つ以上の数は複数形で表し，双数形は「 示双形 」となる。（⇒ 詳しくは <h5>示双形</h5> を参照。）"]
+}
+},
+"▱kari7": {
+"word": "kari",
+"stem": "kar",
+"stem2": "kar",
+"tag": ["智語用語"],
+"parts": "名象",
+"rule": "単性",
+"type": "a 基本型",
+"ruletype": "a",
+"meaning": ["双性名象"],
+"variants2": ["そうせいめいしょう", "Dual-numeral nouns"],
+  "alert": {
+      "a1": "※ この単語は仮置きです。正式なものではありません。",
+      "a2": []
+    },
+"etymology": {
+  "intro": ["合成語。", "｢（双数）」+「（名象）」が組み合わさった単語。"],
+  "changes": []
+},
+"note2":{
+  "title": ["《 双性名象「<sub>そ</sub><sup>うせいめ</sup><sub>いしょう - ガ</sub>」 》 / <small>dual-numeral nouns</small>"],
+  "txt":  ["<span>語彙素が本来持つ数的な基本形が、双数形の名象。</span>", "複数形にすると「 ペアが2つ以上あること 」を表す。", "単数形は「 片数形 」となる。（⇒ 詳しくは <h5>片数形</h5> を参照。）"]
+}
+},
+"▱k": {
+"word": "kari",
+"stem": "kar",
+"stem2": "kar",
+"tag": ["智語用語"],
+"parts": "名象",
+"rule": "単性",
+"type": "a 基本型",
+"ruletype": "a",
+"meaning": ["名象"],
+"variants2": ["めいしょう", "nomant"],
+  "alert": {
+      "a1": "※ この単語は仮置きです。正式なものではありません。",
+      "a2": []
+    },
+"etymology": {
+  "intro": ["合成語。", "「（姿）」+「（～的な）」が組み合わさった単語。"],
+  "changes": []
+},
+"note2":{
+  "title": ["《 名象「<sub>め</sub><sup>いしょう - ガ</sup>」 》 / <small>nomant</small>"],
+  "txt":  ["<span>象の一つで，格を持ちうるもの。</span>"]
+}
+},
+"▱k2": {
+"word": "kari",
+"stem": "kar",
+"stem2": "kar",
+"tag": ["智語用語"],
+"parts": "名象",
+"rule": "単性",
+"type": "a 基本型",
+"ruletype": "a",
+"meaning": ["動象"],
+"variants2": ["どうしょう", "movant"],
+  "alert": {
+      "a1": "※ この単語は仮置きです。正式なものではありません。",
+      "a2": []
+    },
+"etymology": {
+  "intro": ["合成語。", "「（動く）」+「（～的な）」が組み合わさった単語。"],
+  "changes": []
+},
+"note2":{
+  "title": ["《 動象「<sub>ど</sub><sup>うしょう - ガ</sup>」 》 / <small>movant</small>"],
+  "txt":  ["<span>象の一つで，格を持ちえず，動詞になりうるもの。</span>"]
+}
+},
+"▱k3": {
+"word": "kari",
+"stem": "kar",
+"stem2": "kar",
+"tag": ["智語用語"],
+"parts": "名象",
+"rule": "単性",
+"type": "a 基本型",
+"ruletype": "a",
+"meaning": ["飾象"],
+"variants2": ["しょくしょう", "modificant "],
+  "alert": {
+      "a1": "※ この単語は仮置きです。正式なものではありません。",
+      "a2": []
+    },
+"etymology": {
+  "intro": ["合成語。", "「」+「」が組み合わさった単語。"],
+  "changes": []
+},
+"note2":{
+  "title": ["《 飾象「<sub>しょ</sub><sup>くしょう - ガ</sup>」 》 / <small>modificant </small>"],
+  "txt":  ["<span>象の一つで，格を持ちえず，動詞にもなれないが，他の要素（本辞や文）を修飾しうるもの。</span>"]
+}
+},
+"▱k4": {
+"word": "kari",
+"stem": "kar",
+"stem2": "kar",
+"tag": ["智語用語"],
+"parts": "名象",
+"rule": "単性",
+"type": "a 基本型",
+"ruletype": "a",
+"meaning": ["動詞"],
+"variants2": ["どうし", "movicle"],
+  "alert": {
+      "a1": "※ この単語は仮置きです。正式なものではありません。",
+      "a2": []
+    },
+"etymology": {
+  "intro": ["合成語。", "「」+「」が組み合わさった単語。"],
+  "changes": []
+},
+"note2":{
+  "title": ["《 動詞「<sub>ど</sub><sup>うし - ガ</sup>」 》 / <small>movicle</small>"],
+  "txt":  ["<span>詞の一つで，文を成すのに不可欠な詞。</span>述語とほぼ同じ概念である。", "言い換えれば，単独で文を構成でき，動詞がなければ文は成り立たない。"]
+}
+},
+"▱k5": {
+"word": "kari",
+"stem": "kar",
+"stem2": "kar",
+"tag": ["智語用語"],
+"parts": "名象",
+"rule": "単性",
+"type": "a 基本型",
+"ruletype": "a",
+"meaning": ["名飾詞"],
+"variants2": ["めいしょくし", "connomant"],
+  "alert": {
+      "a1": "※ この単語は仮置きです。正式なものではありません。",
+      "a2": []
+    },
+"etymology": {
+  "intro": ["合成語。", "「」+「」が組み合わさった単語。"],
+  "changes": []
+},
+"note2":{
+  "title": ["《 名飾詞「<sub>め</sub><sup>いしょ</sup><sub>く - ガ</sub>」 》 / <small>connomant</small>"],
+  "txt":  ["<span>詞の一つで，名象を修飾する詞。</span>"]
+}
+},
+"▱k6": {
+"word": "kari",
+"stem": "kar",
+"stem2": "kar",
+"tag": ["智語用語"],
+"parts": "名象",
+"rule": "単性",
+"type": "a 基本型",
+"ruletype": "a",
+"meaning": ["副飾詞"],
+"variants2": ["ふくしょくし", "commalacary"],
+  "alert": {
+      "a1": "※ この単語は仮置きです。正式なものではありません。",
+      "a2": []
+    },
+"etymology": {
+  "intro": ["合成語。", "｢」+「」が組み合わさった単語。"],
+  "changes": []
+},
+"note2":{
+  "title": ["《 副飾詞「<sub>ふ</sub><sup>くしょ</sup><sub>く - ガ</sub>」 》 / <small>commalacary</small>"],
+  "txt":  ["<span>詞の一つで，象然（ = 名象以外 = 動象・飾象 ）を修飾する詞｡</span>"]
+}
+},
+"▱k7": {
+"word": "kari",
+"stem": "kar",
+"stem2": "kar",
+"tag": ["智語用語"],
+"parts": "名象",
+"rule": "単性",
+"type": "a 基本型",
+"ruletype": "a",
+"meaning": ["包飾詞"],
+"variants2": ["ほうしょくし", "convelopial"],
+  "alert": {
+      "a1": "※ この単語は仮置きです。正式なものではありません。",
+      "a2": []
+    },
+"etymology": {
+  "intro": ["合成語。", "｢」+「」が組み合わさった単語。"],
+  "changes": []
+},
+"note2":{
+  "title": ["《 包飾詞「<sub>ほ</sub><sup>うしょ</sup><sub>く - ガ</sub>」 》 / <small>convelopial</small>"],
+  "txt":  ["<span>詞の一つで，包子（ = 動詞束 ）を修飾する詞。</span>", "言い換えると，文全体にかかるもの。"]
+}
+},
+"▱k8": {
+"word": "kari",
+"stem": "kar",
+"stem2": "kar",
+"tag": ["智語用語"],
+"parts": "名象",
+"rule": "単性",
+"type": "a 基本型",
+"ruletype": "a",
+"meaning": ["象然"],
+"variants2": ["しょうぜん", "malacary"],
+  "alert": {
+      "a1": "※ この単語は仮置きです。正式なものではありません。",
+      "a2": []
+    },
+"etymology": {
+  "intro": ["合成語。", "｢」+「」が組み合わさった単語。"],
+  "changes": []
+},
+"note2":{
+  "title": ["《 象然「<sub>しょ</sub><sup>うぜん - ガ</sup>」 》 / <small>malacary</small>"],
+  "txt":  ["<span>名象以外の象（ 動象・飾象 ）の総称。</span>"]
 }
 }
 }
