@@ -11,7 +11,7 @@
       "type": "k 基本型（部分不規則）",
       "ruletype": "kha",
     "meaning": ["（ 人格性の低い ）生物", "動物", "生き物", "動物", "獣", "けもの", "けだもの","アスク"],
-    "pronunciation": ["/ask/<br>[əsk]<br>‖ask‖"],
+    "pronunciation": ["/ask/<br>[əsk]"],
     "etymology": ["単純語。", "形成の根拠は不明。"],
     "variants2": ["ask"],
     "note2": ["生物の分類の中で，特に人格性が低いもの。","詳しくは ⇒ <h5>人格性</h5> を参照。"]
@@ -28,7 +28,7 @@
       "type": "m 基本型",
       "ruletype": "ha",
     "meaning": ["（ 人格性の高い ）生物", "動物", "生き物", "知的生命体","エルマ"],
-    "pronunciation": ["/elʲs/<br>[əlʲs]<br>‖elis‖"],
+    "pronunciation": ["/elʲs/<br>[əlʲs]"],
     "etymology": ["単純語。", "形成の根拠は不明。"],
     "variants2": ["erma", "エルマ"],
     "note2": ["生物の分類の中で，特に人格性が高いもの。","人間などもここに含まれる。","詳しくは ⇒ <h5>人格性</h5> を参照。"]
@@ -42,7 +42,7 @@
     "type": "z 基本型",
     "ruletype": "a",
   "meaning": ["クジラ", "鯨"],
-  "pronunciation": ["/boiz/<br>[bo̞js]<br>‖boiz‖"],
+  "pronunciation": ["/boiz/<br>[bo̞js]"],
     "etymology": {
       "intro": ["単純語。", "音象徴「 クジラ 」から。", "形成から以下のように変化。"],
       "changes": [
@@ -62,7 +62,7 @@
     "type": "fi 基本型",
     "ruletype": "fha",
   "meaning": ["リス"],
-  "pronunciation": ["/ʈ͡ʂɨfʲa/<br>[ʈ͡ʂɨfʲə]<br>‖čïfia‖"],
+  "pronunciation": ["/t͡ʃʲifʲa/<br>[t͡ʃʲifʲə]"],
   "etymology": {
       "intro": ["単純語。", "擬音語「 リスの鳴き声 」から。", "形成から以下のように変化。"],
       "changes": [
@@ -86,7 +86,7 @@
       "type": "n 基本型（ 部分不規則 ）",
       "ruletype": "nha",
     "meaning": ["カモメ"],
-    "pronunciation": ["/xlɨna/<br>[xlɨnə]<br>‖hlïna‖"],
+    "pronunciation": ["/xlɨna/<br>[xlɨnə]"],
     "etymology": ["単純語。", "形成の根拠は不明。"],
     "variants2": ["hluina"]
   },
@@ -102,7 +102,7 @@
       "type": "n 基本型（ 部分不規則 ）",
       "ruletype": "nha",
     "meaning": ["ウミネコ"],
-    "pronunciation": ["/xlɨna/<br>[xlɨnə]<br>‖hlïna‖"],
+    "pronunciation": ["/nʲaxlɨna/<br>[nʲaxlɨnə]"],
     "etymology": ["合成語。", "「 nia-（ 猫 ）」+「 chluina（ カモメ ）」が組み合わさった単語。"],
     "variants2": ["hluina"]
   },
@@ -117,7 +117,7 @@
       "type": "n 複子音型",
       "ruletype": "nha",
     "meaning": ["シャチ", "しゃち"],
-    "pronunciation": ["/dapna/<br>[däpnə]<br>‖dapna‖"],
+    "pronunciation": ["/dapna/<br>[däpnə]"],
     "etymology": {
   "intro": ["単純語。", "音象徴「 シャチ 」から。"],
   "changes": [
@@ -138,7 +138,7 @@
     "type": "k 複子音型",
     "ruletype": "kha",
   "meaning": ["机", "デスク", "テーブル"],
-  "pronunciation": ["/jetka/<br>[jetkə]<br>‖jetka‖"],
+  "pronunciation": ["/jetka/<br>[jetkə]"],
   "etymology": {
   "intro": ["単純語。", "夢の中で見た単語「 étiko（ テーブル ）」から。","形成から以下のように変化。"],
   "changes": [
@@ -160,7 +160,7 @@
     "type": "k 基本型",
     "ruletype": "kha",
   "meaning": ["鳥", "トリ"],
-  "pronunciation": ["/faska/<br>[fäskə]<br>‖faska‖"],
+  "pronunciation": ["/faska/<br>[fäskə]"],
   "etymology": ["単純語", "音象徴「 鳥がはばたく音 」から。"],
   "variants2": ["faska", "ファスカ", "とり"]
 },
@@ -176,7 +176,7 @@
       "type": "m 基本型（部分不規則）",
       "ruletype": "ha",
     "meaning": ["（ ロップイヤーの ）うさぎ, 兎"],
-    "pronunciation": ["/woma/<br>[womə]<br>‖woma‖"],
+    "pronunciation": ["/woma/<br>[womə]"],
     "vari": ["fkṓma<br>fcṓma"],
   "variants1": ["piásta"],
     "variants2": ["woma", "fhoma", "たれ耳うさぎ", "垂れ耳うさぎ", "ロップイヤー", "ロップイヤーラビット"],
@@ -199,7 +199,7 @@
   "type": "lo 変則型",
   "ruletype": "lo",
   "meaning": ["オコジョ"],
-  "pronunciation": ["/fʂalo/<br>[fʂalə]<br>‖fšalo‖"],
+  "pronunciation": ["/fʂalo/<br>[fʂalə]"],
   "etymology": {
   "intro": ["単純語。", "音象徴「 モフモフの白い細長い動物 」から。"],
   "changes": []
@@ -218,7 +218,7 @@
   "type": "a 基本型",
   "ruletype": "kha",
   "meaning": ["ムシ", "虫"],
-  "pronunciation": ["/gʲiʂka/<br>[gʲiʂka]<br>‖gyška‖"],
+  "pronunciation": ["/gʲiʂka/<br>[gʲiʂka]"],
   "etymology": {
   "intro": ["単純語。", "音象徴「 不快な 」から。"],
   "changes": []
@@ -235,7 +235,7 @@
   "type": "f 基本型",
   "ruletype": "fha",
   "meaning": ["（昼間の）空", "青空", "天空", "天気", "空模様", "天国", "天界"],
-  "pronunciation": ["/xafa/<br>[xäfə]<br>‖hafa‖"],
+  "pronunciation": ["/xafa/<br>[xäfə]"],
   "variants2": ["hafa","そら", "あおぞら", "てんくう", "てんき", "そらもよう", "てんごく", "てんかい"]
 },
 "luip": {
@@ -248,8 +248,7 @@
   "type": "p 基本型",
   "ruletype": "ha",
   "meaning": ["りんご", "リンゴ"],
-  "pronunciation": ["/lɨp/<br>[lɨp]<br>‖lïp‖"],
-  "variants1": ["píp"],
+  "pronunciation": ["/lɨp/<br>[lɨp]"],
   "variants2": ["luip","アップル, apple"]
 },
   "lů́po": {
@@ -261,7 +260,7 @@
   "type": "p 基本型",
   "ruletype": "ha",
   "meaning": ["ぶどう", "ブドウ", "葡萄"],
-  "pronunciation": ["/lupa/<br>[lupə]<br>‖lupa‖"],
+  "pronunciation": ["/lupa/<br>[lupə]"],
   "etymology": {
   "intro": ["単純語。", "音象徴「 紫の甘い丸いもの 」から"],
   "changes": []
@@ -277,7 +276,7 @@
   "type": "t 複子音型",
   "ruletype": "tha",
   "meaning": ["砂糖", "シュガー"],
-  "pronunciation": ["/lukatː/<br>[lukɑtː]<br>‖lukott‖"],
+  "pronunciation": ["/lukatː/<br>[lukɑtː]"],
   "etymology": {
   "intro": ["借用語。", "古トシュカ語「lukotto（ 金平糖 ）」から", "形成から以下のように変化。"],
   "changes": [
@@ -298,7 +297,7 @@
   "type": "a 基本形",
   "ruletype": "ha",
   "meaning": ["みゅるくるー", "ひるりゅー", "智語の制作者"],
-  "pronunciation": ["/mʲɯlɯklɯf/<br>[mʲɯlɯklɯf]<br>‖mʲɯlɯklɯf‖"],
+  "pronunciation": ["/mʲɯlɯklɯf/<br>[mʲɯlɯklɯf]"],
   "etymology": {
   "intro": ["合成語。", "古智語「 Miul（ 竜 ）+ klout（ 昼 ）」から。"],
   "changes": []
@@ -315,7 +314,7 @@
       "type": "k 基本型",
       "ruletype": "kha",
     "meaning": ["ナメクジ", "蛞蝓"],
-    "pronunciation": ["/nʲːak/<br>[nʲːæk]<br>‖nniak‖"],
+    "pronunciation": ["/nʲːak/<br>[nʲːæk]"],
     "etymology": {
   "intro": ["単純語。", "音象徴「 湿っている 」から。", "「 nniev（ 官能的な ）」「 bnia（ ナマズ ）」などと同印象"],
   "changes": []
@@ -332,7 +331,7 @@
   "type": "m 基本形",
   "ruletype": "ha",
   "meaning": ["友達", "友人", "フレンド"],
-  "pronunciation": ["/pnʲiɾma/<br>[pnʲiɾmə]<br>‖pnyrma‖"],
+  "pronunciation": ["/pnʲiɾma/<br>[pnʲiɾmə]"],
   "etymology": {
   "intro": ["合成語。", "「 pny-（友達）」+「 -rma（〜のerma）」を組み合わせた語。"],
   "changes": []
@@ -349,7 +348,7 @@
   "type": "k 基本形",
   "ruletype": "ka",
   "meaning": ["愛獣", "信頼し合っているペット"],
-  "pronunciation": ["/pnʲiŋk/<br>[pnʲiŋk]<br>‖pnyŋk‖"],
+  "pronunciation": ["/pnʲiŋk/<br>[pnʲiŋk]"],
   "etymology": {
   "intro": ["合成語。", "「 pny-（ 友達 ）」+「 -qk（ 〜のask ）」を組み合わせた語。"],
   "changes": []
@@ -367,7 +366,7 @@
   "type": "l 基本形",
   "ruletype": "a",
   "meaning": ["群れ", "群"],
-  "pronunciation": ["/dal/<br>[dal]<br>‖dal‖"],
+  "pronunciation": ["/dal/<br>[dal]"],
   "etymology": {
   "intro": ["単純語。", "古智語「 fedol（ 群れ ）」から。", "形成から以下のように変化。"],
   "changes": [
@@ -397,7 +396,7 @@
   "type": "l 基本形",
   "ruletype": "a",
   "meaning": ["群れ", "群", "（ 分類学 ）群"],
-  "pronunciation": ["/eɾbal/<br>[eɾbal]<br>‖erbal‖"],
+  "pronunciation": ["/eɾbal/<br>[eɾbal]"],
   "etymology": {
   "intro": ["合成語。", "「 er-（ erma ）」+「 -dal（ 群れ ）」から。"],
   "changes": []
@@ -413,7 +412,7 @@
   "type": "r 基本形",
   "ruletype": "a",
   "meaning": ["睡眠", "眠り"],
-  "pronunciation": ["/fʲiʃʲaɾ/<br>[fʲiʃʲaɾ]<br>‖fyxiar‖"],
+  "pronunciation": ["/fʲiʃʲaɾ/<br>[fʲiʃʲaɾ]"],
   "etymology": {
   "intro": ["合成語。", "「 fyx-（ 眠る ）」+「 -iar（〜こと）」から。"],
   "changes": []
@@ -429,7 +428,7 @@
   "type": "ci 基本形",
   "ruletype": "a",
   "meaning": ["名前", "名称"],
-  "pronunciation": ["/nʲit͡ʃʲ/<br>[nʲit͡ʃʲ]<br>‖nyči‖"],
+  "pronunciation": ["/nʲit͡ʃʲ/<br>[nʲit͡ʃʲ]"],
   "etymology": {
   "intro": ["単純語。", "音象徴「 くっつける 」から。"],
   "changes": []
@@ -446,7 +445,7 @@
       "type": "p 基本型（部分不規則）",
       "ruletype": "ha",
       "meaning": ["りんご", "リンゴ"],
-      "pronunciation": ["/pip/<br>[pɪp]<br>‖pip‖"],
+      "pronunciation": ["/pip/<br>[pɪp]"],
       "alert": {
       "a1": "※ この単語は現在使われていません。以下を使用してください。",
       "a2": [
@@ -466,7 +465,7 @@
       "type": "f 基本型",
       "ruletype": "fha",
     "meaning": ["夜", "晩"],
-    "pronunciation": ["/pnoɾmfa/<br>[pnoɾmfə]<br>‖pnorfa‖"],
+    "pronunciation": ["/pnoɾmfa/<br>[pnoɾmfə]"],
     "variants2": ["pnorfa", "よる", "ばん", "宵", "よい"],
     "etymology": {
       "intro": ["単純語。", "形成の根拠は不明。"],
@@ -486,7 +485,7 @@
   "type": "完全不規則型",
   "ruletype": "mia",
   "meaning": ["（一人称男性形）","俺", "僕", "自分"],
-  "pronunciation": ["/mʲa/<br>[mʲə]<br>‖mia‖"],
+  "pronunciation": ["/mʲa/<br>[mʲə]"],
   "etymology": ["古智語「 miula（竜）」から。"],
   "variants2": ["おれ", "ぼく", "じぶん"]
 },
@@ -499,7 +498,7 @@
   "type": "完全不規則型",
   "ruletype": "mia",
   "meaning": ["（一人称女性形）","わたし", "私", "自分"],
-  "pronunciation": ["/lʲa/<br>[lʲə]<br>‖lia‖"],
+  "pronunciation": ["/lʲa/<br>[lʲə]"],
   "variants2": ["わたくし", "じぶん"]
 },
   "cia": {
@@ -511,7 +510,7 @@
   "type": "完全不規則型",
   "ruletype": "mia",
   "meaning": ["（一人称中性形）","ぼく", "私", "自分"],
-  "pronunciation": ["/ʈ͡ʂja/<br>[ʈ͡ʂjə]<br>‖ča‖"],
+  "pronunciation": ["/t͡ʃʲa/<br>[t͡ʃʲə]"],
   "variants2": ["僕", "わたし", "じぶん"]
 },
   "sia": {
@@ -523,7 +522,7 @@
   "type": "完全不規則型",
   "ruletype": "mia",
   "meaning": ["（二人称男性形）","あなた", "君"],
-  "pronunciation": ["/sʲa/<br>[sʲə]<br>‖sia‖"],
+  "pronunciation": ["/sʲa/<br>[sʲə]"],
   "variants2": ["きみ", "貴方"]
 },
   "pia": {
@@ -535,7 +534,7 @@
   "type": "完全不規則型",
   "ruletype": "mia",
   "meaning": ["（二人称女性形）","あなた", "君"],
-  "pronunciation": ["/pʲa/<br>[pʲə]<br>‖pia‖"],
+  "pronunciation": ["/pʲa/<br>[pʲə]"],
   "variants2": ["きみ", "貴方", "貴女"]
 },
   "tia": {
@@ -547,7 +546,7 @@
   "type": "完全不規則型",
   "ruletype": "mia",
   "meaning": ["（二人称中性形）","あなた", "君"],
-  "pronunciation": ["/tʲa/<br>[tʲə]<br>‖tia‖"],
+  "pronunciation": ["/tʲa/<br>[tʲə]"],
   "variants2": ["きみ", "貴方"]
 },
 
@@ -560,7 +559,7 @@
   "type": "完全不規則型",
   "ruletype": "mia",
   "meaning": ["（三人称男性形）", "彼"],
-  "pronunciation": ["/kʲa/<br>[kʲə]<br>‖kia‖"],
+  "pronunciation": ["/kʲa/<br>[kʲə]"],
   "variants2": ["かれ"]
 },
   "fia": {
@@ -572,7 +571,7 @@
   "type": "完全不規則型",
   "ruletype": "mia",
   "meaning": ["（二人称女性形）","彼女"],
-  "pronunciation": ["/fʲa/<br>[fʲə]<br>‖fia‖"],
+  "pronunciation": ["/fʲa/<br>[fʲə]"],
   "variants2": ["かのじょ"]
 },
   "xia": {
@@ -584,7 +583,7 @@
   "type": "完全不規則型",
   "ruletype": "mia",
   "meaning": ["（三人称中性形）", "彼", "彼女"],
-  "pronunciation": ["/ʃʲa/<br>[ʃʲə]<br>‖šia‖"],
+  "pronunciation": ["/ʃʲa/<br>[ʃʲə]"],
   "variants2": ["かれ", "かのじょ"]
 },
 
@@ -597,7 +596,7 @@
   "type": "完全不規則型",
   "ruletype": "mia",
   "meaning": ["（二人称男性形）", "あなた", "君"],
-  "pronunciation": ["/zʲa/<br>[zʲə]<br>‖zia‖"],
+  "pronunciation": ["/zʲa/<br>[zʲə]"],
   "variants2": ["きみ", "貴方"]
 },
   "bia": {
@@ -609,7 +608,7 @@
   "type": "完全不規則型",
   "ruletype": "mia",
   "meaning": ["（二人称女性形）","あなた", "君"],
-  "pronunciation": ["/bʲa/<br>[bʲə]<br>‖bia‖"],
+  "pronunciation": ["/bʲa/<br>[bʲə]"],
   "variants2": ["きみ", "貴方", "貴女"]
 },
   "dia": {
@@ -621,7 +620,7 @@
   "type": "完全不規則型",
   "ruletype": "mia",
   "meaning": ["（二人称中性形）","あなた", "君"],
-  "pronunciation": ["/dʲa/<br>[dʲə]<br>‖dia‖"],
+  "pronunciation": ["/dʲa/<br>[dʲə]"],
   "variants2": ["きみ", "貴方"]
 },
 
@@ -634,7 +633,7 @@
   "type": "完全不規則型",
   "ruletype": "mia",
   "meaning": ["（三人称男性形）", "彼"],
-  "pronunciation": ["/gʲa/<br>[gʲə]<br>‖gia‖"],
+  "pronunciation": ["/gʲa/<br>[gʲə]"],
   "variants2": ["かれ"]
 },
   "via": {
@@ -646,7 +645,7 @@
   "type": "完全不規則型",
   "ruletype": "mia",
   "meaning": ["（二人称女性形）","彼女"],
-  "pronunciation": ["/vʲa/<br>[vʲə]<br>‖via‖"],
+  "pronunciation": ["/vʲa/<br>[vʲə]"],
   "variants2": ["かのじょ"]
 },
   "jia": {
@@ -658,7 +657,7 @@
   "type": "完全不規則型",
   "ruletype": "mia",
   "meaning": ["（三人称中性形）", "彼", "彼女"],
-  "pronunciation": ["/ʒʲa/<br>[ʒʲə]<br>‖žia‖"],
+  "pronunciation": ["/ʒʲa/<br>[ʒʲə]"],
   "variants2": ["かれ", "かのじょ"]
 },
   "kóta": {
@@ -671,7 +670,7 @@
   "type": "完全不規則型",
   "ruletype": "ha",
   "meaning": ["（可算代象-近称）", "これ"],
-  "pronunciation": ["/kota/<br>[kotə]<br>‖kota‖"]
+  "pronunciation": ["/kota/<br>[kotə]"]
 },
   "lóta": {
   "word": "lóta",
@@ -683,7 +682,7 @@
   "type": "完全不規則型",
   "ruletype": "ha",
   "meaning": ["（可算代象-近称）", "これ"],
-  "pronunciation": ["/lota/<br>[lotə]<br>‖lota‖"]
+  "pronunciation": ["/lota/<br>[lotə]"]
 },
   "fóta": {
   "word": "fóta",
@@ -695,7 +694,7 @@
   "type": "完全不規則型",
   "ruletype": "ha",
   "meaning": ["（可算代象-近称）", "これ"],
-  "pronunciation": ["/fota/<br>[fotə]<br>‖fota‖"]
+  "pronunciation": ["/fota/<br>[fotə]"]
 },
   "káta": {
   "word": "káta",
@@ -707,7 +706,7 @@
   "type": "完全不規則型",
   "ruletype": "ha",
   "meaning": ["（可算代象-中称）", "しれ"],
-  "pronunciation": ["/kata/<br>[katə]<br>‖kata‖"]
+  "pronunciation": ["/kata/<br>[katə]"]
 },
   "láta": {
   "word": "láta",
@@ -719,7 +718,7 @@
   "type": "完全不規則型",
   "ruletype": "ha",
   "meaning": ["（可算代象-中称）", "それ"],
-  "pronunciation": ["/lata/<br>[latə]<br>‖lata‖"]
+  "pronunciation": ["/lata/<br>[latə]"]
 },
   "fáta": {
   "word": "fáta",
@@ -731,7 +730,7 @@
   "type": "完全不規則型",
   "ruletype": "ha",
   "meaning": ["（可算代象-中称）", "それ"],
-  "pronunciation": ["/fata/<br>[fatə]<br>‖fata‖"]
+  "pronunciation": ["/fata/<br>[fatə]"]
 },
 
   "kýta": {
@@ -744,7 +743,7 @@
   "type": "完全不規則型",
   "ruletype": "ha",
   "meaning": ["（可算代象-遠称）", "あれ"],
-  "pronunciation": ["/kita/<br>[kʲitə]<br>‖kyta‖"]
+  "pronunciation": ["/kita/<br>[kʲitə]"]
 },
   "lýta": {
   "word": "lýta",
@@ -756,7 +755,7 @@
   "type": "完全不規則型",
   "ruletype": "ha",
   "meaning": ["（可算代象-遠称）", "あれ"],
-  "pronunciation": ["/lita/<br>[lʲitə]<br>‖lyta‖"]
+  "pronunciation": ["/lita/<br>[lʲitə]"]
 },
   "fýta": {
   "word": "fýta",
@@ -768,6 +767,6 @@
   "type": "完全不規則型",
   "ruletype": "ha",
   "meaning": ["（可算代象-遠称）", "あれ"],
-  "pronunciation": ["/fita/<br>[fʲitə]<br>‖fyta‖"]
+  "pronunciation": ["/fita/<br>[fʲitə]"]
 }
 }
