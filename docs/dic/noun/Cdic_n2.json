@@ -39,8 +39,8 @@
   "lúpha": {
   "word": "lupha",
   "stem": "luph",
-  "lexemic": "luph",
-  "fix": ["luph"],
+  "lexemic": "luph-",
+  "fix": ["luph-", "-upha"],
   "tag": ["言語学"],
   "parts": "名象",
   "rule": "単性",
@@ -152,6 +152,76 @@
         { "form": "/zafa/　", "note": "古形"},
         { "form": "/zaf-/　", "note": "末母音の消滅"}
       ]
+}
+},
+"Prúvka": {
+"word": "Prúvka",
+"stem": "Prúvk",
+"stem2": "Pruvk",
+"lexemic": "Pruvk-",
+"tag": ["星名"],
+"parts": "名象",
+"rule": "単性",
+"type": "k 基本型",
+"ruletype": "kha",
+"meaning": ["プルフカ"],
+"pronunciation": ["/pɾɯfka/<br>[pɾɯfkə]"],
+"variants2": ["ぷるふか", "Prufka"],
+  "etymology": {
+  "intro": ["合成語？。", "「」+「」が組み合わさった語。"],
+  "changes": []
+}
+},
+"Ciésna": {
+"word": "Ciésna",
+"stem": "Ciésn",
+"stem2": "Ciesn",
+"lexemic": "Ciesn-",
+"tag": ["地名", "プルフカ地名"],
+"parts": "名象",
+"rule": "単性",
+"type": "ph 型",
+"ruletype": "a",
+"meaning": ["チェルスノー語", "智語"],
+"pronunciation": ["/t͡ʃʲesnɯfa/<br>[t͡ʃʲesnɯfə]"],
+"variants2": ["ちぇるすのーご", "Ciesnupha"],
+  "etymology": {
+  "intro": ["合成語。", "「 Ciesn-（ チェルスノー ）」+「 -upha（ ～語 ）」が組み合わさった語。"],
+  "changes": []
+}
+},
+"Ciesnúpha": {
+"word": "Ciésnúpha",
+"stem": "Ciésnúph",
+"stem2": "Ciesnuph",
+"tag": ["言語名", "智語族"],
+"parts": "名象",
+"rule": "単性",
+"type": "ph 型",
+"ruletype": "a",
+"meaning": ["チェルスノー語", "智語"],
+"pronunciation": ["/t͡ʃʲesnɯfa/<br>[t͡ʃʲesnɯfə]"],
+"variants2": ["ちぇるすのーご", "Ciesnupha"],
+  "etymology": {
+  "intro": ["合成語。", "「 Ciesn-（ チェルスノー ）」+「 -upha（ ～語 ）」が組み合わさった語。"],
+  "changes": []
+}
+},
+"Toxkúpha": {
+"word": "Toxkúpha",
+"stem": "Toxkúpha",
+"stem2": "Toxkupha",
+"tag": ["言語名", "智語族"],
+"parts": "名象",
+"rule": "単性",
+"type": "ph 型",
+"ruletype": "a",
+"meaning": ["トシュカ語", "新灯語"],
+"pronunciation": ["/toʂkɯfa/<br>[toʂkɯfə]"],
+"variants2": ["ちぇるすのーご", "Ciesnupha"],
+  "etymology": {
+  "intro": ["借用語。", "古トシュカ語の「 toška 」+「 -upha（ 〜語 ）」が組み合わさった単語。"],
+  "changes": []
 }
 },
 "Tákipania": {
