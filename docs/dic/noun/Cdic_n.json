@@ -373,7 +373,7 @@
   "changes": [
         { "form": "/fedol/　"},
         { "form": "/fedal/　", "note": "o の広い化"},
-        { "form": "/fdal/　", "note": "単音節化" }
+        { "form": "/fdal/　", "note": "単音節化" },
         { "form": "/dal/　", "note": "f の軟音化" }
   ]
 },
@@ -382,8 +382,7 @@
       "a2": [
         { "word": "erbal" }
       ]
-    }
-  },
+    },
   "variants2": ["dal"]
 },
   "erbál": {
