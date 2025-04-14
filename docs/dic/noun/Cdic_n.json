@@ -74,6 +74,43 @@
   "idiom": ["cyfiaf vniut（ 結婚する，結ばれる ）"],
   "variants2": ["りす", "栗鼠"]
 },
+  "cýta": {
+  "word": "cýta",
+  "stem": "cýt",
+  "stem2": "cyt",
+    "lexemic": "cyt-",
+    "fix": ["cyt-"],
+  "tag": ["星名"],
+  "parts": "名象",
+  "rule": "単性",
+    "type": "t 基本型",
+    "ruletype": "ha",
+  "meaning": ["星", "天体", "恒星"],
+  "pronunciation": ["/t͡ʃʲita/<br>[t͡ʃʲitə]"],
+  "etymology": {
+      "intro": ["単純語。", "擬音語「 キラキラ光る 」から。"],
+      "changes": []
+    },
+  "variants2": ["ほし", "てんたい", "こうせい"]
+},
+  "cytháta": {
+  "word": "cytháta",
+  "stem": "cythát",
+  "stem2": "cythat-",
+    "lexemic": "cythat-",
+  "tag": ["–"],
+  "parts": "名象",
+  "rule": "単性",
+    "type": "t 基本型",
+    "ruletype": "ha",
+  "meaning": ["星空"],
+  "pronunciation": ["/t͡ʃʲisata/<br>[t͡ʃʲisatə]"],
+  "etymology": {
+      "intro": ["合成語。", "「 cyt-（ 星 ）」+「 hafa（ 空 ）」が混ざり合った単語。"],
+      "changes": []
+    },
+  "variants2": ["ほしぞら", "よぞら", "夜空"]
+},
   "hlýna": {
     "word": "hlýna",
     "stem": "hlýn",
