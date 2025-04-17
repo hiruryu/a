@@ -97,10 +97,11 @@
       "a2": []
     }
 },
-"piásta": {
-"word": "piast",
-"stem": "piást",
-"stem2": "piast",
+"piósta": {
+"word": "piósta",
+"stem": "pióst",
+"stem2": "piost",
+"lexemic": ["piost-"],
 "tag": ["動物名", "十二支"],
 "parts": "名象",
 "rule": "単性",
