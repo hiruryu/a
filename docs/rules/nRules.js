@@ -20,7 +20,6 @@ function getConjN(word, stem, stem2, type, ruletype) {
       ad_ansC: stem + "ūt",
       g_ansC: stem + "oy",
       v_ansC: stem + "agh",
-      in_ansC: stem + "iax",
       // 非限定形可視複数形
       anpC: anpC,
       f_anpC: anpC.slice(0, -1) + "f",
@@ -29,7 +28,6 @@ function getConjN(word, stem, stem2, type, ruletype) {
       ad_anpC: anpC.slice(0, -2) + "ūt",
       g_anpC: anpC.slice(0, -2) + "oy",
       v_anpC: anpC.slice(0, -2) + "agh",
-      in_anpC: anpC.slice(0, -2) + "iax",
       // 限定形可視単数形
       adsC: adsC,
       f_adsC: adsC.slice(0, -1) + "af",
@@ -38,7 +36,6 @@ function getConjN(word, stem, stem2, type, ruletype) {
       ad_adsC: adsC.slice(0, -1) + "ūt",
       g_adsC: adsC.slice(0, -1) + "oy",
       v_adsC: adsC.slice(0, -1) + "agh",
-      in_adsC: adsC.slice(0, -1) + "iax",
       // 限定形可視複数形
       adpC: adpC,
       f_adpC: adpC.slice(0, -1) + "af",
@@ -47,7 +44,6 @@ function getConjN(word, stem, stem2, type, ruletype) {
       ad_adpC: adpC.slice(0, -1) + "ūt",
       g_adpC: adpC.slice(0, -1) + "oy",
       v_adpC: adpC.slice(0, -1) + "agh",
-      in_adpC: adpC.slice(0, -1) + "iax",
 
       // 非限定形不可視単数形
       ansI: ansI,  
@@ -57,7 +53,7 @@ function getConjN(word, stem, stem2, type, ruletype) {
       ad_ansI: ansI.slice(0, -1) + "ūt",
       g_ansI: ansI.slice(0, -1) + "oy",
       v_ansI: ansI.slice(0, -1) + "agh",
-      in_ansI: ansI.slice(0, -1) + "iax", 
+
       // 非限定形不可視複数形
       anpI: anpI,
       f_anpI: anpI.slice(0, -2) + "af",
@@ -66,7 +62,6 @@ function getConjN(word, stem, stem2, type, ruletype) {
       ad_anpI: anpI.slice(0, -2) + "ūt",
       g_anpI: anpI.slice(0, -2) + "oy",
       v_anpI: anpI.slice(0, -2) + "agh",
-      in_anpI: anpI.slice(0, -2) + "iax",
 
        // 限定形不可視単数形
       adsI: adsI,
@@ -76,7 +71,7 @@ function getConjN(word, stem, stem2, type, ruletype) {
       ad_adsI: adsI.slice(0, -1) + "ūt",
       g_adsI: adsI.slice(0, -1) + "oy",
       v_adsI: adsI.slice(0, -1) + "agh",
-      in_adsI: adsI.slice(0, -1) + "iax",
+
       // 限定形不可視複数形
       adpI: adpI,
       f_adpI: adpI.slice(0, -1) + "af",
@@ -85,7 +80,6 @@ function getConjN(word, stem, stem2, type, ruletype) {
       ad_adpI: adpI.slice(0, -1) + "ūt",
       g_adpI: adpI.slice(0, -1) + "oy",
       v_adpI: adpI.slice(0, -1) + "agh",
-      in_adpI: adpI.slice(0, -1) + "iax",
     };
   } else if (ruletype === "ka") {
     // ka - ci 型 (ka)       
