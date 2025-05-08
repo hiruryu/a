@@ -91,11 +91,11 @@ window.toggleVulgarMeaning = function(linkElem) {
     };
 
     Promise.all([
-      fetch('data/Cdic_a.json').then(response => response.json()),
-      fetch('data/noun/Cdic_n.json').then(response => response.json()),
-      fetch('data/noun/Cdic_n2.json').then(response => response.json()),
-      fetch('data/Cdic_o.json').then(response => response.json()),
-      fetch('data/Cdic_v.json').then(response => response.json())
+      fetch('dic/Cdic_a.json').then(response => response.json()),
+      fetch('dic/noun/Cdic_n.json').then(response => response.json()),
+      fetch('dic/noun/Cdic_n2.json').then(response => response.json()),
+      fetch('dic/Cdic_o.json').then(response => response.json()),
+      fetch('dic/Cdic_v.json').then(response => response.json())
     ]).then(([nounData, noun2Data, verbData, adjectiveData, othersData]) => {
       dictionary = { ...nounData, ...noun2Data, ...verbData, ...adjectiveData, ...othersData };
     }).catch(error => console.error("JSON読み込みエラー:", error));
