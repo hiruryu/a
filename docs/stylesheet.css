@@ -4,7 +4,7 @@ body {
     min-width: 1300px;
     height: auto;
     margin: 10px 0px 0px 0px;
-    font-family: "Arial";
+    font-family: "Roboto", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
   background-color: #fcf9f5;
@@ -25,7 +25,7 @@ body {
     border-radius: 10px;
   }
   .content {
-    width: 100%;
+    width: 77%;
     padding: 1rem;
     box-sizing: border-box;
     overflow-y: auto;
@@ -161,7 +161,7 @@ body {
   .placeholder {
     font-size: 15px;
     padding: 4px;
-    color: #333333;
+    color: #414141;
     vertical-align: center;
     text-align: center;
 
@@ -209,7 +209,7 @@ body {
 .p-td {
   color: #361616;
   font-size: 16px;
-  font-family:'Times New Roman', Times, sans-serif;
+  font-family: "Roboto", sans-serif;
   line-height: 25px;
 }
 
@@ -224,7 +224,7 @@ body {
     line-height:inherit;
     color:#665550;
     background-color: #fbf2ed;
-    font-family: Arial, serif;
+    font-family: "Roboto", sans-serif;
     width: 50%;
     border-radius: 20px;
   }
