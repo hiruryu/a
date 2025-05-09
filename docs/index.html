@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>📕 智語辞書</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="stylesheet.css">
 </head>
 <body>
@@ -37,7 +37,7 @@
     
         <div id="pagination" class="pagination">
           <button id="prevPage">＜ 前のページ</button>
-          <span class="bottonspan" id="pageInfo">1 / 1</span>
+          <span class="bottonspan" id="pageInfo">0 / 0</span>
           <button id="nextPage">次のページ ＞</button>
         </div>
   </div>
@@ -1033,7 +1033,12 @@ window.generateInflections = generateInflections;
       renderPage();
     }
     
-    searchBox.addEventListener("input", performSearch);
+    searchBox.addEventListener("keydown", function(e) {
+  if (e.key === "Enter") {
+    e.preventDefault();
+    performSearch();
+  }
+});
     searchModeSelect.addEventListener("change", performSearch);
 
     prevPageBtn.addEventListener("click", () => {
