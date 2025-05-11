@@ -100,9 +100,7 @@ window.toggleVulgarMeaning = function(linkElem) {
       fetch('dic/Cdic_v.json').then(response => response.json())
     ]).then(([nounData, noun2Data, verbData, adjectiveData, othersData]) => {
       dictionary = { ...nounData, ...noun2Data, ...verbData, ...adjectiveData, ...othersData };
-    }).catch(error => console.error("JSON読み込みエラー:", error));
-
-    function extractTranslations(text) {
+ function extractTranslations(text) {
       const cleaned = text.replace(/［[^］]*］/g, "").replace(/（[^）]*）/g, "").trim();
       return cleaned.split(/\s*,\s*/).filter(item => item !== "");
     }
@@ -111,29 +109,27 @@ window.toggleVulgarMeaning = function(linkElem) {
     }
 
   const idToWord = {};
-  for (const [word, data] of Object.entries(dictionary)) {
-    if (data.id) idToWord[data.id] = word;
-  }
-
-  function getWordFromHash() {
-    const h = decodeURIComponent(location.hash.slice(1));
-    if (!h) return null;
-    if (idToWord[h]) return idToWord[h];
-    if (dictionary[h]) return h;
-    return null;
-  }
-
-  function loadFromHash() {
-    const w = getWordFromHash();
-    if (w) {
-      searchResults = [];
-      renderPage();
-      showDetails(w);
+    for (const [word, data] of Object.entries(dictionary)) {
+      if (data.id) idToWord[data.id] = word;
     }
-  }
-  window.addEventListener('DOMContentLoaded', loadFromHash);
-  window.addEventListener('hashchange', loadFromHash);
-
+    function getWordFromParam() {
+      const params = new URLSearchParams(location.search);
+      const id = params.get("id");
+      if (!id) return null;
+      return idToWord[id] || (dictionary[id] ? id : null);
+    }
+    function loadFromParam() {
+      const w = getWordFromParam();
+      if (w) {
+        searchResults = [];
+        renderPage();
+        showDetails(w);
+      }
+    }
+    window.addEventListener("DOMContentLoaded", loadFromParam);
+  })
+  .catch(error => console.error("JSON読み込みエラー:", error));
+    
     const searchBox = document.getElementById("searchBox");
     const searchModeSelect = document.getElementById("searchMode");
     const wordList = document.getElementById("wordList");
