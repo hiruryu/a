@@ -88,7 +88,17 @@ function processH5Links(text) {
     return `<h5><a href="#" onclick="loadWord('${mappedLink}'); return false;">${trimmedText}</a></h5>`;
   });
 }
-    
+    function toggleVulgarMeaning(linkElem) {
+  const span = linkElem.nextElementSibling;
+  if (span.style.display === "none") {
+    span.style.display = "inline";
+    linkElem.textContent = "俗的な意味を非表示";
+  } else {
+    span.style.display = "none";
+    linkElem.textContent = "俗的な意味を表示";
+  }
+}   
+  
     Promise.all([
       fetch('./dic/Cdic_a.json').then(response => response.json()),
       fetch('./dic/noun/Cdic_n.json').then(response => response.json()),
@@ -293,17 +303,7 @@ if (data.vulgarMeaning) {
   `;
 }
 
-function toggleVulgarMeaning(linkElem) {
-  const span = linkElem.nextElementSibling;
-  if (span.style.display === "none") {
-    span.style.display = "inline";
-    linkElem.textContent = "俗的な意味を非表示";
-  } else {
-    span.style.display = "none";
-    linkElem.textContent = "俗的な意味を表示";
-  }
-}   
-      let leftRows = [];
+    let leftRows = [];
       let bottomRows = [];
       leftRows.push(`<tr><th>属性</th><td>${data.parts || ""}</td></tr>`);
       leftRows.push(`<tr><th>タグ</th><td class="t-td">${data.tag ? (Array.isArray(data.tag) ? data.tag.join(", ") : data.tag) : ""}</td></tr>`);
