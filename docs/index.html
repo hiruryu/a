@@ -108,7 +108,7 @@ window.toggleVulgarMeaning = function(linkElem) {
       return text.replace(/［[^］]*］/g, "").replace(/（[^）]*）/g, "").trim();
     }
 
-  const idToWord = {};
+const idToWord = {};
     for (const [word, data] of Object.entries(dictionary)) {
       if (data.id) idToWord[data.id] = word;
     }
@@ -126,7 +126,7 @@ window.toggleVulgarMeaning = function(linkElem) {
         showDetails(w);
       }
     }
-    window.addEventListener("DOMContentLoaded", loadFromParam);
+    loadFromParam();
   })
   .catch(error => console.error("JSON読み込みエラー:", error));
     
@@ -785,17 +785,14 @@ let jpnoteHTML = "";
 
       let headerClass = partsStyles[data.parts] || "default";
       li.innerHTML = `<strong class="${headerClass}">${word}</strong><br><span class="pagespan">${displayText}</span>`;
-     li.addEventListener("click", () => {
+      li.addEventListener("click", () => {
     showDetails(word);
-    if (data.id) {
-      location.hash = encodeURIComponent(data.id);
-    } else {
-      location.hash = encodeURIComponent(word);
-    }
+    const value = data.id ? data.id : encodeURIComponent(word);
+    const newUrl = `${location.pathname}?id=${value}`;
+    history.pushState(null, "", newUrl);
   });
   return li;
 }
- 
     function renderPage() {
       wordList.innerHTML = "";
       const totalPages = Math.ceil(searchResults.length / itemsPerPage);
