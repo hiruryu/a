@@ -110,16 +110,20 @@ window.toggleVulgarMeaning = function(linkElem) {
       dictionary = { ...nounData, ...noun2Data, ...verbData, ...adjectiveData, ...othersData };
 
 const idToWord = {};
-    for (const [word, data] of Object.entries(dictionary)) {
-      if (data.id) idToWord[data.id] = word;
-    }
+for (const [word, data] of Object.entries(dictionary)) {
+  if (data.id != null) {
+    idToWord[String(data.id)] = word;
+  }
+}
 
     function getWordFromParam() {
-      const params = new URLSearchParams(location.search);
-      const id = params.get("id");
-      if (!id) return null;
-      return idToWord[id] || (dictionary[id] ? id : null);
-    }
+  const params = new URLSearchParams(location.search);
+  const id = params.get("id");
+  if (!id) return null;
+  if (idToWord[id]) return idToWord[id];
+  if (dictionary[id]) return id;
+  return null;
+}
 
     const initial = getWordFromParam();
     if (initial) {
@@ -783,14 +787,15 @@ let jpnoteHTML = "";
       }
       let headerClass = partsStyles[data.parts] || "default";
       li.innerHTML = `<strong class="${headerClass}">${word}</strong><br><span class="pagespan">${displayText}</span>`;
-      li.addEventListener("click", () => {
-      showDetails(word);
-      const value = data.id || encodeURIComponent(word);
-      const newUrl = `${location.pathname}?id=${value}`;
-      history.pushState(null, "", newUrl);
-    });
-    return li;
-  }
+       li.addEventListener("click", () => {
+    showDetails(word);
+    const value = data.id != null ? String(data.id) : encodeURIComponent(word);
+    const newUrl = `${location.pathname}?id=${value}`;
+    history.pushState(null, "", newUrl);
+  });
+  return li;
+}
+    
    function renderPage() {
     wordList.innerHTML = "";
     const total = Math.ceil(searchResults.length / itemsPerPage);
