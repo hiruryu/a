@@ -17,6 +17,7 @@
     "note2": ["生物の分類の中で，特に人格性が低いもの。","詳しくは ⇒ <h5>人格性</h5> を参照。"]
   },
   "érma": {
+    "id": 1,
     "word": "érma",
     "stem": "érm",
     "stem2": "erm",
@@ -34,6 +35,7 @@
     "note2": ["生物の分類の中で，特に人格性が高いもの。","人間などもここに含まれる。","詳しくは ⇒ <h5>人格性</h5> を参照。"]
   },
   "bóiz": {
+    "id": 2,
   "word": "bóiz",
   "stem": "bóiz",
   "tag": ["動物名", "魚介類名"],
@@ -53,6 +55,7 @@
   "variants2": ["boiz", "くじら"]
 },
   "cýfia": {
+    "id": 3,
   "word": "cýfsa",
   "stem": "cýfi",
   "stem2": "cyfi",
@@ -75,6 +78,7 @@
   "variants2": ["りす", "栗鼠"]
 },
   "cýta": {
+    "id": 4,
   "word": "cýta",
   "stem": "cýt",
   "stem2": "cyt",
@@ -84,7 +88,7 @@
   "parts": "名象",
   "rule": "単性",
     "type": "t 基本型",
-    "ruletype": "ha",
+    "ruletype": "f",
   "meaning": ["星", "天体", "恒星"],
   "pronunciation": ["/t͡ʃʲita/<br>[t͡ʃʲitə]"],
   "etymology": {
@@ -94,6 +98,7 @@
   "variants2": ["ほし", "てんたい", "こうせい"]
 },
   "cytháta": {
+    "id": 5,
   "word": "cytháta",
   "stem": "cythát",
   "stem2": "cythat",
@@ -102,7 +107,7 @@
   "parts": "名象",
   "rule": "単性",
     "type": "t 基本型",
-    "ruletype": "ha",
+    "ruletype": "f",
   "meaning": ["星空"],
   "pronunciation": ["/t͡ʃʲisata/<br>[t͡ʃʲisatə]"],
   "etymology": {
@@ -202,6 +207,7 @@
   "variants2": ["faska", "ファスカ", "とり"]
 },
 "wóma": {
+  "id": 6,
     "word": "wóma",
     "stem": "wóm",
     "stem2": "wom",
@@ -263,6 +269,7 @@
   "variants2": ["むし", "蟲"]
 },
 "háfa": {
+  "id": 7,
   "word": "háfa",
   "stem": "háf",
   "stem2": "haf",
@@ -270,7 +277,7 @@
   "parts": "名象",
   "rule": "単性",
   "type": "f 基本型",
-  "ruletype": "fha",
+  "ruletype": "f",
   "meaning": ["（昼間の）空", "青空", "天空", "天気", "空模様", "天国", "天界"],
   "pronunciation": ["/xafa/<br>[xäfə]"],
   "variants2": ["hafa","そら", "あおぞら", "てんくう", "てんき", "そらもよう", "てんごく", "てんかい"]
