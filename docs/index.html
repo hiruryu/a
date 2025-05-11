@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>📕 智語辞書</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="stylesheet.css">
@@ -91,11 +93,11 @@ window.toggleVulgarMeaning = function(linkElem) {
     };
 
     Promise.all([
-      fetch('dic/Cdic_a.json').then(response => response.json()),
-      fetch('dic/noun/Cdic_n.json').then(response => response.json()),
-      fetch('dic/noun/Cdic_n2.json').then(response => response.json()),
-      fetch('dic/Cdic_o.json').then(response => response.json()),
-      fetch('dic/Cdic_v.json').then(response => response.json())
+      fetch('data/Cdic_a.json').then(response => response.json()),
+      fetch('data/noun/Cdic_n.json').then(response => response.json()),
+      fetch('data/noun/Cdic_n2.json').then(response => response.json()),
+      fetch('data/Cdic_o.json').then(response => response.json()),
+      fetch('data/Cdic_v.json').then(response => response.json())
     ]).then(([nounData, noun2Data, verbData, adjectiveData, othersData]) => {
       dictionary = { ...nounData, ...noun2Data, ...verbData, ...adjectiveData, ...othersData };
     }).catch(error => console.error("JSON読み込みエラー:", error));
@@ -107,6 +109,30 @@ window.toggleVulgarMeaning = function(linkElem) {
     function removeAnnotations(text) {
       return text.replace(/［[^］]*］/g, "").replace(/（[^）]*）/g, "").trim();
     }
+
+  const idToWord = {};
+  for (const [word, data] of Object.entries(dictionary)) {
+    if (data.id) idToWord[data.id] = word;
+  }
+
+  function getWordFromHash() {
+    const h = decodeURIComponent(location.hash.slice(1));
+    if (!h) return null;
+    if (idToWord[h]) return idToWord[h];
+    if (dictionary[h]) return h;
+    return null;
+  }
+
+  function loadFromHash() {
+    const w = getWordFromHash();
+    if (w) {
+      searchResults = [];
+      renderPage();
+      showDetails(w);
+    }
+  }
+  window.addEventListener('DOMContentLoaded', loadFromHash);
+  window.addEventListener('hashchange', loadFromHash);
 
     const searchBox = document.getElementById("searchBox");
     const searchModeSelect = document.getElementById("searchMode");
@@ -763,11 +789,16 @@ let jpnoteHTML = "";
 
       let headerClass = partsStyles[data.parts] || "default";
       li.innerHTML = `<strong class="${headerClass}">${word}</strong><br><span class="pagespan">${displayText}</span>`;
-      li.addEventListener("click", () => {
-        showDetails(word);
-      });
-      return li;
+     li.addEventListener("click", () => {
+    showDetails(word);
+    if (data.id) {
+      location.hash = encodeURIComponent(data.id);
+    } else {
+      location.hash = encodeURIComponent(word);
     }
+  });
+  return li;
+}
  
     function renderPage() {
       wordList.innerHTML = "";
@@ -1032,13 +1063,14 @@ window.generateInflections = generateInflections;
       currentPage = 1;
       renderPage();
     }
-    
+
     searchBox.addEventListener("keydown", function(e) {
   if (e.key === "Enter") {
     e.preventDefault();
     performSearch();
   }
 });
+
     searchModeSelect.addEventListener("change", performSearch);
 
     prevPageBtn.addEventListener("click", () => {
@@ -1053,11 +1085,11 @@ window.generateInflections = generateInflections;
     });
 
   const files = [
-  'dic/Cdic_a.json',
-  'dic/noun/Cdic_n.json',
-  'dic/noun/Cdic_n2.json',
-  'dic/Cdic_o.json',
-  'dic/Cdic_v.json'
+  'data/Cdic_a.json',
+  'data/noun/Cdic_n.json',
+  'data/noun/Cdic_n2.json',
+  'data/Cdic_o.json',
+  'data/Cdic_v.json'
 ];
 
 async function countWords() {
