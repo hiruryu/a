@@ -69,7 +69,15 @@
   "付称辞": "fukuji",
   "間投詞": "kanto",
 };
-
+    
+function extractTranslations(text) {
+      const cleaned = text.replace(/［[^］]*］/g, "").replace(/（[^）]*）/g, "").trim();
+      return cleaned.split(/\s*,\s*/).filter(item => item !== "");
+    }
+    function removeAnnotations(text) {
+      return text.replace(/［[^］]*］/g, "").replace(/（[^）]*）/g, "").trim();
+    }
+    
 function processH5Links(text) {
   return text.replace(/<h5>(.*?)<\/h5>/g, (match, innerText) => {
     const trimmedText = innerText.trim();
@@ -80,7 +88,7 @@ function processH5Links(text) {
     return `<h5><a href="#" onclick="loadWord('${mappedLink}'); return false;">${trimmedText}</a></h5>`;
   });
 }
-
+    
 window.toggleVulgarMeaning = function(linkElem) {
       const ul = linkElem.nextElementSibling;
       if (ul.style.display === "none") {
@@ -100,36 +108,27 @@ window.toggleVulgarMeaning = function(linkElem) {
       fetch('dic/Cdic_v.json').then(response => response.json())
     ]).then(([nounData, noun2Data, verbData, adjectiveData, othersData]) => {
       dictionary = { ...nounData, ...noun2Data, ...verbData, ...adjectiveData, ...othersData };
- function extractTranslations(text) {
-      const cleaned = text.replace(/［[^］]*］/g, "").replace(/（[^）]*）/g, "").trim();
-      return cleaned.split(/\s*,\s*/).filter(item => item !== "");
-    }
-    function removeAnnotations(text) {
-      return text.replace(/［[^］]*］/g, "").replace(/（[^）]*）/g, "").trim();
-    }
 
 const idToWord = {};
     for (const [word, data] of Object.entries(dictionary)) {
       if (data.id) idToWord[data.id] = word;
     }
+
     function getWordFromParam() {
       const params = new URLSearchParams(location.search);
       const id = params.get("id");
       if (!id) return null;
       return idToWord[id] || (dictionary[id] ? id : null);
     }
-    function loadFromParam() {
-      const w = getWordFromParam();
-      if (w) {
-        searchResults = [];
-        renderPage();
-        showDetails(w);
-      }
+
+    const initial = getWordFromParam();
+    if (initial) {
+      searchResults = [];
+      renderPage();
+      showDetails(initial);
     }
-    loadFromParam();
-  })
-  .catch(error => console.error("JSON読み込みエラー:", error));
-    
+  }).catch(error => console.error("JSON読み込みエラー:", error));
+   
     const searchBox = document.getElementById("searchBox");
     const searchModeSelect = document.getElementById("searchMode");
     const wordList = document.getElementById("wordList");
@@ -770,8 +769,8 @@ let jpnoteHTML = "";
     };
 
     function createWordListItem(word) {
-      const data = dictionary[word];
-      const li = document.createElement("li");
+    const data = dictionary[word];
+    const li = document.createElement("li");
       let meaningText = data.meaning
         ? (Array.isArray(data.meaning) ? data.meaning.join(', ') : data.meaning)
         : "";
@@ -782,52 +781,46 @@ let jpnoteHTML = "";
       if (displayText.length > maxLength) {
         displayText = displayText.substring(0, maxLength) + "……";
       }
-
       let headerClass = partsStyles[data.parts] || "default";
       li.innerHTML = `<strong class="${headerClass}">${word}</strong><br><span class="pagespan">${displayText}</span>`;
       li.addEventListener("click", () => {
-    showDetails(word);
-    const value = data.id ? data.id : encodeURIComponent(word);
-    const newUrl = `${location.pathname}?id=${value}`;
-    history.pushState(null, "", newUrl);
-  });
-  return li;
-}
-    function renderPage() {
-      wordList.innerHTML = "";
-      const totalPages = Math.ceil(searchResults.length / itemsPerPage);
-      if (totalPages === 0) {
-        const li = document.createElement("li");
-        li.textContent = "該当する単語はありません｡";
-        li.style.color = "gray";
-        wordList.appendChild(li);
-        pageInfoSpan.textContent = "0 / 0";
-        prevPageBtn.disabled = true;
-        nextPageBtn.disabled = true;
-        return;
-      }
-      if (currentPage < 1) currentPage = 1;
-      if (currentPage > totalPages) currentPage = totalPages;
-      const startIndex = (currentPage - 1) * itemsPerPage;
-      const endIndex = startIndex + itemsPerPage;
-      const pageItems = searchResults.slice(startIndex, endIndex);
-      pageItems.forEach(item => {
-        if (item.type === "heading") {
-          const li = document.createElement("li");
-          li.textContent = item.text;
-          li.style.fontWeight = "bold";
-          li.style.color = "#6d6d6d";
-          li.style.backgroundColor = "#ece9e5";
-          wordList.appendChild(li);
-        } else if (item.type === "word") {
-          wordList.appendChild(createWordListItem(item.value));
-        }
-      });
-      pageInfoSpan.textContent = `${currentPage} / ${totalPages}`;
-      prevPageBtn.disabled = (currentPage === 1);
-      nextPageBtn.disabled = (currentPage === totalPages);
+      showDetails(word);
+      const value = data.id || encodeURIComponent(word);
+      const newUrl = `${location.pathname}?id=${value}`;
+      history.pushState(null, "", newUrl);
+    });
+    return li;
+  }
+   function renderPage() {
+    wordList.innerHTML = "";
+    const total = Math.ceil(searchResults.length / itemsPerPage);
+    if (total === 0) {
+      const li = document.createElement("li");
+      li.textContent = "該当する単語はありません｡";
+      li.style.color = "gray";
+      wordList.appendChild(li);
+      pageInfoSpan.textContent = "0 / 0";
+      prevPageBtn.disabled = nextPageBtn.disabled = true;
+      return;
     }
-
+    currentPage = Math.max(1, Math.min(currentPage, total));
+    const start = (currentPage - 1) * itemsPerPage;
+    const slice = searchResults.slice(start, start + itemsPerPage);
+    slice.forEach(item => {
+      if (item.type === "heading") {
+        const li = document.createElement("li");
+        li.textContent = item.text;
+        li.style.fontWeight = "bold";
+        li.style.backgroundColor = "#ece9e5";
+        wordList.appendChild(li);
+      } else {
+        wordList.appendChild(createWordListItem(item.value));
+      }
+    });
+    pageInfoSpan.textContent = `${currentPage} / ${total}`;
+    prevPageBtn.disabled = (currentPage === 1);
+    nextPageBtn.disabled = (currentPage === total);
+  }
     const inflectionRules = {
     名象: getConjN,
     動詞: getConjV,
