@@ -89,7 +89,6 @@ function processH5Links(text) {
   });
 }
     
-
     Promise.all([
       fetch('./dic/Cdic_a.json').then(response => response.json()),
       fetch('./dic/noun/Cdic_n.json').then(response => response.json()),
@@ -144,7 +143,9 @@ for (const [word, data] of Object.entries(dictionary)) {
       let conjugations = {};
 
       if (data.parts === "名象") {
-        conjugations = getConjN(data.word, data.stem, data.stem2, data.type, data.ruletype);
+        const { word, stem, stem2 = stem, type, ruletype } = data;
+    const raw = getConjN(word, stem, stem2, type, ruletype);
+    const conjugations = raw || {};
         if (Object.keys(conjugations).length === 0) {
     tableHTML = `<tr><td colspan="9">この名詞は活用型がありません。</td></tr>`;
   } else {
