@@ -110,21 +110,18 @@ window.toggleVulgarMeaning = function(linkElem) {
       dictionary = { ...nounData, ...noun2Data, ...verbData, ...adjectiveData, ...othersData };
 
 const idToWord = {};
-for (const [word, data] of Object.entries(dictionary)) {
-  if (data.id != null) {
-    idToWord[String(data.id)] = word;
-  }
-}
-
+    for (const [w,d] of Object.entries(dictionary)) {
+      if (d.id!=null) idToWord[String(d.id)] = w;
+    }
+      
     function getWordFromParam() {
-  const params = new URLSearchParams(location.search);
-  const id = params.get("id");
-  if (!id) return null;
-  if (idToWord[id]) return idToWord[id];
-  if (dictionary[id]) return id;
-  return null;
-}
-
+      const p = new URLSearchParams(location.search);
+      const id = p.get("id");
+      if (!id) return null;
+      if (idToWord[id]) return idToWord[id];
+      return dictionary[id]? id : null;
+    }
+      
     const initial = getWordFromParam();
     if (initial) {
       searchResults = [];
@@ -143,13 +140,13 @@ for (const [word, data] of Object.entries(dictionary)) {
     const nextPageBtn = document.getElementById("nextPage");
     const pageInfoSpan = document.getElementById("pageInfo");
 
-    function showDetails(word) {
-      const data = dictionary[word];
-      if (!data) {
-        alert("単語「" + word + "」の詳細が見つかりません。");
-        return;
-      }
-
+ function showDetails(word) {
+    const data = dictionary[word];
+    if (!data) return alert(`「${word}」が見つかりません`);
+    details.innerHTML = `<h2>${word}</h2><p>${(data.meaning||[]).join(", ")}</p>`;
+  }
+    window.loadWord = w=>showDetails(w);
+    
       let tableHTML = "";
       let conjugations = {};
 
@@ -787,15 +784,14 @@ let jpnoteHTML = "";
       }
       let headerClass = partsStyles[data.parts] || "default";
       li.innerHTML = `<strong class="${headerClass}">${word}</strong><br><span class="pagespan">${displayText}</span>`;
-       li.addEventListener("click", () => {
-    showDetails(word);
-    const value = data.id != null ? String(data.id) : encodeURIComponent(word);
-    const newUrl = `${location.pathname}?id=${value}`;
-    history.pushState(null, "", newUrl);
-  });
-  return li;
-}
-    
+        li.addEventListener("click",()=>{
+      showDetails(word);
+      const val = d.id!=null? String(d.id) : encodeURIComponent(word);
+      history.pushState(null,"",`${location.pathname}?id=${val}`);
+    });
+    return li;
+  }
+
    function renderPage() {
     wordList.innerHTML = "";
     const total = Math.ceil(searchResults.length / itemsPerPage);
