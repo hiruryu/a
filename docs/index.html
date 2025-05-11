@@ -147,7 +147,7 @@ for (const [word, data] of Object.entries(dictionary)) {
     const raw = getConjN(word, stem, stem2, type, ruletype);
     const conjugations = raw || {};
         if (Object.keys(conjugations).length === 0) {
-    tableHTML = `<tr><td colspan="9">この名詞は活用型がありません。</td></tr>`;
+    tableHTML = `<tr><td colspan="9">この名詞には活用型がまだ書かれていません。</td></tr>`;
   } else {
     const rows = [
       { label: "素格", prefix: "" },
