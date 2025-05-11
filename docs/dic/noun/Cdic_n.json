@@ -52,25 +52,6 @@
     },
   "variants2": ["boiz", "くじら"]
 },
-  "fáíter": {
-    "id": 4,
-  "word": "fáíter",
-  "stem": "fáíter",
-  "tag": ["動物名", "縫性熟語"],
-  "parts": "名象",
-    "type": "p 基本型",
-    "ruletype": "p",
-  "meaning": ["クジラ", "鯨"],
-  "pronunciation": ["/boiz/<br>[bo̞js]"],
-    "etymology": {
-      "intro": ["単純語。", "音象徴「 クジラ 」から。", "形成から以下のように変化。"],
-      "changes": [
-        { "form": "/boiz-/", "note": "古形"},
-        { "form": "/boiz-/", "note": "" }
-      ]
-    },
-  "variants2": ["boiz", "くじら"]
-},
   "cýfia": {
     "id": 5,
   "word": "cýfia",
@@ -214,6 +195,7 @@
     "explanation": ["ウサギの中でも、耳が垂れているもの。"]
   },
 "fxálo": {
+  "id": 4,
   "word": "fxalo",
   "stem": "fxal",
   "tag": ["動物名"],
