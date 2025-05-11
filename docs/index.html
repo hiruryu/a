@@ -49,10 +49,10 @@
     </div>
   </div>
 
-  <script src="rules/nRules.js"></script>
-  <script src="rules/vRules.js"></script>
-  <script src="rules/aRules.js"></script>
-  <script src="rules/oRules.js"></script>
+  <script src="./rules/nRules.js"></script>
+  <script src="./rules/vRules.js"></script>
+  <script src="./rules/aRules.js"></script>
+  <script src="./rules/oRules.js"></script>
   <script src="mapping.js"></script>
   <script>
     let dictionary = {};
@@ -91,11 +91,11 @@ function processH5Links(text) {
     
 
     Promise.all([
-      fetch('dic/Cdic_a.json').then(response => response.json()),
-      fetch('dic/noun/Cdic_n.json').then(response => response.json()),
-      fetch('dic/noun/Cdic_n2.json').then(response => response.json()),
-      fetch('dic/Cdic_o.json').then(response => response.json()),
-      fetch('dic/Cdic_v.json').then(response => response.json())
+      fetch('./dic/Cdic_a.json').then(response => response.json()),
+      fetch('./dic/noun/Cdic_n.json').then(response => response.json()),
+      fetch('./dic/noun/Cdic_n2.json').then(response => response.json()),
+      fetch('./dic/Cdic_o.json').then(response => response.json()),
+      fetch('./dic/Cdic_v.json').then(response => response.json())
     ]).then(([nounData, noun2Data, verbData, adjectiveData, othersData]) => {
       dictionary = { ...nounData, ...noun2Data, ...verbData, ...adjectiveData, ...othersData };
 
@@ -1066,11 +1066,11 @@ window.generateInflections = generateInflections;
     });
 
   const files = [
-  'dic/Cdic_a.json',
-  'dic/noun/Cdic_n.json',
-  'dic/noun/Cdic_n2.json',
-  'dic/Cdic_o.json',
-  'dic/Cdic_v.json'
+  './dic/Cdic_a.json',
+  './dic/noun/Cdic_n.json',
+  './dic/noun/Cdic_n2.json',
+  './dic/Cdic_o.json',
+  './dic/Cdic_v.json'
 ];
 
 async function countWords() {
