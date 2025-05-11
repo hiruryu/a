@@ -88,17 +88,6 @@ function processH5Links(text) {
     return `<h5><a href="#" onclick="loadWord('${mappedLink}'); return false;">${trimmedText}</a></h5>`;
   });
 }
-    
-window.toggleVulgarMeaning = function(linkElem) {
-      const ul = linkElem.nextElementSibling;
-      if (ul.style.display === "none") {
-        ul.style.display = "block";
-        linkElem.textContent = "俗的な意味を非表示";
-      } else {
-        ul.style.display = "none";
-        linkElem.textContent = "俗的な意味を表示";
-      }
-    };
 
     Promise.all([
       fetch('dic/Cdic_a.json').then(response => response.json()),
