@@ -113,12 +113,15 @@ for (const [word, data] of Object.entries(dictionary)) {
   if (dictionary[id]) return id;
   return null;
 }
-
     const initial = getWordFromParam();
     if (initial) {
-      searchResults = [];
-      renderPage();
       showDetails(initial);
+      placeholder.style.display    = 'none';
+      wordList.innerHTML           = '';  
+      pageInfoSpan.textContent     = '';
+      prevPageBtn.disabled         = true;
+      nextPageBtn.disabled         = true;
+      document.getElementById('pagination').style.display = 'none';     
     }
   }).catch(error => console.error("JSON読み込みエラー:", error));
    
