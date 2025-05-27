@@ -12,6 +12,23 @@
   <link rel="stylesheet" href="stylesheet.css">
 </head>
 <body>
+  <script>
+     document.addEventListener('DOMContentLoaded', () => {
+    const params = new URLSearchParams(location.search);
+    const hasId = params.has('id');
+    if (!hasId) return;
+
+    document.body.classList.add('detail-view');
+
+    const sidebar = document.querySelector('.sidebar');
+    if (sidebar) sidebar.style.display = 'none';
+
+    const back = document.createElement('div');
+    back.className = 'back-to-top';
+    back.innerHTML = `<a href="cdic.html">📖 辞書トップへ戻る</a>`;
+    document.body.insertBefore(back, document.body.firstChild);
+  });
+  </script>
   <div class="sidebar">
     <label for="searchMode">検索モード:</label>
     <select id="searchMode" title="検索モード">
@@ -107,7 +124,10 @@ function processH5Links(text) {
       fetch('./dic/Cdic_v.json').then(response => response.json())
     ]).then(([nounData, noun2Data, verbData, adjectiveData, othersData]) => {
       dictionary = { ...nounData, ...noun2Data, ...verbData, ...adjectiveData, ...othersData };
-
+const sidebar = document.querySelector('.sidebar');
+  if (location.search && sidebar) {
+    sidebar.style.display = 'none';
+  }
 const idToWord = {};
 for (const [word, data] of Object.entries(dictionary)) {
   if (data.id != null) {
