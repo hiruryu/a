@@ -56,8 +56,8 @@ body.detail-view .back-to-top a:hover {
   }
 
   .sidebar {
-    max-width: 30%;
-    width: 20%;
+    max-width: 25%;
+    width: 25%;
     padding: 1rem;
     border-right: 1px solid #cccccc;
     box-sizing: border-box;
@@ -68,8 +68,8 @@ body.detail-view .back-to-top a:hover {
   }
 
   .content {
-    max-width: 80%;
-    width: 80%;
+    max-width: 75%;
+    width: 75%;
     padding: 1rem;
     box-sizing: border-box;
     overflow-y: auto;
