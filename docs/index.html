@@ -73,6 +73,7 @@
   <script src="mapping.js"></script>
   <script>
     let dictionary = {};
+    const idToWord = {};
     let searchResults = [];
     let currentPage = 1;
     const itemsPerPage = 20;
@@ -128,7 +129,7 @@ const sidebar = document.querySelector('.sidebar');
   if (location.search && sidebar) {
     sidebar.style.display = 'none';
   }
-const idToWord = {};
+
 for (const [word, data] of Object.entries(dictionary)) {
   if (data.id != null) {
     idToWord[String(data.id)] = word;
@@ -596,9 +597,14 @@ let jpnoteHTML = "";
       `;
     }
   }
-
-      if (data.variants1 && data.variants1.length) {
-        const links = data.variants1.map(v => `<a href="#" onclick="loadWord('${v}'); return false;">${v}</a>`).join(", ");
+      
+  if (data.variants1 && data.variants1.length) {
+    const links = data.variants1
+    .map(id => {
+      const word = idToWord[id] || id;
+      return `<a href="#" onclick="loadWord('${word}'); return false;">${word}</a>`;
+    })
+    .join(", ");
         detailsHTML += `<table class="detailTable">
           <tbody>
             <tr>
@@ -608,6 +614,7 @@ let jpnoteHTML = "";
           </tbody>
         </table>`;
       }
+      
       if (data.examples && data.examples.length) {
         detailsHTML += `<table class="detailTable">
           <tbody>
