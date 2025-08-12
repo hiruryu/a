@@ -45,13 +45,7 @@
       入力欄に単語を入力して<br>
       Enter/Return キーを押してください｡<br><br>
       （ 現在の収録語数： <span id="word-count"></span> 語 ）<br><br>
-      ⚠️ 本辞書内蔵の用語辞典は<br>
-      智式言語学・智式音楽理論に基づくため，<br>
-      一般的な定義とは異なる可能性があります。<br><br>
-      ⚠️この辞書は未完成です。<br>
-      単語・活用形・語義などは，<br>
-      変更される可能性があります。<br>
-      ご了承ください。 
+      ⚠️ 現在工事中です。
     </p>
     
         <div id="pagination" class="pagination">
@@ -117,7 +111,7 @@ function processH5Links(text) {
   }
 }   
   
-    Promise.all([
+    #Promise.all([
       fetch('./dic/Cdic_a.json').then(response => response.json()),
       fetch('./dic/noun/Cdic_n.json').then(response => response.json()),
       fetch('./dic/noun/Cdic_n2.json').then(response => response.json()),
@@ -1097,11 +1091,6 @@ window.generateInflections = generateInflections;
     });
 
   const files = [
-  './dic/Cdic_a.json',
-  './dic/noun/Cdic_n.json',
-  './dic/noun/Cdic_n2.json',
-  './dic/Cdic_o.json',
-  './dic/Cdic_v.json'
 ];
 
 async function countWords() {
@@ -1119,3 +1108,4 @@ document.addEventListener('DOMContentLoaded', countWords);
   </script>
 </body>
 </html>
+
